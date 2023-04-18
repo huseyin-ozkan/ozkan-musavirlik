@@ -35,22 +35,22 @@ jobs:
         run: npm ci
 
       - name: Pretty
-        run: npm format
+        run: npm run format
 
       - name: Lint
-        run: npm lint
+        run: npm run lint
 
       - name: 🛠️ Build Application
-        run: npm build
+        run: npm run build
 
       - name: 🧪 Test Units
-        run: npm test:unit
+        run: npm run test:unit
 
       - name: 📥 Install Playwright
         run: npx playwright install
 
       - name: 🧪 Test Application
-        run: npm test
+        run: npm run test
 
   release-please:
     name: 🚀 Version
