@@ -65,7 +65,6 @@ jobs:
         with:
           release-type: node
           prerelease: true
-          release-as: 0.1.0
           # use 0.x.x for pre-major releases:
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
