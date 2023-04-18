@@ -1,0 +1,104 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Publish
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: '*'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  quality:
+    name: ✨ Quality Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+        with:
+          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
+          fetch-depth: 0
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: 📥 Install dependencies
+        run: npm ci
+
+      - name: Pretty
+        run: npm format
+
+      - name: Lint
+        run: npm lint
+
+      - name: 🛠️ Build Application
+        run: npm build
+
+      - name: 🧪 Test Units
+        run: npm test:unit
+
+      - name: 📥 Install Playwright
+        run: npx playwright install
+
+      - name: 🧪 Test Application
+        run: npm test
+
+  release-please:
+    name: 🚀 Version
+    runs-on: ubuntu-latest
+    needs: [quality]
+    # only run this job on main branch:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    steps:
+      - name: Version with Release Please
+        uses: google-github-actions/release-please-action@v3
+        id: version
+        with:
+          release-type: node
+          prerelease: true
+          release-as: 0.1.0
+          # use 0.x.x for pre-major releases:
+          bump-minor-pre-major: true
+          bump-patch-for-minor-pre-major: true
+
+      # # The logic below handles the npm publication:
+
+      # # these if statements ensure that a publication only occurs when
+      # # a new release is created:
+      # - name: Check out code
+      #   if: ${{ steps.version.outputs.release_created }}
+      #   uses: actions/checkout@v3
+      #   with:
+      #     # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
+      #     fetch-depth: 0
+
+      # - name: Use Node.js 18
+      #   if: ${{ steps.version.outputs.release_created }}
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 18
+      #     registry-url: 'https://registry.npmjs.org'
+      #     cache: 'npm'
+
+      # - name: 📥 Install dependencies
+      #   if: ${{ steps.version.outputs.release_created }}
+      #   run: npm ci
+
+      # - name: 🛠️ Build
+      #   if: ${{ steps.version.outputs.release_created }}
+      #   run: npm run build
+
+      # - name: 📦 Publish to NPM
+      #   run: npm publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      #   if: ${{ steps.version.outputs.release_created }}
