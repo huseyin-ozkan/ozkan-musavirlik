@@ -57,7 +57,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [quality]
     # only run this job on main branch:
-    if: ${{ github.ref == 'refs/heads/main' }}
+    if: ${{ github.ref == 'refs/heads/master' }}
     steps:
       - name: Version with Release Please
         uses: google-github-actions/release-please-action@v3
