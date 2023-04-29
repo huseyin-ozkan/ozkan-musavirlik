@@ -1,0 +1,42 @@
+* {
+	/* display */
+
+	/* positioning */
+
+	/* box */
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline: none;
+
+	/* typography */
+	font-family: Ubuntu, Mulish, Segoe UI, sans-serif;
+	color: black;
+	font-size: 1rem;
+	font-style: normal;
+	text-decoration: none;
+
+	/* misc */
+	scroll-behavior: smooth;
+}
+
+img {
+	max-width: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+button,
+a {
+	cursor: pointer;
+}
