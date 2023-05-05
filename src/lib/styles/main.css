@@ -36,10 +36,42 @@
 
 	/* misc */
 	scroll-behavior: smooth;
+	/* Scrollbar for Firefox */
+	scrollbar-color: #fff7 #0006;
+	scrollbar-width: thin;
 }
 
-img {
+/* Make the scrollbar style match the rest of the modal */
+*::-webkit-scrollbar {
+	width: 7px;
+}
+
+*::-webkit-scrollbar-track {
+	background: #0006;
+}
+
+*::-webkit-scrollbar-thumb {
+	background: #fff7;
+	border-radius: 99px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	background: #0007;
+}
+
+html,
+body {
+	width: 100%;
+	min-height: 100%;
+	background-color: var(--color-bg-light);
+	overflow-x: clip;
+}
+
+img,
+svg,
+video {
 	max-width: 100%;
+	max-height: 100%;
 	object-fit: cover;
 	object-position: center;
 }
@@ -51,9 +83,12 @@ a {
 
 ul {
 	list-style: none;
+	list-style-type: none;
 }
 
+a,
 button,
-a {
+label {
 	cursor: pointer;
+	user-select: none;
 }
