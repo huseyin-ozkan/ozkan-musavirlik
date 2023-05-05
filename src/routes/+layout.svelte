@@ -11,3 +11,9 @@
 	<slot />
 </main>
 <Footer />
+
+<style lang="scss" global>
+	main > :global(section) {
+		@include section;
+	}
+</style>
