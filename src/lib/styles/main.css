@@ -1,3 +1,20 @@
+:root {
+	// main
+	--color-primary: #2b4499;
+	--color-white: #fff;
+	--color-black: #000;
+
+	// background
+	--color-bg-light: #fff;
+	--color-bg-medium: #f4f7ff;
+	--color-bg-dark: #cfdaff;
+
+	// text
+	--color-text-black: #000;
+	--color-text-white: #fff;
+	--color-text-primary: var(--color-primary);
+}
+
 * {
 	/* display */
 
