@@ -1,8 +1,8 @@
 $xs: 0px;
 $sm: 480px;
-$md: 800px;
-$lg: 1200px;
-$xl: 1600px;
+$md: 700px;
+$lg: 1000px;
+$xl: 1300px;
 
 @mixin xs {
 	@media screen and (min-width: $xs) {
