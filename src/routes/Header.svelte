@@ -48,7 +48,7 @@
 		justify-content: space-between;
 		flex-wrap: nowrap;
 
-		position: fixed;
+		position: sticky;
 		inset: 0 0 auto 0;
 		z-index: 999;
 
