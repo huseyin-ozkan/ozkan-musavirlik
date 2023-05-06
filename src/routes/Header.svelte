@@ -36,6 +36,12 @@
 </header>
 
 <style lang="scss">
+	@mixin breakpoint() {
+		@include md() {
+			@content;
+		}
+	}
+
 	header {
 		@include section;
 		--logo-size: clamp(1.05rem, 3vw, 1.7rem);
@@ -78,7 +84,7 @@
 
 		z-index: 999;
 
-		@include md {
+		@include breakpoint() {
 			display: none;
 		}
 	}
@@ -107,7 +113,7 @@
 			pointer-events: all;
 		}
 
-		@include md {
+		@include breakpoint() {
 			position: static;
 			opacity: 1;
 			pointer-events: all;
@@ -132,7 +138,7 @@
 
 		transition: inherit;
 
-		@include md {
+		@include breakpoint() {
 			flex-direction: row;
 			position: static;
 			right: unset;
@@ -161,7 +167,7 @@
 
 		transition: inherit;
 
-		@include md {
+		@include breakpoint() {
 			padding: 0.25em 0.75em;
 		}
 	}
