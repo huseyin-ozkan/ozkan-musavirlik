@@ -51,6 +51,8 @@
 	}
 
 	.image-container {
+		display: flex;
+
 		position: relative;
 		width: 100%;
 		height: 100%;
