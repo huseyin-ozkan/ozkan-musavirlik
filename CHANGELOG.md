@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.2](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/compare/v0.1.1...v0.1.2) (2023-05-26)
+
+
+### Features
+
+* public blog section ([6fe439d](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/6fe439d757fd6f84898a93319575f3e66fc30135))
+
+
+### Bug Fixes
+
+* **hero:** gap under image ([a8f440a](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/a8f440a0ccbeca5940e15495e193e7c4092517e6))
+
 ## [0.1.1](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/compare/v0.1.0...v0.1.1) (2023-05-06)
 
 
