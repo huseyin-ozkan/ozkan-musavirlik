@@ -20,14 +20,14 @@
 		{
 			name: 'Hüseyin Özkan',
 			title: 'Serbest Muhasebeci Mali Müşavir, Gayrimenkul Değerleme Uzmanı',
-			image: './assets/huseyin-ozkan.png',
+			image: './assets/mock-huseyin-ozkan.png',
 			description:
 				'2012 yılından itibaren Yahyalı ve Kayseri’de Serbest Muhasebeci Mali Müşavirlik faaliyeti yürütmekteyiz. SPK lisanslı Gayrimenkul Değerleme Uzmanı olan Hüseyin Özkan tarafından talep üzerine özel veya kamu otoritelerine verilmek üzere Gayrimenkul Ekspertiz Raporlama faaliyetinde bulunmaktadır.'
 		},
 		{
 			name: 'Hatice Banu Özkan',
 			title: 'Serbest Muhasebeci Mali Müşavir',
-			image: './assets/hatice-banu-ozkan.png',
+			image: './assets/mock-hatice-banu-ozkan.png',
 			description:
 				'2012 yılından itibaren Yahyalı ve Kayseri’de Serbest Muhasebeci Mali Müşavirlik faaliyeti yürütmekteyiz. SPK lisanslı Gayrimenkul Değerleme Uzmanı olan Hüseyin Özkan tarafından talep üzerine özel veya kamu otoritelerine verilmek üzere Gayrimenkul Ekspertiz Raporlama faaliyetinde bulunmaktadır.'
 		}
