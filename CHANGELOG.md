@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.1.3](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/compare/v0.1.2...v0.1.3) (2023-05-28)
+
+
+### Features
+
+* About section html and mock ([69a7556](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/69a7556d0699a5718d403647ab9204ea0ad65bca))
+* **css:** a better scrollbar ([2426386](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/2426386442a2fcc462f408cfc9d01d92e9f944ef))
+* **css:** about section first part styles ([68c29c6](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/68c29c60be7b0cdecf9e0514d052f73c0d4ab761))
+* global contact section ([287de82](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/287de824ead790563b6c6df26d97ac3a07ba7684))
+* global staff section ([d401f3e](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/d401f3eb436b2d109d1a0f8762e2c03b824b5400))
+* public footer ([de3ebb7](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/de3ebb7c227396b8ac4f4bc26d7f314c8a7fdaf1))
+
+
+### Bug Fixes
+
+* **assets:** about mock image names and shadow ([c86675b](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/c86675bd48f4f6722398d428e234edac467f998f))
+* **css:** missing header background color ([d34d462](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/d34d462dddaf257d8d806de97fe85607fdad9fd9))
+* **html:** blog section wrong id ([cc0b919](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/cc0b919b7548950cf3812b81719fbf6d4a445c45))
+
 ## [0.1.2](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/compare/v0.1.1...v0.1.2) (2023-05-26)
 
 
