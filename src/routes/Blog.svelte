@@ -23,7 +23,7 @@
 		}, [] as any[][])
 </script>
 
-<section id="#blog">
+<section id="blog">
 	<div class="pagination">
 		<Swiper
 			spaceBetween={10}

@@ -43,11 +43,14 @@
 	}
 
 	header {
-		@include section;
-		--logo-size: clamp(1.05rem, 3vw, 1.7rem);
+		--bg-color: var(--color-bg-light);
 		--logo-color: var(--color-text-black);
+
+		--logo-size: clamp(1.05rem, 3vw, 1.7rem);
 		--nav-toggle-size: clamp(1.2rem, calc(var(--logo-size) * 1.5), 1.8rem);
 		--nav-item-size: clamp(1rem, calc(var(--logo-size) * 0.65), 1.5rem);
+
+		@include section();
 
 		display: flex;
 		align-items: center;
@@ -57,6 +60,8 @@
 		position: sticky;
 		inset: 0 0 auto 0;
 		z-index: 999;
+
+		background-color: var(--bg-color);
 
 		width: 100%;
 		border-bottom: #e1e1e1 1px solid;
