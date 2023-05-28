@@ -34,7 +34,8 @@
 		--color-mission-vision-bg: var(--color-bg-medium);
 		--color-mission-vision-text: #7a88ba;
 
-		--section-pv: clamp(75px, 10vw, 250px);
+		--section-pt: clamp(75px, 10vw, 250px);
+		--section-pb: clamp(75px, 7vw, 150px);
 		--paragraph-max-width: 1000px;
 
 		--heading-font-size: clamp(1.7rem, 5vw, 4rem);
@@ -45,8 +46,8 @@
 		align-items: center;
 		justify-content: center;
 
-		padding-top: var(--section-pv);
-		padding-bottom: var(--section-pv);
+		padding-top: var(--section-pt);
+		padding-bottom: var(--section-pb);
 	}
 
 	#about > h1 {
@@ -71,9 +72,9 @@
 
 	// Mission & Vision
 	.mission-vision {
-		--title-size: clamp(1.25rem, 2.5vw, 2rem);
-		--text-size: clamp(0.95rem, calc(var(--title-size) * 0.6), 1.1rem);
-		--gap: calc(var(--title-size) * 1.4);
+		--title-font-size: clamp(1.25rem, 2.5vw, 2rem);
+		--text-size: clamp(0.95rem, calc(var(--title-font-size) * 0.6), 1.1rem);
+		--gap: calc(var(--title-font-size) * 1.4);
 
 		display: flex;
 		flex-direction: column;
@@ -102,7 +103,7 @@
 	}
 
 	.mission-vision > article > h2 {
-		font-size: var(--title-size);
+		font-size: var(--title-font-size);
 		font-family: Mulish, Ubuntu, sans-serif;
 		font-weight: 700;
 		margin-bottom: 0.8em;
