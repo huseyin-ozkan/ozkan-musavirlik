@@ -13,6 +13,11 @@
 	--color-text-black: #000;
 	--color-text-white: #fff;
 	--color-text-primary: var(--color-primary);
+
+	/* scrollbar */
+	--color-scrollbar-track: #9fa6bd;
+	--color-scrollbar-thumb: #525777;
+	--color-scrollbar-thumb-hover: #53566b;
 }
 
 * {
@@ -36,27 +41,29 @@
 
 	/* misc */
 	scroll-behavior: smooth;
+
 	/* Scrollbar for Firefox */
-	scrollbar-color: #fff7 #0006;
-	scrollbar-width: thin;
+	scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-track);
+	scrollbar-width: auto;
 }
 
 /* Make the scrollbar style match the rest of the modal */
 *::-webkit-scrollbar {
-	width: 7px;
+	width: 15px;
 }
 
 *::-webkit-scrollbar-track {
-	background: #0006;
+	background: var(--color-scrollbar-track);
 }
 
 *::-webkit-scrollbar-thumb {
-	background: #fff7;
-	border-radius: 99px;
+	background: var(--color-scrollbar-thumb);
+	border-radius: 4px;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-	background: #0007;
+	background: var(--color-scrollbar-thumb-hover);
+	cursor: pointer;
 }
 
 html,
