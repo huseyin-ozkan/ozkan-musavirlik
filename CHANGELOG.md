@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.4](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/compare/v0.1.3...v0.1.4) (2023-07-25)
+
+
+### Features
+
+* **blog:** api/posts endpoint to fetch posts ([3e75933](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/3e759338d707215bd502ecf968b7c8bf9abd9dca))
+* **blog:** get posts from backend ([907addf](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/907addf6dfa469fd2b505c1e98818bd274294cf3))
+* **sanity:** create post document type ([b972323](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/b97232301a691679b90599db3a6976356b7cc576))
+
+
+### Bug Fixes
+
+* **ci:** eslint incompatibility issue ([250ffcf](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/250ffcfbf909d6884616ca75affb5f58dae6b5e8))
+
 ## [0.1.3](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/compare/v0.1.2...v0.1.3) (2023-05-28)
 
 
