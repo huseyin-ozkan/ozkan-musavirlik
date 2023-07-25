@@ -1,5 +1,50 @@
 # Changelog
 
+## [0.1.4](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/compare/v0.1.3...v0.1.4) (2023-07-25)
+
+
+### Features
+
+* **blog:** api/posts endpoint to fetch posts ([3e75933](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/3e759338d707215bd502ecf968b7c8bf9abd9dca))
+* **blog:** get posts from backend ([907addf](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/907addf6dfa469fd2b505c1e98818bd274294cf3))
+* **sanity:** create post document type ([b972323](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/b97232301a691679b90599db3a6976356b7cc576))
+
+
+### Bug Fixes
+
+* **ci:** eslint incompatibility issue ([250ffcf](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/250ffcfbf909d6884616ca75affb5f58dae6b5e8))
+
+## [0.1.3](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/compare/v0.1.2...v0.1.3) (2023-05-28)
+
+
+### Features
+
+* About section html and mock ([69a7556](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/69a7556d0699a5718d403647ab9204ea0ad65bca))
+* **css:** a better scrollbar ([2426386](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/2426386442a2fcc462f408cfc9d01d92e9f944ef))
+* **css:** about section first part styles ([68c29c6](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/68c29c60be7b0cdecf9e0514d052f73c0d4ab761))
+* global contact section ([287de82](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/287de824ead790563b6c6df26d97ac3a07ba7684))
+* global staff section ([d401f3e](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/d401f3eb436b2d109d1a0f8762e2c03b824b5400))
+* public footer ([de3ebb7](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/de3ebb7c227396b8ac4f4bc26d7f314c8a7fdaf1))
+
+
+### Bug Fixes
+
+* **assets:** about mock image names and shadow ([c86675b](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/c86675bd48f4f6722398d428e234edac467f998f))
+* **css:** missing header background color ([d34d462](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/d34d462dddaf257d8d806de97fe85607fdad9fd9))
+* **html:** blog section wrong id ([cc0b919](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/cc0b919b7548950cf3812b81719fbf6d4a445c45))
+
+## [0.1.2](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/compare/v0.1.1...v0.1.2) (2023-05-26)
+
+
+### Features
+
+* public blog section ([6fe439d](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/6fe439d757fd6f84898a93319575f3e66fc30135))
+
+
+### Bug Fixes
+
+* **hero:** gap under image ([a8f440a](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/commit/a8f440a0ccbeca5940e15495e193e7c4092517e6))
+
 ## [0.1.1](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/compare/v0.1.0...v0.1.1) (2023-05-06)
 
 
