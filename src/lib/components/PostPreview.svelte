@@ -1,33 +1,16 @@
 <script lang="ts">
-	type Post = {
-		id: number
-		createdAt: Date
-		updatedAt: Date
-
-		title: string
-		content: string
-	}
-
-	// <!-- TODO remove mock
-	export const post: Post = {
-		id: 1,
-		createdAt: new Date(),
-		updatedAt: new Date(),
-		title: '509 Sıra No.lu Vergi Usul Kanunu Genel Tebliği’nde Değişiklik',
-		content: `Elektronik belge uygulamalarının yaygınlaştırılması, mükelleflerin vergiye uyum maliyetlerinin
-			azaltılması ve kayıt dışı ekonomi ile mücadeledeki etkinliğin artırılması amacıyla, 19/10/2019
-			tarihli ve 30923 sayılı Resmî Gazete’de yayımlanan509 Sıra No.lu Vergi Usul Kanunu Genel
-			Tebliğinde değişiklik yapılmak suretiyle`
-	}
+	export let post: Post
 </script>
 
-<a href="/posts/{post.id}" title="Devamını oku">
+<a href="/posts/{post.slug}" title="Devamını oku">
 	<article>
 		<!-- TODO format to Turkish locale DD MMMM YYYY -->
-		<span class="date"> {post.createdAt.toLocaleDateString()} </span>
+		<span class="date">
+			{post.createdAt}
+		</span>
 		<h1>{post.title}</h1>
 		<p>
-			{post.content}...
+			{post.body.substring(0, 320)}...
 		</p>
 	</article>
 </a>
