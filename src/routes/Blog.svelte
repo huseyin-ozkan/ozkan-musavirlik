@@ -7,20 +7,16 @@
 
 	import PostPreview from '$lib/components/PostPreview.svelte'
 
-	// <!-- TODO remove mock and fetch from server -->
-	const posts = Array.from({ length: 20 }, (_, i) => i + 1)
-		.map((i) => ({
-			id: i,
-			title: `Post ${i}`
-		}))
-		.reduce((prev, cur) => {
-			// paginate to 6 posts per page
-			if (prev.length === 0 || prev[prev.length - 1].length === 6) prev.push([])
+	export let posts: Post[]
 
-			prev[prev.length - 1].push(cur)
+	$: postPages = posts.reduce((prev, cur) => {
+		// paginate to 6 posts per page
+		if (prev.length === 0 || prev[prev.length - 1].length === 6) prev.push([])
 
-			return prev
-		}, [] as any[][])
+		prev[prev.length - 1].push(cur)
+
+		return prev
+	}, [] as any[][])
 </script>
 
 <section id="blog">
@@ -31,7 +27,7 @@
 			modules={[Pagination, Autoplay]}
 			pagination={{ clickable: true, type: 'bullets' }}
 		>
-			{#each posts as page}
+			{#each postPages as page}
 				<SwiperSlide>
 					<div class="page">
 						{#each page as post}
@@ -43,7 +39,7 @@
 		</Swiper>
 	</div>
 	<div class="mobile-view">
-		{#each posts[0] as post}
+		{#each postPages[0] as post}
 			<PostPreview {post} />
 		{/each}
 	</div>
