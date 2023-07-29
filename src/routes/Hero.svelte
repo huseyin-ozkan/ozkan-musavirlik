@@ -2,7 +2,7 @@
 </script>
 
 <section>
-	<h1>Doğruluk, dürüstlük, tarafsızlık ve gizlilik ilkeleriyle, uluslararası</h1>
+	<h1>Doğruluk, dürüstlük, tarafsızlık ve gizlilik ilkeleriyle hizmet</h1>
 	<div class="image-container">
 		<img src="/assets/hero-image.jpg" alt="" />
 		<div class="image-cover" />
