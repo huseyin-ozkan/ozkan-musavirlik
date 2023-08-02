@@ -20,10 +20,10 @@
 		},
 		{
 			name: 'Yahyalı',
-			address: 'Gülük Mah. Osman Kavuncu Bulv. No:7/206 Melikgazi Kayseri',
-			phone: '0536 644 26 66',
-			phone2: '0352 222 49 45',
-			email: 'muhasebe@ozkanmusavirlik.com.tr'
+			address: 'Seydili Mahallesi Atatürk Bulvarı No:101/2 Yahyalı Kayseri',
+			phone: '0531 897 12 36',
+			phone2: '0352 611 25 44',
+			email: 'haticebanu@ozkanmusavirlik.com'
 		}
 	]
 </script>
