@@ -1,12 +1,13 @@
 <script lang="ts">
+	import dayjs from 'dayjs'
+
 	export let post: Post
 </script>
 
 <a href="/posts/{post.slug}" title="Devamını oku">
 	<article>
-		<!-- TODO format to Turkish locale DD MMMM YYYY -->
 		<span class="date">
-			{post.createdAt}
+			{dayjs(post.createdAt).format('D MMMM YYYY')}
 		</span>
 		<h1>{post.title}</h1>
 		<p>

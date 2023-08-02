@@ -1,4 +1,10 @@
 <script lang="ts">
+	import dayjs from 'dayjs'
+	import 'dayjs/locale/tr'
+
+	// <!-- TODO move this dayjs config to initialization
+	dayjs.locale('tr')
+
 	import '$lib/styles/main.css'
 
 	// SECTIONS
