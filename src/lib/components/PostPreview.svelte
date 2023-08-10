@@ -4,7 +4,7 @@
 	export let post: Post
 </script>
 
-<a href="/posts/{post.slug}" title="Devamını oku">
+<a href="/posts/{post.id}" title="Devamını oku">
 	<article>
 		<span class="date">
 			{dayjs(post.createdAt).format('D MMMM YYYY')}
