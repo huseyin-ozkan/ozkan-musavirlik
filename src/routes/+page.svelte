@@ -16,5 +16,5 @@
 	<Blog posts={data.posts} />
 {/if}
 <About />
-<Staff />
+<!-- <Staff /> -->
 <Contact />
