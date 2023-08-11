@@ -1,4 +1,4 @@
-import marked from 'marked'
+import { marked } from 'marked'
 
 export const convertBackendPostToPost = (post: SanityPost): Post => ({
 	id: post._id,
