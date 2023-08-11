@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.1.5](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v0.1.4...v0.1.5) (2023-08-11)
+
+
+### Features
+
+* **blog:** format date on post preview ([22b9f1c](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/22b9f1cda7423d32b6b0064f797d0c265a917c27))
+* **hero:** change h1 text ([409ffbb](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/409ffbb8641d5935ab5b97c2ed70048e2263c577))
+* **posts:** posts page fetch post with post id ([c83f474](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/c83f4747c0a2e72f6f60c74fc809e9174dd8cb77))
+* **posts:** use slug instead of id ([6556ef6](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/6556ef65d6b37ff6aba5a4bb30950b66f2286afd))
+* **sanity:** post schema slug field ([17ec22d](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/17ec22d129df4377ca6c923181caa3254f8afd39))
+* **sanity:** post schema validations for title and body ([d448f88](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/d448f8814b7e3800a1f94a6ca63970f67155ee5f))
+
+
+### Bug Fixes
+
+* **api/posts:** correct the API version ([57b4cce](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/57b4ccec0b6d1bbe0bcc5efe841c968068f3237c))
+* marked should be imported as { marked } ([27595c9](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/27595c98b4b7e07fc9bba5b5d4e8d31d15743af7))
+* staff section should stay hidden for a while ([59485e4](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/59485e430f29167dbeaaa8bd6a748b9c2dd08072))
+* **type:** Post.id should be string, not number ([1e7971c](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/1e7971cad460b70410c5180418cb8354f1e354a1))
+
 ## [0.1.4](https://github.com/Metehan-Altuntekin/ozkan-musavirlik/compare/v0.1.3...v0.1.4) (2023-07-25)
 
 
