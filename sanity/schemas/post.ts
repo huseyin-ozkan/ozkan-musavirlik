@@ -10,6 +10,16 @@ export default {
       validation: (Rule: any) => Rule.required().min(10).max(90),
     },
     {
+      title: 'Slug',
+      name: 'slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 90,
+      },
+      validation: (Rule: any) => Rule.required(),
+    },
+    {
       name: 'body',
       title: 'Yazı',
       type: 'markdown',
