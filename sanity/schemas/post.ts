@@ -7,11 +7,13 @@ export default {
       name: 'title',
       title: 'Başlık',
       type: 'string',
+      validation: (Rule: any) => Rule.required().min(10).max(90),
     },
     {
       name: 'body',
       title: 'Yazı',
       type: 'markdown',
+      validation: (Rule: any) => Rule.required().min(100).max(20000),
     },
     {
       name: 'mainImage',
