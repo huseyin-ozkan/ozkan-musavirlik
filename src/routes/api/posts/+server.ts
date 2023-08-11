@@ -1,11 +1,4 @@
-import { createClient } from '@sanity/client'
-
-const client = createClient({
-	projectId: 'yl22p85a',
-	dataset: 'production',
-	apiVersion: '2023-06-25',
-	useCdn: false
-})
+import { client } from '$lib/config/sanity'
 
 export async function GET({ params }) {
 	const data = await client.fetch(`*[_type == "post"]`)
