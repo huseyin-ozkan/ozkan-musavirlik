@@ -4,7 +4,10 @@
 	}
 
 	const { title, body } = data.post
+
+	console.log(body)
 </script>
 
 <h1>{title}</h1>
-{body}
+
+{@html body}

@@ -1,5 +1,5 @@
-
 import { client } from '$lib/config/sanity'
+import { convertBackendPostToPost } from '$lib/utils'
 
 export async function GET({ params }) {
 	const { slug } = params
@@ -8,19 +8,12 @@ export async function GET({ params }) {
 
 	// TODO get image url from sanity
 
-	const data = await client.fetch(`*[_type == "post" && _id == "${slug}"]`)
+	const post: Post = convertBackendPostToPost(data[0])
 
 	return new Response(
 		JSON.stringify({
 			data: {
-				post: {
-					id: data[0]._id,
-					slug: data[0].title.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
-					createdAt: new Date(data[0]._createdAt),
-					updatedAt: new Date(data[0]._updatedAt),
-					title: data[0].title,
-					body: data[0].body
-				}
+				post
 			}
 		})
 	)
