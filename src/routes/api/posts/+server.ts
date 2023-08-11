@@ -1,28 +1,15 @@
-import { createClient } from '@sanity/client'
-
-const client = createClient({
-	projectId: 'yl22p85a',
-	dataset: 'production',
-	apiVersion: '2021-10-21',
-	useCdn: false
-})
+import { client } from '$lib/config/sanity'
+import { convertBackendPostToPost } from '$lib/utils.js'
 
 export async function GET({ params }) {
-	const data = await client.fetch(`*[_type == "post"]`)
+	const data: SanityPost[] = await client.fetch(`*[_type == "post"]`)
+
+	// TODO get image url from sanity
 
 	if (data)
 		return new Response(
 			JSON.stringify({
-				posts: data.map(
-					(post: any): Post => ({
-						id: post._id,
-						slug: post.title.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
-						createdAt: new Date(post._createdAt),
-						updatedAt: new Date(post._updatedAt),
-						title: post.title,
-						body: post.body
-					})
-				) as Post[]
+				posts: data.map(convertBackendPostToPost)
 			})
 		)
 

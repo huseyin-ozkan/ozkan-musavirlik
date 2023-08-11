@@ -8,7 +8,7 @@ export default defineConfig({
   name: 'default',
   title: 'ozkan-musavirlik',
 
-  projectId: 'yl22p85a',
+  projectId: 'mak6gl1u',
   dataset: 'production',
 
   plugins: [deskTool(), visionTool(), markdownSchema()],
