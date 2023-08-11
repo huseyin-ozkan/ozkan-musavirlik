@@ -1,5 +1,5 @@
 declare type Post = {
-	id: number
+	id: string
 	slug: string
 
 	createdAt: Date
