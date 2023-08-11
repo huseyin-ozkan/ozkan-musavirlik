@@ -4,8 +4,9 @@ import { client } from '$lib/config/sanity'
 export async function GET({ params }) {
 	const { slug } = params
 
-	// at the moment, we use the _id as the slug
-	// TODO use slug instead of _id
+	const data: SanityPost[] = await client.fetch(`*[_type == "post" && slug.current == "${slug}"]`)
+
+	// TODO get image url from sanity
 
 	const data = await client.fetch(`*[_type == "post" && _id == "${slug}"]`)
 
