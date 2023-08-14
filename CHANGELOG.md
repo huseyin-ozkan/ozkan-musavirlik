@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.6](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v0.1.5...v0.1.6) (2023-08-14)
+
+
+### Features
+
+* **posts:** summary field for PostPreview ([e8eaeb5](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/e8eaeb52ed1fa0654eb5b65eb34e610c46f4fabd))
+
+
+### Bug Fixes
+
+* **blog:** remove unnecessary void ([80c985b](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/80c985bcd4823231da4a949e4d1041acae5fda8e))
+* **posts:** handle text overflows ([921509d](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/921509d08b30487eb4c43fbf20b021ad4008fa64))
+* **posts:** PostPrevies title capitalizing issue ([2f0eeda](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/2f0eedacd4faa842eb19e6b4a503aa038b9ba341))
+
 ## [0.1.5](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v0.1.4...v0.1.5) (2023-08-11)
 
 
