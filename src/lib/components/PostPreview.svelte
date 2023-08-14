@@ -12,7 +12,7 @@
 		<span class="date">
 			{dayjs(post.createdAt).format('D MMMM YYYY')}
 		</span>
-		<h1>{post.title}</h1>
+		<h1>{post.title.toLocaleLowerCase('tr')}</h1>
 		<p>
 			{summary}
 		</p>
