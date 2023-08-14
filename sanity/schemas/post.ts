@@ -7,7 +7,7 @@ export default {
       name: 'title',
       title: 'Başlık',
       type: 'string',
-      validation: (Rule: any) => Rule.required().min(10).max(90),
+      validation: (Rule: any) => Rule.required().min(40).max(90),
     },
     {
       title: 'Slug',

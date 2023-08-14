@@ -34,7 +34,6 @@
 		justify-content: start;
 
 		width: 100%;
-		height: 100%;
 	}
 
 	a {
@@ -58,6 +57,14 @@
 		font-weight: 600;
 		font-family: Ubuntu, Mulish, sans-serif;
 		margin-bottom: 1em;
+		text-transform: capitalize;
+
+		// cut the text after 2 lines
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
 	}
 
 	p {
@@ -65,5 +72,12 @@
 		font-weight: 400;
 		color: var(--color-p);
 		font-family: Ubuntu, Mulish, sans-serif;
+
+		// cut the text after 6 lines
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 6;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
 	}
 </style>
