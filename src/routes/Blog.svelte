@@ -117,7 +117,7 @@
 
 		display: grid;
 		grid-template-columns: repeat(var(--grid-columns), 1fr);
-		grid-template-rows: repeat(var(--grid-rows), 1fr);
+		grid-template-rows: repeat(auto, 1fr);
 		column-gap: var(--column-gap);
 		row-gap: var(--row-gap);
 	}

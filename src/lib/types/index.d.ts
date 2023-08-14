@@ -6,6 +6,7 @@ declare type Post = {
 	updatedAt: Date
 
 	title: string
+	summary?: string
 	/** HTML */
 	body: string
 	mainImage?: string
@@ -23,6 +24,7 @@ declare type SanityPost = {
 		current: string
 		_type: 'slug'
 	}
+	summary?: string
 	/** Markdown */
 	body: string
 
