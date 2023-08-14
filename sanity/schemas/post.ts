@@ -20,6 +20,12 @@ export default {
       validation: (Rule: any) => Rule.required(),
     },
     {
+      title: 'Özet',
+      name: 'summary',
+      type: 'text',
+      validation: (Rule: any) => Rule.min(200).max(380),
+    },
+    {
       name: 'body',
       title: 'Yazı',
       type: 'markdown',

@@ -2,6 +2,9 @@
 	import dayjs from 'dayjs'
 
 	export let post: Post
+
+	// if there is no summary, get the body without html tags
+	const summary = post?.summary || post.body.replace(/<[^>]*>?/gm, '')
 </script>
 
 <a href="/posts/{post.slug}" title="Devamını oku">
@@ -11,7 +14,7 @@
 		</span>
 		<h1>{post.title}</h1>
 		<p>
-			{post.body.substring(0, 320)}...
+			{summary}
 		</p>
 	</article>
 </a>
