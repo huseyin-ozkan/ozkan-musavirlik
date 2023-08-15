@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.1.7](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v0.1.6...v0.1.7) (2023-08-15)
+
+
+### Features
+
+* **about:** mission - vision styling align start ([d9bee40](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/d9bee40d26d3df72d99499fd552b522f34e530c0))
+* **components:** Markdown rendering component ([3cd8b68](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/3cd8b68289f72779281560b89510a743d4755569))
+* **posts:** post page temporary styling and details ([33e4567](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/33e456737c5da52896392175b25f30b6c36b1242))
+
+
+### Bug Fixes
+
+* **about:** mission - vision texts placement ([31905af](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/31905af680dd5445f1c1b389526ea383c00edf88))
+* **Markdown:** eslint issue of type infer ([cf1a90f](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/cf1a90ff39be9fb7b02cece5ca6c9a71faf73d4f))
+
 ## [0.1.6](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v0.1.5...v0.1.6) (2023-08-14)
 
 
