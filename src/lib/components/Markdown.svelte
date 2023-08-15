@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let content: string = `# Hello World`
+	export let content: string
 </script>
 
 <!-- @component 
