@@ -94,7 +94,7 @@
 		flex: 1;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
+		justify-content: start;
 
 		background-color: var(--color-mission-vision-bg);
 		border-radius: 30px;
