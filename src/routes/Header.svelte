@@ -10,8 +10,9 @@
 </script>
 
 <header>
-	<a href={ROUTES.home.path} title={ROUTES.home.title} class="logo"
-		><span>Özkan Mali Müşavirlik</span></a
+	<a href={ROUTES.home.path} title={ROUTES.home.title} class="logo">
+		<img src="/favicon.png" alt="" aria-hidden />
+		<span>Özkan Mali Müşavirlik</span></a
 	>
 
 	<button class="mobile-nav-toggle" on:click={toggleMobileNav} on:keyup={toggleMobileNav}>
@@ -68,7 +69,15 @@
 	}
 
 	.logo {
-		display: block;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.logo > img {
+		width: calc(var(--logo-size) * 1.5);
+		margin-right: calc(var(--logo-size) * 0.5);
+		border-radius: 5px;
 	}
 
 	.logo > span {
@@ -78,6 +87,7 @@
 		font-weight: 800;
 		color: var(--logo-color);
 		font-size: var(--logo-size);
+		white-space: nowrap;
 
 		padding: 0.66em 0;
 	}
