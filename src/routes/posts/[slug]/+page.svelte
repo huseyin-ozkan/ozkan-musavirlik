@@ -13,6 +13,10 @@
 	console.log(body)
 </script>
 
+<svelte:head>
+	<title>{title} | Özkan Mali Müşavirlik</title>
+</svelte:head>
+
 <div class="post-container">
 	<img src={poster} alt="Poster" />
 
@@ -29,6 +33,8 @@
 			<Markdown content={body} />
 		</article>
 	</section>
+
+	<!-- TODO other posts section -->
 </div>
 
 <style lang="scss">
