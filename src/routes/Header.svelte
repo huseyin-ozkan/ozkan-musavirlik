@@ -38,7 +38,7 @@
 
 <style lang="scss">
 	@mixin breakpoint() {
-		@include md() {
+		@include lg() {
 			@content;
 		}
 	}
@@ -175,6 +175,7 @@
 		font-weight: 700;
 		color: var(--color-text-black);
 		font-size: var(--nav-item-size);
+		white-space: nowrap;
 
 		padding: 0.25em 2em;
 
