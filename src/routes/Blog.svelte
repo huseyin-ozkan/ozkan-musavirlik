@@ -9,14 +9,16 @@
 
 	export let posts: Post[]
 
-	$: postPages = posts.reduce((prev, cur) => {
-		// paginate to 6 posts per page
-		if (prev.length === 0 || prev[prev.length - 1].length === 6) prev.push([])
+	$: postPages = posts
+		.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+		.reduce((prev, cur) => {
+			// paginate to 6 posts per page
+			if (prev.length === 0 || prev[prev.length - 1].length === 6) prev.push([])
 
-		prev[prev.length - 1].push(cur)
+			prev[prev.length - 1].push(cur)
 
-		return prev
-	}, [] as any[][])
+			return prev
+		}, [] as any[][])
 </script>
 
 <section id="blog">
@@ -57,8 +59,8 @@
 
 		--section-pv: clamp(20px, 5vw, 100px);
 		--section-border-radius: var(--section-pv);
-		--column-gap: clamp(20px, 4vw, 65px);
-		--row-gap: calc(var(--column-gap) * 0.7);
+		--column-gap: clamp(20px, 6vw, 65px);
+		--row-gap: calc(var(--column-gap) * 0.8);
 
 		display: flex;
 		flex-direction: column;

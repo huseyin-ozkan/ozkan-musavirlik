@@ -2,8 +2,8 @@ declare type Post = {
 	id: string
 	slug: string
 
-	createdAt: Date
-	updatedAt: Date
+	createdAt: string
+	updatedAt: string
 
 	title: string
 	summary?: string

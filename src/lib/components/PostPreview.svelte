@@ -12,7 +12,7 @@
 		<span class="date">
 			{dayjs(post.createdAt).format('D MMMM YYYY')}
 		</span>
-		<h1>{post.title.toLocaleLowerCase('tr')}</h1>
+		<h1 title={post.title}>{post.title}</h1>
 		<p>
 			{summary}
 		</p>
@@ -24,7 +24,7 @@
 		--color-date: #6a93ff;
 		--color-p: #7988bb;
 
-		--h1-font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+		--h1-font-size: clamp(1.2rem, 1.1vw, 1.4rem);
 		--date-font-size: clamp(0.7rem, 1vw, 0.9rem);
 		--p-font-size: clamp(0.85rem, 1.2vw, 1rem);
 
@@ -54,10 +54,9 @@
 
 	h1 {
 		font-size: var(--h1-font-size);
-		font-weight: 600;
-		font-family: Ubuntu, Mulish, sans-serif;
+		font-weight: 700;
+		font-family: Mulish, Ubuntu, sans-serif;
 		margin-bottom: 1em;
-		text-transform: capitalize;
 
 		// cut the text after 2 lines
 		text-overflow: ellipsis;

@@ -3,13 +3,17 @@
 	import { ROUTES, NAV_ROUTES } from '$lib/config/routes'
 
 	let mobileNavOpen = false
+	let scroll: number
+	$: scrolled = scroll > 200
 
 	function toggleMobileNav() {
 		mobileNavOpen = !mobileNavOpen
 	}
 </script>
 
-<header>
+<svelte:window bind:scrollY={scroll} />
+
+<header class:scrolled>
 	<a href={ROUTES.home.path} title={ROUTES.home.title} class="logo">
 		<img src="/favicon.png" alt="" aria-hidden />
 		<span>Özkan Mali Müşavirlik</span></a
@@ -38,7 +42,7 @@
 
 <style lang="scss">
 	@mixin breakpoint() {
-		@include md() {
+		@include lg() {
 			@content;
 		}
 	}
@@ -46,6 +50,7 @@
 	header {
 		--bg-color: var(--color-bg-light);
 		--logo-color: var(--color-text-black);
+		--nav-item-color: var(--color-text-black);
 
 		--logo-size: clamp(1.05rem, 3vw, 1.7rem);
 		--nav-toggle-size: clamp(1.2rem, calc(var(--logo-size) * 1.5), 1.8rem);
@@ -66,6 +71,16 @@
 
 		width: 100%;
 		border-bottom: #e1e1e1 1px solid;
+
+		transition: 0.5s all;
+	}
+
+	header.scrolled {
+		// --bg-color: var(--color-primary);
+		// --logo-color: var(--color-text-white);
+		// --nav-item-color: var(--color-text-white);
+
+		box-shadow: 0 0 48px rgba(#444, 0.3);
 	}
 
 	.logo {
@@ -173,8 +188,9 @@
 
 		font-family: Mulish;
 		font-weight: 700;
-		color: var(--color-text-black);
+		color: var(--nav-item-color);
 		font-size: var(--nav-item-size);
+		white-space: nowrap;
 
 		padding: 0.25em 2em;
 
