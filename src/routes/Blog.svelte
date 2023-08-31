@@ -59,8 +59,8 @@
 
 		--section-pv: clamp(20px, 5vw, 100px);
 		--section-border-radius: var(--section-pv);
-		--column-gap: clamp(20px, 4vw, 65px);
-		--row-gap: calc(var(--column-gap) * 0.7);
+		--column-gap: clamp(20px, 6vw, 65px);
+		--row-gap: calc(var(--column-gap) * 0.8);
 
 		display: flex;
 		flex-direction: column;
