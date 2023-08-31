@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.1.8](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v0.1.7...v0.1.8) (2023-08-31)
+
+
+### Features
+
+* **document:** change title and favicon ([6fc98a3](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/6fc98a3e956b9f6d7679f1137fc98d9eb6593a3b))
+* **header:** display shadow when window scrolled ([47d29ee](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/47d29ee41da39d295d0f51747be5a8f656f7690e))
+* **header:** favicon to logo ([8ebfeef](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/8ebfeeffd644206118b4bbad6e1fadc9dc203665))
+* **posts:** display post title in document title ([dd84e36](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/dd84e36ac0d895a03d9f4be55c11271a9a116733))
+* **posts:** order posts date descending ([e447d22](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/e447d2251b2372236dcaa75d5346d79ec98f0d40))
+* **posts:** PostPreview styling improvements ([8fba5f9](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/8fba5f9c873f0bf706db20b7a47b47afa210789b))
+* **posts:** PostPreview title HTML title ([5565551](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/55655510eedac8b826ec1633348a2022ac9f4eff))
+
+
+### Bug Fixes
+
+* **header:** navbar colliding with logo ([1bc4abe](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/1bc4abe1d2664f5e59f9646b73f50abf99c85eaf))
+* **posts:** PostPreview title capitalization issues ([88c09db](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/88c09dbc59f27afa7fce0a59ae239655246429c1))
+
 ## [0.1.7](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v0.1.6...v0.1.7) (2023-08-15)
 
 
