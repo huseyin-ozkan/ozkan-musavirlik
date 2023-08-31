@@ -12,7 +12,7 @@
 		<span class="date">
 			{dayjs(post.createdAt).format('D MMMM YYYY')}
 		</span>
-		<h1>{post.title}</h1>
+		<h1 title={post.title}>{post.title}</h1>
 		<p>
 			{summary}
 		</p>
