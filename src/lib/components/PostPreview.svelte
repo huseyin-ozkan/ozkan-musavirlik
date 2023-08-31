@@ -12,7 +12,7 @@
 		<span class="date">
 			{dayjs(post.createdAt).format('D MMMM YYYY')}
 		</span>
-		<h1>{post.title.toLocaleLowerCase('tr')}</h1>
+		<h1>{post.title}</h1>
 		<p>
 			{summary}
 		</p>
@@ -57,7 +57,6 @@
 		font-weight: 600;
 		font-family: Ubuntu, Mulish, sans-serif;
 		margin-bottom: 1em;
-		text-transform: capitalize;
 
 		// cut the text after 2 lines
 		text-overflow: ellipsis;
