@@ -61,4 +61,11 @@ declare namespace Content {
 		description: string
 	}
 
+	export type Branch = {
+		name: string
+		address: string
+		mapLink?: string
+		phones: string[]
+		email: string
+	}
 }

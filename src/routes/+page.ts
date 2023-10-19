@@ -8,7 +8,6 @@ export async function load({ params, fetch }) {
 
 		const about = (await client.fetch<Content.About[]>(`*[_type == "about"]`))[0]
 
-		const branches = await client.fetch<Content.Branch[]>(`*[_type == "branch"]`)
 		const staff: Content.Staff[] = (await client.fetch(`*[_type == "staff"]`)).map(
 			(staff: any) => ({
 				...staff,
@@ -16,12 +15,14 @@ export async function load({ params, fetch }) {
 			})
 		)
 
+		const branches = await client.fetch<Content.Branch[]>(`*[_type == "branch"]`)
 
 		return {
 			hero,
 			posts,
 			about,
 			staff,
+			branches
 		}
 	} catch (error) {
 		console.error(error)

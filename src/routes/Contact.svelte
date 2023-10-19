@@ -1,31 +1,23 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte'
 
-	type Branch = {
-		name: string
-		address: string
-		phone: string
-		phone2?: string
-		email: string
-	}
+	export let branches: Content.Branch[]
 
-	// <!-- TODO remove mock data -->
-	const branches: Branch[] = [
-		{
-			name: 'Kayseri',
-			address: 'Gülük Mah. Osman Kavuncu Bulv. No:7/206 Melikgazi Kayseri',
-			phone: '0536 644 26 66',
-			phone2: '0352 222 49 45',
-			email: 'muhasebe@ozkanmusavirlik.com.tr'
-		},
-		{
-			name: 'Yahyalı',
-			address: 'Seydili Mahallesi Atatürk Bulvarı No:101/2 Yahyalı Kayseri',
-			phone: '0531 897 12 36',
-			phone2: '0352 611 25 44',
-			email: 'haticebanu@ozkanmusavirlik.com'
-		}
-	]
+	// mock data
+	// const branches: Content.Branch[] = [
+	// 	{
+	// 		name: 'Kayseri',
+	// 		address: 'Gülük Mah. Osman Kavuncu Bulv. No:7/206 Melikgazi Kayseri',
+	// 		phones: ['0536 644 26 66', '0352 222 49 45'],
+	// 		email: 'muhasebe@ozkanmusavirlik.com.tr'
+	// 	},
+	// 	{
+	// 		name: 'Yahyalı',
+	// 		address: 'Seydili Mahallesi Atatürk Bulvarı No:101/2 Yahyalı Kayseri',
+	// 		phones: ['0531 897 12 36', '0352 611 25 44'],
+	// 		email: 'haticebanu@ozkanmusavirlik.com'
+	// 	}
+	// ]
 </script>
 
 <section id="contact">
@@ -46,11 +38,14 @@
 
 				<span class="phone">
 					<Icon icon="ic:baseline-local-phone" aria-hidden />
-					<a href="tel:{branch.phone}" title="Ara">{branch.phone}</a>
-					{#if branch.phone2}
-						/
-						<a href="tel:{branch.phone2}" title="Ara">{branch.phone2}</a>
-					{/if}
+
+					{#each branch.phones as phone, i (i)}
+						{#if i > 0}
+							<span aria-hidden>/</span>
+						{/if}
+
+						<a href="tel:{phone}" title="Ara">{phone}</a>
+					{/each}
 				</span>
 
 				<span class="email">
