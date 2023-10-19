@@ -1,4 +1,6 @@
-export default {
+import {defineType} from 'sanity'
+
+const post = defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
@@ -7,7 +9,7 @@ export default {
       name: 'title',
       title: 'Başlık',
       type: 'string',
-      validation: (Rule: any) => Rule.required().min(40).max(90),
+      validation: (Rule) => Rule.required().min(40).max(90),
     },
     {
       title: 'Slug',
@@ -17,19 +19,19 @@ export default {
         source: 'title',
         maxLength: 90,
       },
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Özet',
       name: 'summary',
       type: 'text',
-      validation: (Rule: any) => Rule.min(200).max(380),
+      validation: (Rule) => Rule.min(200).max(380),
     },
     {
       name: 'body',
       title: 'Yazı',
       type: 'markdown',
-      validation: (Rule: any) => Rule.required().min(100).max(20000),
+      validation: (Rule) => Rule.required().min(100).max(20000),
     },
     {
       name: 'mainImage',
@@ -46,4 +48,6 @@ export default {
     //   of: [{type: 'reference', to: {type: 'category'}}],
     // },
   ],
-}
+})
+
+export default post
