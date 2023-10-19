@@ -8,6 +8,7 @@
 	export let data: {
 		posts: Post[]
 		hero: Content.Hero
+		about: Content.About
 	}
 </script>
 
@@ -16,6 +17,6 @@
 {#if data.posts}
 	<Blog posts={data.posts} />
 {/if}
-<About />
 <!-- <Staff /> -->
 <Contact />
+<About content={data.about} />

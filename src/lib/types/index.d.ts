@@ -48,4 +48,10 @@ declare namespace Content {
 		}
 	}
 
+	export type About = {
+		paragraph: string
+		mission: string
+		vision: string
+	}
+
 }

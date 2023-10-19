@@ -6,6 +6,8 @@ export async function load({ params, fetch }) {
 
 		const posts: Post[] = (await fetch('./api/posts').then((res) => res.json())).posts
 
+		const about = (await client.fetch<Content.About[]>(`*[_type == "about"]`))[0]
+
 		const branches = await client.fetch<Content.Branch[]>(`*[_type == "branch"]`)
 
 	const posts: Post[] = data.posts
@@ -13,11 +15,13 @@ export async function load({ params, fetch }) {
 
 		return {
 			hero,
-			posts
+			posts,
+			about
 		}
 	} catch (error) {
 		console.error(error)
 
 		// TODO redirect to maintenance page
+		throw error
 	}
 }
