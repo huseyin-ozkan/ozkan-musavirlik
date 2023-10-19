@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.1.9](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v0.1.8...v0.1.9) (2023-10-19)
+
+
+### Features
+
+* **contact:** maps link for addresses ([af1540b](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/af1540b72bcaadb915693aa470ffb4e86b4ca1c0))
+* **sanity:** about schema type ([5fbff0e](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/5fbff0ea9f9ffba0787f3b276a117ffa227f5811))
+* **sanity:** branch schema type ([e10e011](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/e10e011052efc94967ad92032af7666047b851e0))
+* **sanity:** hero schema type ([8a2d13b](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/8a2d13b2754ded4c41d6ccbb0cf4cfdbe9a33cc8))
+* **sanity:** staff schema type ([a57d3cc](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/a57d3ccbf17ba9dfa94c22ecc9b306b499591e92))
+* use about content from sanity ([721fbe4](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/721fbe4572c2b5fe6ba552980b31f98098660afd))
+* use branches content from sanity ([b3c59b7](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/b3c59b7b3dc493db91349ef98e1d4d2ca65761f9))
+* use header data from sanity ([effadd0](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/effadd053044bcb9cfc97ca9e504249d8f448881))
+* use staff content from sanity ([902e4cf](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/902e4cfbec747d39ad66457bca75460f895d8d49))
+
 ## [0.1.8](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v0.1.7...v0.1.8) (2023-08-31)
 
 
