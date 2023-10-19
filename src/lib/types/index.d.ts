@@ -54,4 +54,11 @@ declare namespace Content {
 		vision: string
 	}
 
+	export type Staff = {
+		name: string
+		title: string
+		image: string
+		description: string
+	}
+
 }

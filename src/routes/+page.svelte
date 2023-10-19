@@ -9,6 +9,7 @@
 		posts: Post[]
 		hero: Content.Hero
 		about: Content.About
+		staff: Content.Staff[]
 	}
 </script>
 
@@ -17,6 +18,6 @@
 {#if data.posts}
 	<Blog posts={data.posts} />
 {/if}
-<!-- <Staff /> -->
 <Contact />
 <About content={data.about} />
+<!-- <Staff staff={data.staff} /> -->

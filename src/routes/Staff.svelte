@@ -1,28 +1,23 @@
 <script lang="ts">
-	type Staff = {
-		name: string
-		title: string
-		image: string
-		description: string
-	}
+	export let staff: Content.Staff[]
 
-	// <!-- TODO remove mock and fetch from server -->
-	const staff: Staff[] = [
-		{
-			name: 'Hüseyin Özkan',
-			title: 'Serbest Muhasebeci Mali Müşavir',
-			image: './assets/mock-huseyin-ozkan.png',
-			description:
-				'2012 yılından itibaren Yahyalı ve Kayseri’de Serbest Muhasebeci Mali Müşavirlik faaliyeti yürütmekteyiz. SPK lisanslı Gayrimenkul Değerleme Uzmanı olan Hüseyin Özkan tarafından talep üzerine özel veya kamu otoritelerine verilmek üzere Gayrimenkul Ekspertiz Raporlama faaliyetinde bulunmaktadır.'
-		},
-		{
-			name: 'Hatice Banu Özkan',
-			title: 'Serbest Muhasebeci Mali Müşavir',
-			image: './assets/mock-hatice-banu-ozkan.png',
-			description:
-				'2012 yılından itibaren Yahyalı ve Kayseri’de Serbest Muhasebeci Mali Müşavirlik faaliyeti yürütmekteyiz. SPK lisanslı Gayrimenkul Değerleme Uzmanı olan Hüseyin Özkan tarafından talep üzerine özel veya kamu otoritelerine verilmek üzere Gayrimenkul Ekspertiz Raporlama faaliyetinde bulunmaktadır.'
-		}
-	]
+	// // mock
+	// const staff: Staff[] = [
+	// 	{
+	// 		name: 'Hüseyin Özkan',
+	// 		title: 'Serbest Muhasebeci Mali Müşavir',
+	// 		image: './assets/mock-huseyin-ozkan.png',
+	// 		description:
+	// 			'2012 yılından itibaren Yahyalı ve Kayseri’de Serbest Muhasebeci Mali Müşavirlik faaliyeti yürütmekteyiz. SPK lisanslı Gayrimenkul Değerleme Uzmanı olan Hüseyin Özkan tarafından talep üzerine özel veya kamu otoritelerine verilmek üzere Gayrimenkul Ekspertiz Raporlama faaliyetinde bulunmaktadır.'
+	// 	},
+	// 	{
+	// 		name: 'Hatice Banu Özkan',
+	// 		title: 'Serbest Muhasebeci Mali Müşavir',
+	// 		image: './assets/mock-hatice-banu-ozkan.png',
+	// 		description:
+	// 			'2012 yılından itibaren Yahyalı ve Kayseri’de Serbest Muhasebeci Mali Müşavirlik faaliyeti yürütmekteyiz. SPK lisanslı Gayrimenkul Değerleme Uzmanı olan Hüseyin Özkan tarafından talep üzerine özel veya kamu otoritelerine verilmek üzere Gayrimenkul Ekspertiz Raporlama faaliyetinde bulunmaktadır.'
+	// 	}
+	// ]
 </script>
 
 <section id="staff">

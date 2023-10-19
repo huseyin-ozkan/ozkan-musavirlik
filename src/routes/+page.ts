@@ -9,14 +9,19 @@ export async function load({ params, fetch }) {
 		const about = (await client.fetch<Content.About[]>(`*[_type == "about"]`))[0]
 
 		const branches = await client.fetch<Content.Branch[]>(`*[_type == "branch"]`)
+		const staff: Content.Staff[] = (await client.fetch(`*[_type == "staff"]`)).map(
+			(staff: any) => ({
+				...staff,
+				image: staff.image?.asset._ref
+			})
+		)
 
-	const posts: Post[] = data.posts
-	console.log('load page: ', posts)
 
 		return {
 			hero,
 			posts,
-			about
+			about,
+			staff,
 		}
 	} catch (error) {
 		console.error(error)
