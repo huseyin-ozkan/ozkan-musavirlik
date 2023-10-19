@@ -1,8 +1,3 @@
-// TODO name
-// TODO title
-// TODO image
-// TODO description
-
 import {defineType} from 'sanity'
 
 const staff = defineType({

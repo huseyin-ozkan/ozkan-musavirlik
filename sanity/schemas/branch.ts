@@ -1,8 +1,3 @@
-// TODO address
-// TODO map link
-// TODO phones
-// TODO email
-
 import {defineType} from 'sanity'
 
 const branch = defineType({
