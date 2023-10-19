@@ -11,7 +11,7 @@ export async function load({ params, fetch }) {
 		const staff: Content.Staff[] = (await client.fetch(`*[_type == "staff"]`)).map(
 			(staff: any) => ({
 				...staff,
-				image: staff.image?.asset._ref
+				image: staff.image?.asset._ref // TODO get image url from sanity
 			})
 		)
 

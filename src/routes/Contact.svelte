@@ -31,9 +31,20 @@
 
 				<span class="address">
 					<Icon icon="material-symbols:location-on" aria-hidden />
-					<p>
-						{branch.address}
-					</p>
+					{#if branch.mapLink}
+						<a
+							href={branch.mapLink}
+							target="_blank"
+							rel="noopener noreferrer"
+							title="Haritada görüntüle"
+						>
+							{branch.address}
+						</a>
+					{:else}
+						<p>
+							{branch.address}
+						</p>
+					{/if}
 				</span>
 
 				<span class="phone">
