@@ -7,10 +7,11 @@
 
 	export let data: {
 		posts: Post[]
+		hero: Content.Hero
 	}
 </script>
 
-<Hero />
+<Hero content={data.hero} />
 
 {#if data.posts}
 	<Blog posts={data.posts} />

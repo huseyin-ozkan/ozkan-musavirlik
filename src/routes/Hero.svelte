@@ -1,8 +1,9 @@
 <script lang="ts">
+	export let content: Content.Hero
 </script>
 
 <section>
-	<h1>Doğruluk, dürüstlük, tarafsızlık ve gizlilik ilkemizdir</h1>
+	<h1>{content.heading}</h1>
 	<div class="image-container">
 		<img src="/assets/hero-image.jpg" alt="" />
 		<div class="image-cover" />

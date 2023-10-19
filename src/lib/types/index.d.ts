@@ -36,3 +36,16 @@ declare type SanityPost = {
 		}
 	}
 }
+
+declare namespace Content {
+	export type Hero = {
+		heading: string
+		subheading: string
+		services: {
+			accountancy: string
+			realEstateAppraisal: string
+			incentiveConsultancy: string
+		}
+	}
+
+}

@@ -1,16 +1,23 @@
+import { client } from '$lib/config/sanity.js'
+
 export async function load({ params, fetch }) {
-	const data = await fetch('./api/posts').then((res) => res.json())
+	try {
+		const hero = (await client.fetch<Content.Hero[]>(`*[_type == "hero"]`))[0]
+
+		const posts: Post[] = (await fetch('./api/posts').then((res) => res.json())).posts
+
+		const branches = await client.fetch<Content.Branch[]>(`*[_type == "branch"]`)
 
 	const posts: Post[] = data.posts
 	console.log('load page: ', posts)
 
-	if (data)
 		return {
+			hero,
 			posts
 		}
+	} catch (error) {
+		console.error(error)
 
-	return {
-		status: 500,
-		body: new Error('Internal Server Error')
+		// TODO redirect to maintenance page
 	}
 }
