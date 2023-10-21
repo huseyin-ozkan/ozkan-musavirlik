@@ -1,19 +1,34 @@
 :root {
 	/* main */
+	/* --color-primary: #166152; */
+	/* --color-white: #f9fffe;
+	--color-black: #1b4f61; */
+
 	--color-primary: #2b4499;
 	--color-white: #fff;
 	--color-black: #000;
 
 	/* background */
+	--color-bg-100: #f9fffe;
+	--color-bg-200: #d9f4ee;
+	--color-bg-300: #bde2da;
+
+	/* TODO remove these after new styling applied */
 	--color-bg-light: #fff;
 	--color-bg-medium: #f4f7ff;
 	--color-bg-dark: #cfdaff;
 
 	/* text */
+	--color-text-1: #1b4f61;
+	--color-text-2: #5e9288;
+	--color-text-3: #90c3b9;
+
+	/* TODO remove these after new styling applied */
 	--color-text-black: #000;
 	--color-text-white: #fff;
 	--color-text-primary: var(--color-primary);
 
+	/* TODO new scrollbar styling */
 	/* scrollbar */
 	--color-scrollbar-track: #9fa6bd;
 	--color-scrollbar-thumb: #525777;
