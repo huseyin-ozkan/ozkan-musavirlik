@@ -55,7 +55,7 @@
 	h1 {
 		font-size: var(--h1-font-size);
 		font-weight: 700;
-		font-family: Mulish, Ubuntu, sans-serif;
+		font-family: Mulish, sans-serif;
 		margin-bottom: 1em;
 
 		// cut the text after 2 lines
@@ -70,7 +70,7 @@
 		font-size: var(--p-font-size);
 		font-weight: 400;
 		color: var(--color-p);
-		font-family: Ubuntu, Mulish, sans-serif;
+		font-family: Mulish, sans-serif;
 
 		// cut the text after 6 lines
 		text-overflow: ellipsis;

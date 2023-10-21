@@ -39,8 +39,8 @@
 	h1 {
 		margin: 1em 0;
 
-		font-family: Mulish, Ubuntu, sans-serif;
-		font-weight: 800;
+		font-family: Zilla Slab, Mulish, sans-serif;
+		font-weight: 500;
 		line-height: 1;
 		font-size: var(--heading-size);
 		color: var(--heading-color);

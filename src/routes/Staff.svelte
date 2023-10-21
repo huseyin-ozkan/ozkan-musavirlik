@@ -121,7 +121,7 @@
 
 	ul > li > figure > figcaption > .title {
 		font-size: var(--title-font-size);
-		font-family: Mulish, Ubuntu, sans-serif;
+		font-family: Mulish, sans-serif;
 		font-weight: 800;
 		line-height: 116%;
 		color: var(--color-title);
@@ -131,7 +131,7 @@
 
 	ul > li > figure > figcaption > .name {
 		font-size: var(--name-font-size);
-		font-family: Mulish, Ubuntu, sans-serif;
+		font-family: Mulish, sans-serif;
 		font-weight: 700;
 		line-height: 116%;
 
@@ -140,7 +140,7 @@
 
 	ul > li > figure > figcaption > .desc {
 		font-size: var(--desc-font-size);
-		font-family: Mulish, Ubuntu, sans-serif;
+		font-family: Mulish, sans-serif;
 		font-weight: 500;
 		line-height: 116%;
 		color: var(--color-desc);
