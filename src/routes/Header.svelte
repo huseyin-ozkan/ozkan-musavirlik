@@ -71,8 +71,6 @@
 
 		width: 100%;
 		border-bottom: #e1e1e1 1px solid;
-
-		transition: 0.5s all;
 	}
 
 	header.scrolled {
@@ -147,6 +145,7 @@
 			opacity: 1;
 			pointer-events: all;
 			background-color: transparent;
+			transition: none;
 		}
 	}
 
