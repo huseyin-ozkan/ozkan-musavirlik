@@ -53,7 +53,6 @@
 
 	#about > h1 {
 		font-size: var(--heading-font-size);
-		font-family: Mulish, sans-serif;
 		font-weight: bold;
 
 		margin-bottom: 1.2em;
@@ -61,7 +60,6 @@
 
 	#about > p {
 		font-size: var(--paragraph-font-size);
-		font-family: Mulish, sans-serif;
 		font-weight: 500;
 		line-height: 116%;
 		text-align: center;
@@ -105,14 +103,12 @@
 
 	.mission-vision > article > h2 {
 		font-size: var(--title-font-size);
-		font-family: Mulish, sans-serif;
 		font-weight: 700;
 		margin-bottom: 0.8em;
 	}
 
 	.mission-vision > article > p {
 		font-size: var(--text-size);
-		font-family: sans-serif;
 		font-weight: 400;
 		line-height: 130%;
 		text-align: center;

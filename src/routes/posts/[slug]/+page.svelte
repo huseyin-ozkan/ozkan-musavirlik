@@ -66,7 +66,6 @@
 
 		h1 {
 			font-size: var(--main-heading-font-size);
-			font-family: Ubuntu;
 			font-weight: 500;
 			text-align: center;
 			text-transform: capitalize;

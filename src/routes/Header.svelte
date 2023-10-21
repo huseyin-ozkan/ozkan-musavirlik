@@ -98,7 +98,6 @@
 	.logo > span {
 		display: block;
 
-		font-family: Mulish;
 		font-weight: 800;
 		color: var(--logo-color);
 		font-size: var(--logo-size);
@@ -186,7 +185,6 @@
 		@include hover();
 		display: block;
 
-		font-family: Mulish;
 		font-weight: 700;
 		color: var(--nav-item-color);
 		font-size: var(--nav-item-size);

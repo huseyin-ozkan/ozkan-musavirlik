@@ -122,7 +122,6 @@
 	nav > ul > li > a {
 		@include hover();
 
-		font-family: Mulish;
 		font-weight: 700;
 		color: var(--color-text-black);
 		font-size: var(--nav-item-size);

@@ -95,7 +95,6 @@
 
 	#contact > h1 {
 		font-size: var(--heading-font-size);
-		font-family: Mulish, sans-serif;
 		font-weight: bold;
 
 		margin-bottom: 0.3em;
@@ -103,7 +102,6 @@
 
 	#contact > p {
 		font-size: var(--subheading-font-size);
-		font-family: Mulish, sans-serif;
 		font-weight: 500;
 		line-height: 116%;
 		text-align: center;
@@ -148,7 +146,6 @@
 
 	li > .name {
 		font-size: var(--name-font-size);
-		font-family: Mulish, sans-serif;
 		font-weight: 800;
 
 		margin-bottom: 1.1em;
