@@ -1,3 +1,12 @@
+declare type PostPreview = {
+	id: string
+	slug: string
+	createdAt: string
+	updatedAt: string
+	title: string
+	summary: string
+}
+
 declare type Post = {
 	id: string
 	slug: string
