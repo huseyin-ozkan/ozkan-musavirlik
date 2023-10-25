@@ -4,6 +4,7 @@
 	import About from './About.svelte'
 	import Staff from './Staff.svelte'
 	import Contact from './Contact.svelte'
+	import Services from './Services.svelte'
 
 	export let data: {
 		posts: Post[]
@@ -15,10 +16,11 @@
 </script>
 
 <Hero content={data.hero} />
+<Services content={data.hero} />
 
 {#if data.posts}
 	<Blog posts={data.posts} />
 {/if}
 <About content={data.about} />
-<!-- <Staff staff={data.staff} /> -->
+<Staff staff={data.staff} />
 <Contact branches={data.branches} />

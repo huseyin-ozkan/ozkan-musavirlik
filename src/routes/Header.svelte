@@ -4,7 +4,7 @@
 
 	let mobileNavOpen = false
 	let scroll: number
-	$: scrolled = scroll > 200
+	$: scrolled = scroll > 50
 
 	function toggleMobileNav() {
 		mobileNavOpen = !mobileNavOpen
@@ -70,7 +70,8 @@
 		background-color: var(--bg-color);
 
 		width: 100%;
-		border-bottom: #e1e1e1 1px solid;
+
+		transition: box-shadow 500ms;
 	}
 
 	header.scrolled {
@@ -79,6 +80,7 @@
 		// --nav-item-color: var(--color-text-white);
 
 		box-shadow: 0 0 48px rgba(#444, 0.3);
+		border-bottom: #e1e1e1 1px solid;
 	}
 
 	.logo {

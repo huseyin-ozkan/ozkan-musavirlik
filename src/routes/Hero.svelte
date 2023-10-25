@@ -33,6 +33,7 @@
 			align-items: center;
 			gap: var(--gap);
 			padding-right: 0;
+			height: 40vh;
 		}
 	}
 
@@ -62,6 +63,7 @@
 	.image-container img {
 		position: relative;
 		height: 100%;
+		width: 100%;
 	}
 
 	.image-cover {
@@ -89,8 +91,8 @@
 		background: var(--gradient-radial), var(--gradient-left), var(--gradient-right),
 			var(--gradient-vertical);
 
-		@include breakpoint() {
-			background: var(--gradient-radial), var(--gradient-left);
-		}
+		// @include breakpoint() {
+		// 	background: var(--gradient-radial), var(--gradient-left);
+		// }
 	}
 </style>
