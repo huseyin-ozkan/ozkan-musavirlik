@@ -63,7 +63,7 @@
 		--desc-width: calc(var(--title-font-size) * 10);
 
 		--service-width: calc(var(--title-font-size) * 10);
-		--icon-width: clamp(3rem, 5vw, 5rem);
+		--icon-width: clamp(50px, 5vw, 100px);
 
 		--title-color: var(--color-text-1);
 		--description-color: var(--color-text-2);
