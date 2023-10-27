@@ -67,10 +67,10 @@ jobs:
         id: version
         with:
           release-type: node
-          prerelease: false
+          prerelease: true
           # use 0.x.x for pre-major releases:
-          # bump-minor-pre-major: true
-          # bump-patch-for-minor-pre-major: true
+          bump-minor-pre-major: true
+          bump-patch-for-minor-pre-major: true
 
       # # The logic below handles the npm publication:
 
