@@ -1,2 +1,25 @@
 @import 'responsive';
 @import 'utils';
+
+@mixin section-title {
+	margin-bottom: 10px;
+
+	font-family: Zilla Slab;
+	font-size: 2.5rem;
+	font-weight: 700;
+	// color: var(--color-text-1); // TODO enable after color palette is finalized
+}
+
+@mixin paragraph-1 {
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 115%;
+	// color: var(--color-text-2); // TODO enable after color palette is finalized
+}
+
+@mixin paragraph-2 {
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 125%;
+	// color: var(--color-text-2); // TODO enable after color palette is finalized
+}
