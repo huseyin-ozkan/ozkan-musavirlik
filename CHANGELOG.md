@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.0.0](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v0.1.10...v1.0.0) (2023-10-27)
+
 ## [0.1.10](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v0.1.9...v0.1.10) (2023-10-26)
 
 
