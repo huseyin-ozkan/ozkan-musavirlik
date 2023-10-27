@@ -43,8 +43,8 @@
 		--notice-bg-color: var(--color-bg-dark);
 		--notice-text-color: #7080b2;
 
-		--notice-font-size: 0.85rem;
-		--logo-font-size: clamp(1rem, 1.5vw, 1.2rem);
+		--notice-font-size: 12px;
+		--logo-font-size: 1rem;
 		--nav-item-size: 1rem;
 
 		--gap: 1.5rem;
@@ -55,7 +55,7 @@
 	footer > .notice {
 		@include section;
 
-		--pv: calc(var(--notice-font-size) * 1.3);
+		--pv: 10px;
 
 		display: flex;
 		align-items: center;
@@ -69,14 +69,15 @@
 			font-size: var(--notice-font-size);
 			text-align: center;
 			color: var(--notice-text-color);
-			max-width: 70em;
+			font-weight: 500;
+			max-width: 1000px;
 		}
 	}
 
 	footer > .content {
 		@include section;
 
-		--pv: 20px;
+		--pv: 12px;
 
 		display: flex;
 		align-items: center;
