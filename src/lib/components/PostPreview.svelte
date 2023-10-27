@@ -24,9 +24,9 @@
 		--color-date: #6a93ff;
 		--color-p: #7988bb;
 
-		--h1-font-size: clamp(1.2rem, 1.1vw, 1.4rem);
-		--date-font-size: clamp(0.7rem, 1vw, 0.9rem);
-		--p-font-size: clamp(0.85rem, 1.2vw, 1rem);
+		--h1-font-size: 1.15rem;
+		--date-font-size: 0.8rem;
+		--p-font-size: 0.9rem;
 
 		display: flex;
 		flex-direction: column;
@@ -54,8 +54,9 @@
 
 	h1 {
 		font-size: var(--h1-font-size);
-		font-weight: 700;
-		margin-bottom: 1em;
+		font-weight: 800;
+		line-height: 130%;
+		margin-bottom: 0.2em;
 
 		// cut the text after 2 lines
 		text-overflow: ellipsis;
@@ -73,7 +74,7 @@
 		// cut the text after 6 lines
 		text-overflow: ellipsis;
 		display: -webkit-box;
-		-webkit-line-clamp: 6;
+		-webkit-line-clamp: 3;
 		-webkit-box-orient: vertical;
 		overflow: hidden;
 	}

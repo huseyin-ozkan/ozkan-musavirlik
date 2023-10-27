@@ -22,29 +22,54 @@
 </script>
 
 <section id="blog">
-	<div class="pagination">
+
+	<div class="blog-header">
+
+		<div class="title">
+			<h1>Blog</h1>
+			<p>
+				Yönetmelik değişiklikleri, yeni yasalar gibi konularla alaklı yazılarımızı
+				inceleyebilirsiniz
+			</p>
+		</div>
+
+		<div class="categories">
+			<!-- TODO -->
+		</div>
+
+	</div>
+
+	<div class="posts">
 		<Swiper
 			spaceBetween={10}
 			slidesPerView={1}
 			modules={[Pagination, Autoplay]}
 			pagination={{ clickable: true, type: 'bullets' }}
 		>
+
 			{#each postPages as page}
 				<SwiperSlide>
+
 					<div class="page">
+
 						{#each page as post}
 							<PostPreview {post} />
 						{/each}
+					
 					</div>
+
 				</SwiperSlide>
 			{/each}
+
 		</Swiper>
 	</div>
-	<div class="mobile-view">
+
+	<div class="mobile-posts">
 		{#each postPages[0] as post}
 			<PostPreview {post} />
 		{/each}
 	</div>
+
 </section>
 
 <style lang="scss">
@@ -55,27 +80,48 @@
 	}
 	section {
 		--section-bg: var(--color-bg-medium);
-		--pagination-bullet: #9db8ff;
+		--posts-bullet: #9db8ff;
 
 		--section-pv: clamp(20px, 5vw, 100px);
-		--section-border-radius: var(--section-pv);
-		--column-gap: clamp(20px, 6vw, 65px);
-		--row-gap: calc(var(--column-gap) * 0.8);
+		--column-gap: 50px;
+		--row-gap: 40px;
 
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: start;
 		justify-content: center;
 
+		gap: 3em;
+
 		padding-top: var(--section-pv);
-		padding-bottom: calc(var(--section-pv) / 2); // other half is coming from pagination gap
-		border-radius: var(--section-border-radius) 0 var(--section-border-radius) 0;
+		padding-bottom: calc(var(--section-pv) / 2); // other half is coming from posts gap
 
 		background-color: var(--section-bg);
+		border-top: var(--color-bg-dark) 1px solid;
+		border-bottom: var(--color-bg-dark) 1px solid;
+
+		@include lg {
+			flex-direction: row;
+			gap: 5vw;
+		}
+	}
+
+	.blog-header {
+		@include lg {
+			width: 20vw;
+			max-width: 300px;
+		}
+
+		.title > h1 {
+			@include section-title;
+		}
+		.title > p {
+			@include paragraph-1;
+		}
 	}
 
 	// Mobile view
-	.mobile-view {
+	.mobile-posts {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -88,50 +134,39 @@
 	}
 
 	// Pagination on desktop
-	.pagination {
-		width: 100%;
+	.posts {
 		display: none;
-
+		
 		@include breakpoint() {
 			display: block;
-		}
-	}
-
-	// Swiper slide
-	.pagination :global(.swiper-slide) {
-		margin-bottom: calc(var(--section-pv) / 2 + 30px);
-		width: 100%;
-		height: 100%;
-	}
-
-	.page {
-		--grid-columns: 1;
-		--grid-rows: 6;
-
-		@include md {
-			--grid-columns: 2;
-			--grid-rows: 3;
-		}
-		@include xl {
-			--grid-columns: 3;
-			--grid-rows: 2;
+			width: 50vw;
+			flex-grow: 1;
 		}
 
-		display: grid;
-		grid-template-columns: repeat(var(--grid-columns), 1fr);
-		grid-template-rows: repeat(auto, 1fr);
-		column-gap: var(--column-gap);
-		row-gap: var(--row-gap);
-	}
+		// Swiper slide
+		:global(.swiper-slide) {
+			margin-bottom: calc(var(--section-pv) / 2 + 30px);
+			width: 100%;
+			height: 100%;
+		}
 
-	// Pagination bullets
-	.pagination :global(.swiper-pagination-bullet) {
-		width: 1rem;
-		height: 1rem;
-		background-color: var(--pagination-bullet);
-		opacity: 0.3;
-	}
-	.pagination :global(.swiper-pagination-bullet-active) {
-		opacity: 1;
+		.page {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			
+			column-gap: var(--column-gap);
+			row-gap: var(--row-gap);
+		}
+
+		// Pagination bullets
+		:global(.swiper-posts-bullet) {
+			width: 1rem;
+			height: 1rem;
+			background-color: var(--posts-bullet);
+			opacity: 0.3;
+		}
+		:global(.swiper-posts-bullet-active) {
+			opacity: 1;
+		}
 	}
 </style>
