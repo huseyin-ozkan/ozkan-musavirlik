@@ -67,8 +67,7 @@ jobs:
         id: version
         with:
           release-type: node
-          prerelease: false
-          release-as: 1.0.0 # remove after release
+          prerelease: true
           # use 0.x.x for pre-major releases:
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
