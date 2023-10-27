@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.10](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v0.1.9...v0.1.10) (2023-10-26)
+
+
+### Features
+
+* remove Ubuntu font and add Zilla Slab ([694c4ce](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/694c4ce132cd220842e399c6d8065018ad1b17f3))
+* Services better responsive styling ([0d8c6a5](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/0d8c6a5aae540ebed5b9b581625d8e4f816e5736))
+* Services section & changes on the hero styling ([6e31fb6](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/6e31fb61b9cbbef06b8934ae9fe1c4678a211071))
+
+
+### Bug Fixes
+
+* header transition issue ([f49dec2](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/f49dec26798183e9ea313de239c8fc0d4da737d0))
+
 ## [0.1.9](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v0.1.8...v0.1.9) (2023-10-19)
 
 
