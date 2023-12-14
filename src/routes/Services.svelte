@@ -1,6 +1,4 @@
 <script lang="ts">
-	import type { ComponentType } from 'svelte/internal'
-
 	import accountingIcon from '$lib/assets/accounting-svgrepo-com 1.svelte'
 	import consultingIcon from '$lib/assets/men-and-women-to-consult-senior-svgrepo-com.svelte'
 	import realEstateIcon from '$lib/assets/villa.svelte'
@@ -10,24 +8,24 @@
 	type Service = {
 		title: string // min 10 max 25
 		description: string
-		icon: ComponentType
+		icon: string
 	}
 
 	const services: Service[] = [
 		{
 			title: 'Mali Müşavirlik',
 			description: content.services.accountancy,
-			icon: accountingIcon
+			icon: './assets/icons/accountancy-icon.png'
 		},
 		{
 			title: 'Gayrimenkul Değerleme',
 			description: content.services.realEstateAppraisal,
-			icon: realEstateIcon
+			icon: './assets/icons/real-estate-appraisal-icon.png'
 		},
 		{
 			title: 'Destek Danışmanlığı',
 			description: content.services.incentiveConsultancy,
-			icon: consultingIcon
+			icon: './assets/icons/consultancy-icon.png'
 		}
 	]
 </script>
@@ -36,8 +34,7 @@
 	{#each services as service}
 		<figure class="service">
 			<div class="icon">
-				<div class="watermark" />
-				<svelte:component this={service.icon} />
+				<img src={service.icon} alt={service.title} />
 			</div>
 
 			<figcaption>
@@ -101,34 +98,9 @@
 	}
 
 	.icon {
-		--px: calc(var(--icon-width) * 0.2);
-		--pt: calc(var(--px) * 0.5);
 		position: relative;
-		padding-left: var(--px);
-		padding-right: var(--px);
-		padding-top: var(--pt);
+		margin-right: calc(var(--icon-width) * 0.2);
 		z-index: 0;
-	}
-
-	.icon .watermark {
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: -1;
-
-		width: 100%;
-		aspect-ratio: 4/3;
-
-		background: linear-gradient(to bottom right, var(--color-accent), transparent);
-		border-radius: 125px;
-		rotate: 15deg;
-	}
-
-	.icon > :global(svg) {
-		width: var(--icon-width);
-		height: auto;
-		max-width: unset;
-		min-width: unset;
 	}
 
 	.service > figcaption > h1 {
