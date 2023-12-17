@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.2.0](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v1.1.0...v1.2.0) (2023-12-17)
+
+
+### Features
+
+* about section design improvements ([254ea51](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/254ea5152b63d564c3df405e579eb940f1bb4c4a))
+* contact section new design ([fb6e420](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/fb6e420c48f5db4bf18c93253044f38078e4fbcc))
+* footer new design ([a464a08](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/a464a08764a23112497c3089ebba8b1b605ad273))
+* header color invert on scroll ([c9af7eb](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/c9af7eb8d8ad5cabb14a320353c10ac0006dd6d0))
+* header new design ([c48dc58](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/c48dc58dfa43b61f507074d0e5ce5ab0d141141f))
+* hero section new design ([299233a](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/299233a58528d14b4c94a87850a5ad18396e122e))
+* increase header shadow and make it neutral color ([b4e1b2e](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/b4e1b2e2d7283891c882688016da91a3fb9d9cf8))
+* make neutral the default content color ([1df5093](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/1df5093ddded84a265a0d70a1a0dab932642e902))
+* new color system ([d34088f](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/d34088fd6a76d1adf72ca4f663adb4d277affa85))
+* staff section new design ([cf8311e](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/cf8311e8553854c4feb29138d7f1ae5d31c51580))
+
 ## [1.1.0](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v1.0.0...v1.1.0) (2023-12-17)
 
 
