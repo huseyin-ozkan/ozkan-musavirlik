@@ -16,7 +16,7 @@
 </script>
 
 <Hero content={data.hero} />
-<Services content={data.hero} />
+<!-- <Services content={data.hero} /> -->
 
 {#if data.posts}
 	<Blog posts={data.posts} />
