@@ -99,8 +99,8 @@
 
 	.icon {
 		position: relative;
+		width: var(--icon-width);
 		margin-right: calc(var(--icon-width) * 0.2);
-		z-index: 0;
 	}
 
 	.service > figcaption > h1 {
