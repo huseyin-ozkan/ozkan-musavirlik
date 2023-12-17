@@ -2,7 +2,7 @@
 	import { ROUTES, NAV_ROUTES } from '$lib/config/routes'
 
 	const notice =
-		'Sitemizdeki bilgiler kullanıcılara yol gösterici nitelikte ve genel bilgi vermek amacını taşımaktadır. Tarafımızdan yazılı görüş alınmadan sitede yer alan bilgilerden ya da yayınlanan mali açıklamalarda yer alan görüşlerden hareketle yapılan uygulamalardan şirketimiz sorumluluk kabul etmez.'
+		'Sitemizdeki bilgiler ziyaretçilere yol göstermek ve genel bilgi vermek amacını taşımaktadır. Tarafımızdan yazılı görüş alınmadan sitede yer alan bilgilerden ya da yayınlanan açıklamalarda yer alan görüşlerden hareketle yapılan uygulamalardan şirketimiz sorumluluk kabul etmez.'
 </script>
 
 <footer>
@@ -100,6 +100,7 @@
 		color: var(--color-base-100);
 		font-size: var(--logo-font-size);
 		font-weight: 500;
+		font-family: 'Zilla Slab';
 	}
 
 	// nav
@@ -123,9 +124,10 @@
 	nav > ul > li > a {
 		@include hover();
 
-		font-weight: 700;
+		font-weight: 600;
 		color: var(--color-neutral);
 		font-size: var(--nav-item-size);
+		font-family: 'Zilla Slab';
 
 		padding: 0.25em 2em;
 
