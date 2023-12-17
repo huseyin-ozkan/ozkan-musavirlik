@@ -22,5 +22,5 @@
 	<Blog posts={data.posts} />
 {/if}
 <About content={data.about} />
-<Staff staff={data.staff} />
+<!-- <Staff staff={data.staff} /> -->
 <Contact branches={data.branches} />
