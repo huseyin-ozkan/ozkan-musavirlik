@@ -13,67 +13,86 @@
 </script>
 
 <section id="about">
-	<h1 class="section-title">Hakkımızda</h1>
-	<p>{content.paragraph}</p>
+	<section class="section-hero">
+		<h1 class="section-title">Hakkımızda</h1>
+		<p class="main-paragraph">{content.paragraph}</p>
+	</section>
 
 	<section class="mission-vision">
-		<article>
+		<article class="mission">
 			<h2>Misyonumuz</h2>
 			<p>{content.mission}</p>
 		</article>
 
-		<article>
+		<article class="vision">
 			<h2>Vizyonumuz</h2>
 			<p>{content.vision}</p>
 		</article>
 	</section>
+
+	<div class="image">
+		<div class="watermark" />
+		<img src="/assets/accounting-calculator.png" alt="" aria-hidden="true" />
+	</div>
 </section>
 
 <style lang="scss">
 	#about {
-		--color-paragraph: #5b6c98;
-		--color-mission-vision-bg: var(--color-bg-medium);
-		--color-mission-vision-text: #7a88ba;
-
 		--section-pt: clamp(75px, 10vw, 250px);
 		--section-pb: clamp(75px, 7vw, 150px);
-		--paragraph-max-width: 1000px;
 
 		--heading-font-size: clamp(1.7rem, 5vw, 4rem);
 		--paragraph-font-size: clamp(1rem, 2vw, 1.3rem);
 
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-
 		padding-top: var(--section-pt);
 		padding-bottom: var(--section-pb);
+
+		display: grid;
+		align-items: start;
+
+		grid-template-areas:
+			'her her'
+			'... img'
+			'mvs mvs';
+		grid-template-columns: repeat(2, auto);
+		grid-template-rows: repeat(3, auto);
+
+		@include md {
+			grid-template-areas:
+				'her img'
+				'mvs mvs';
+			grid-template-columns: auto 15vw;
+			grid-template-rows: repeat(2, auto);
+			column-gap: 15vw;
+		}
+
+		@include xl {
+			grid-template-areas:
+				'her img'
+				'mvs img';
+			grid-template-columns: auto 15vw;
+			grid-template-rows: repeat(2, auto);
+		}
 	}
 
-	#about > h1 {
-		font-size: var(--heading-font-size);
-		font-weight: bold;
+	.section-hero {
+		grid-area: her;
 
-		margin-bottom: 1.2em;
+		.section-title {
+			@include section-title;
+		}
+
+		.main-paragraph {
+			@include paragraph-1;
+			margin-bottom: 4em;
+		}
 	}
 
-	#about > p {
-		font-size: var(--paragraph-font-size);
-		font-weight: 500;
-		line-height: 116%;
-		text-align: center;
-		color: var(--color-paragraph);
-
-		max-width: var(--paragraph-max-width);
-		margin-bottom: 4em;
-	}
-
-	// Mission & Vision
 	.mission-vision {
-		--title-font-size: clamp(1.25rem, 2.5vw, 2rem);
+		grid-area: mvs;
+		--title-font-size: clamp(1.3rem, 1.5vw, 1.5rem);
 		--text-size: clamp(0.95rem, calc(var(--title-font-size) * 0.6), 1.1rem);
-		--gap: calc(var(--title-font-size) * 1.4);
+		--gap: calc(var(--title-font-size) * 3);
 
 		display: flex;
 		flex-direction: column;
@@ -81,37 +100,55 @@
 		justify-content: center;
 		gap: var(--gap);
 
+		margin-bottom: 2em;
+
 		@include md {
 			flex-direction: row;
 		}
 
-		margin-bottom: 2em;
-		max-width: var(--paragraph-max-width);
+		article {
+			display: flex;
+			flex: 1;
+			flex-direction: column;
+			align-items: start;
+			justify-content: start;
+
+			h2 {
+				font-size: var(--title-font-size);
+				font-weight: 700;
+				font-family: 'Zilla Slab';
+				margin-bottom: 0.8em;
+			}
+
+			p {
+				@include paragraph-2;
+			}
+		}
 	}
 
-	.mission-vision > article {
-		display: flex;
-		flex: 1;
-		flex-direction: column;
-		align-items: center;
-		justify-content: start;
+	.image {
+		grid-area: img;
+		justify-self: end;
+		position: relative;
+		z-index: 1;
+		// width: 45%;
+		max-width: 300px;
+		flex-grow: 1;
+		flex-shrink: 0;
 
-		background-color: var(--color-mission-vision-bg);
-		border-radius: 30px;
-		padding: var(--gap);
-	}
+		.watermark {
+			position: absolute;
+			inset: 20% -70% -10% -60%;
 
-	.mission-vision > article > h2 {
-		font-size: var(--title-font-size);
-		font-weight: 700;
-		margin-bottom: 0.8em;
-	}
+			z-index: -1;
 
-	.mission-vision > article > p {
-		font-size: var(--text-size);
-		font-weight: 400;
-		line-height: 130%;
-		text-align: center;
-		color: var(--color-mission-vision-text);
+			background: linear-gradient(to bottom, var(--color-accent), transparent);
+			border-radius: 150px;
+			rotate: 15deg;
+		}
+
+		img {
+			width: 100%;
+		}
 	}
 </style>

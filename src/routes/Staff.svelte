@@ -42,16 +42,15 @@
 
 <style lang="scss">
 	#staff {
-		--color-img-bg: var(--color-bg-medium);
-		--color-title: #b2c4ff;
-		--color-desc: #2b4499;
+		--color-title: var(--color-neutral-vivid);
 
-		--name-font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+		--image-size: clamp(200px, 16vw, 350px);
+
+		--name-font-size: clamp(1.3rem, 2vw, 2rem);
 		--title-font-size: 1rem;
 		--desc-font-size: 1rem;
 
-		--gap: calc(var(--name-font-size) * 1);
-		--max-width: 800px;
+		--gap: calc(var(--name-font-size) * 1.5);
 
 		display: flex;
 		align-items: center;
@@ -64,11 +63,14 @@
 		flex-direction: column;
 		align-items: stretch;
 		justify-content: center;
-		gap: var(--gap);
-		row-gap: calc(var(--gap) * 2);
+		gap: 2em;
 
 		width: 100%;
-		max-width: var(--max-width);
+
+		@include md {
+			flex-direction: row;
+			gap: 4em;
+		}
 	}
 
 	// Staff member
@@ -82,7 +84,7 @@
 
 		width: 100%;
 
-		@include sm {
+		@include xl {
 			grid-template-columns: auto auto;
 			grid-template-rows: 1fr;
 		}
@@ -96,20 +98,13 @@
 		aspect-ratio: 1;
 		padding-top: 1em;
 		overflow: hidden;
-		width: 150px;
-		max-width: 300px;
-		border-radius: 100px;
+		width: var(--image-size);
+		border-radius: 150px;
 
-		background-color: var(--color-img-bg);
-
-		@include sm {
-			width: 100%;
-			height: 100%;
-			border-radius: 50px;
-		}
+		background: linear-gradient(to bottom, var(--color-accent), transparent);
 
 		img {
-			filter: drop-shadow(4px 0px 35px rgba(#000, 0.3));
+			filter: drop-shadow(4px 0px 16px rgba(#000, 0.1));
 		}
 	}
 
@@ -121,7 +116,7 @@
 
 	ul > li > figure > figcaption > .title {
 		font-size: var(--title-font-size);
-		font-weight: 800;
+		font-weight: 700;
 		line-height: 116%;
 		color: var(--color-title);
 
@@ -130,17 +125,15 @@
 
 	ul > li > figure > figcaption > .name {
 		font-size: var(--name-font-size);
-		font-weight: 700;
+		font-family: 'Zilla Slab';
+		font-weight: 600;
 		line-height: 116%;
 
 		margin-bottom: 0.3em;
 	}
 
 	ul > li > figure > figcaption > .desc {
-		font-size: var(--desc-font-size);
-		font-weight: 500;
-		line-height: 116%;
-		color: var(--color-desc);
+		@include paragraph-2;
 	}
 
 	// overrides to alternate staff member direction
@@ -152,7 +145,7 @@
 			text-align: end;
 		}
 
-		@include sm {
+		@include xl {
 			.image {
 				grid-column: 2;
 				grid-row: 1;

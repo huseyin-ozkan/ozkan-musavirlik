@@ -1,39 +1,20 @@
 :root {
-	/* main */
-	/* --color-primary: #166152; */
-	/* --color-white: #f9fffe;
-	--color-black: #1b4f61; */
-
+	/* Colors */
 	--color-primary: #2b4499;
 	--color-accent: #fcde8a;
-	--color-white: #fff;
-	--color-black: #000;
 
-	/* background */
-	--color-bg-100: #f9fffe;
-	--color-bg-200: #d9f4ee;
-	--color-bg-300: #bde2da;
+	--color-base-100: #fafdff;
+	--color-base-200: #dbe8f0;
+	--color-base-300: #bdd3e2;
 
-	/* TODO remove these after new styling applied */
-	--color-bg-light: #fff;
-	--color-bg-medium: #f4f7ff;
-	--color-bg-dark: #cfdaff;
+	--color-neutral: #1d2d64;
+	--color-neutral-pale: #636f98;
+	--color-neutral-vivid: #849ce8;
 
-	/* text */
-	--color-text-1: #1b4f61;
-	--color-text-2: #5e9288;
-	--color-text-3: #82d2c2;
-
-	/* TODO remove these after new styling applied */
-	--color-text-black: #000;
-	--color-text-white: #fff;
-	--color-text-primary: var(--color-primary);
-
-	/* TODO new scrollbar styling */
 	/* scrollbar */
-	--color-scrollbar-track: #9fa6bd;
-	--color-scrollbar-thumb: #525777;
-	--color-scrollbar-thumb-hover: #53566b;
+	--color-scrollbar-track: var(--color-base-100);
+	--color-scrollbar-thumb: var(--color-neutral-pale);
+	--color-scrollbar-thumb-hover: var(--color-neutral-vivid);
 }
 
 * {
@@ -50,7 +31,7 @@
 
 	/* typography */
 	font-family: Mulish, Segoe UI, sans-serif;
-	color: black;
+	color: var(--color-neutral);
 	font-size: 1rem;
 	font-style: normal;
 	text-decoration: none;
@@ -86,7 +67,7 @@ html,
 body {
 	width: 100%;
 	min-height: 100%;
-	background-color: var(--color-bg-light);
+	background-color: var(--color-base-100);
 	overflow-x: clip;
 }
 
