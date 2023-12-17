@@ -75,7 +75,7 @@
 	}
 
 	header.scrolled {
-		box-shadow: 0 0 48px rgba(#444, 0.3);
+		box-shadow: 0 0 48px rgba(#2b4499, 0.4);
 		border-bottom: #e1e1e1 1px solid;
 	}
 
