@@ -61,15 +61,16 @@
 			grid-template-areas:
 				'her img'
 				'mvs mvs';
-			grid-template-columns: repeat(2, auto);
+			grid-template-columns: auto 15vw;
 			grid-template-rows: repeat(2, auto);
+			column-gap: 15vw;
 		}
 
-		@include lg {
+		@include xl {
 			grid-template-areas:
 				'her img'
 				'mvs img';
-			grid-template-columns: auto 30vw;
+			grid-template-columns: auto 15vw;
 			grid-template-rows: repeat(2, auto);
 		}
 	}
@@ -115,6 +116,7 @@
 			h2 {
 				font-size: var(--title-font-size);
 				font-weight: 700;
+				font-family: 'Zilla Slab';
 				margin-bottom: 0.8em;
 			}
 
@@ -129,19 +131,19 @@
 		justify-self: end;
 		position: relative;
 		z-index: 1;
-		width: 50%;
+		// width: 45%;
 		max-width: 300px;
 		flex-grow: 1;
 		flex-shrink: 0;
 
 		.watermark {
 			position: absolute;
-			inset: 20% -50% -10% -50%;
+			inset: 20% -70% -10% -60%;
 
 			z-index: -1;
 
-			background: linear-gradient(to bottom right, var(--color-accent), transparent);
-			border-radius: 125px;
+			background: linear-gradient(to bottom, var(--color-accent), transparent);
+			border-radius: 150px;
 			rotate: 15deg;
 		}
 
