@@ -62,8 +62,8 @@
 		--service-width: calc(var(--title-font-size) * 10);
 		--icon-width: clamp(50px, 5vw, 100px);
 
-		--title-color: var(--color-text-1);
-		--description-color: var(--color-text-2);
+		--title-color: var(--color-neutral);
+		--description-color: var(--color-neutral-pale);
 
 		display: flex;
 		flex-direction: column;

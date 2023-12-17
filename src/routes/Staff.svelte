@@ -42,9 +42,9 @@
 
 <style lang="scss">
 	#staff {
-		--color-img-bg: var(--color-bg-medium);
-		--color-title: #b2c4ff;
-		--color-desc: #2b4499;
+		--color-img-bg: var(--color-accent);
+		--color-title: var(--color-neutral-vivid);
+		--color-desc: var(--color-neutral-pale);
 
 		--name-font-size: clamp(1.5rem, 2.5vw, 2.2rem);
 		--title-font-size: 1rem;

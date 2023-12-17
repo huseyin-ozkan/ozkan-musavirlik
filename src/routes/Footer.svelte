@@ -39,9 +39,9 @@
 	}
 
 	footer {
-		--footer-bg-color: var(--color-primary);
-		--notice-bg-color: var(--color-bg-dark);
-		--notice-text-color: #7080b2;
+		--footer-bg-color: var(--color-neutral);
+		--notice-bg-color: var(--color-base-300);
+		--notice-text-color: var(--color-neutral-pale);
 
 		--notice-font-size: 12px;
 		--logo-font-size: 1rem;
@@ -89,7 +89,7 @@
 		padding-top: var(--pv);
 		padding-bottom: var(--pv);
 
-		color: var(--color-text-white);
+		color: var(--color-base-100);
 
 		@include breakpoint() {
 			flex-direction: row;
@@ -97,7 +97,7 @@
 	}
 
 	.logo {
-		color: var(--color-text-white);
+		color: var(--color-base-100);
 		font-size: var(--logo-font-size);
 		font-weight: 500;
 	}
@@ -124,12 +124,12 @@
 		@include hover();
 
 		font-weight: 700;
-		color: var(--color-text-black);
+		color: var(--color-neutral);
 		font-size: var(--nav-item-size);
 
 		padding: 0.25em 2em;
 
-		color: var(--color-text-white);
+		color: var(--color-base-100);
 		white-space: nowrap;
 
 		padding: 0.25em 0.75em;

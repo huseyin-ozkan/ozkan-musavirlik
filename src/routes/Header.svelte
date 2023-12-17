@@ -48,9 +48,9 @@
 	}
 
 	header {
-		--bg-color: var(--color-bg-light);
-		--logo-color: var(--color-text-black);
-		--nav-item-color: var(--color-text-black);
+		--bg-color: var(--color-base-100);
+		--logo-color: var(--color-neutral);
+		--nav-item-color: var(--color-neutral);
 
 		--logo-size: clamp(1.05rem, 3vw, 1.7rem);
 		--nav-toggle-size: clamp(1.2rem, calc(var(--logo-size) * 1.5), 1.8rem);
@@ -76,8 +76,8 @@
 
 	header.scrolled {
 		// --bg-color: var(--color-primary);
-		// --logo-color: var(--color-text-white);
-		// --nav-item-color: var(--color-text-white);
+		// --logo-color: var(--color-base-100);
+		// --nav-item-color: var(--color-base-100);
 
 		box-shadow: 0 0 48px rgba(#444, 0.3);
 		border-bottom: #e1e1e1 1px solid;
@@ -164,7 +164,7 @@
 
 		padding-top: 10vh;
 
-		background-color: var(--color-bg-dark);
+		background-color: var(--color-base-300);
 
 		transition: inherit;
 

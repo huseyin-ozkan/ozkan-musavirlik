@@ -22,9 +22,7 @@
 </script>
 
 <section id="blog">
-
 	<div class="blog-header">
-
 		<div class="title">
 			<h1>Blog</h1>
 			<p>
@@ -36,7 +34,6 @@
 		<div class="categories">
 			<!-- TODO -->
 		</div>
-
 	</div>
 
 	<div class="posts">
@@ -46,21 +43,15 @@
 			modules={[Pagination, Autoplay]}
 			pagination={{ clickable: true, type: 'bullets' }}
 		>
-
 			{#each postPages as page}
 				<SwiperSlide>
-
 					<div class="page">
-
 						{#each page as post}
 							<PostPreview {post} />
 						{/each}
-					
 					</div>
-
 				</SwiperSlide>
 			{/each}
-
 		</Swiper>
 	</div>
 
@@ -69,7 +60,6 @@
 			<PostPreview {post} />
 		{/each}
 	</div>
-
 </section>
 
 <style lang="scss">
@@ -79,7 +69,7 @@
 		}
 	}
 	section {
-		--section-bg: var(--color-bg-medium);
+		--section-bg: #fff;
 		--posts-bullet: #9db8ff;
 
 		--section-pv: clamp(20px, 5vw, 100px);
@@ -97,8 +87,8 @@
 		padding-bottom: calc(var(--section-pv) / 2); // other half is coming from posts gap
 
 		background-color: var(--section-bg);
-		border-top: var(--color-bg-dark) 1px solid;
-		border-bottom: var(--color-bg-dark) 1px solid;
+		border-top: var(--color-base-200) 1px solid;
+		border-bottom: var(--color-base-200) 1px solid;
 
 		@include lg {
 			flex-direction: row;
@@ -136,7 +126,7 @@
 	// Pagination on desktop
 	.posts {
 		display: none;
-		
+
 		@include breakpoint() {
 			display: block;
 			width: 50vw;
@@ -153,7 +143,7 @@
 		.page {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-			
+
 			column-gap: var(--column-gap);
 			row-gap: var(--row-gap);
 		}

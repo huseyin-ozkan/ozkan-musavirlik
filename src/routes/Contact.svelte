@@ -70,10 +70,10 @@
 
 <style lang="scss">
 	#contact {
-		--color-section-bg: var(--color-bg-medium);
+		--color-section-bg: var(--color-base-200);
 		--color-subheading: #5b6c98;
 
-		--color-branch-bg: var(--color-bg-light);
+		--color-branch-bg: var(--color-base-100);
 		--color-address: #5264a4;
 		--color-phone: #99a4c0;
 		--color-email: #233571;

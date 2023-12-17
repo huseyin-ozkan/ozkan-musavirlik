@@ -38,10 +38,6 @@
 
 <style lang="scss">
 	#about {
-		--color-paragraph: #5b6c98;
-		--color-mission-vision-bg: var(--color-bg-medium);
-		--color-mission-vision-text: #7a88ba;
-
 		--section-pt: clamp(75px, 10vw, 250px);
 		--section-pb: clamp(75px, 7vw, 150px);
 

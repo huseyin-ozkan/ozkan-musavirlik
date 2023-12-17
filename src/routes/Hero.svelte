@@ -23,7 +23,7 @@
 
 		--gap: var(--heading-size);
 
-		--image-cover-color: var(--color-bg-light);
+		--image-cover-color: var(--color-base-100);
 
 		display: flex;
 		flex-direction: column;
