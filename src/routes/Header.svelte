@@ -71,12 +71,16 @@
 
 		width: 100%;
 
-		transition: box-shadow 500ms;
+		transition: 300ms;
 	}
 
 	header.scrolled {
 		box-shadow: 0 0 48px rgba(#444, 0.3);
-		border-bottom: #e1e1e1 1px solid;
+		// border-bottom: #e1e1e1 1px solid;
+
+		--bg-color: var(--color-neutral);
+		--logo-color: var(--color-base-100);
+		--nav-item-color: var(--color-base-100);
 	}
 
 	.logo {
@@ -89,6 +93,7 @@
 		width: calc(var(--logo-size) * 1.2);
 		margin-right: calc(var(--logo-size) * 0.5);
 		border-radius: 3px;
+		border: 2px solid var(--color-base-100);
 	}
 
 	.logo > span {
