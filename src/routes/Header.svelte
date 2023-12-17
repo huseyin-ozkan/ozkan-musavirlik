@@ -54,7 +54,7 @@
 
 		--logo-size: clamp(1.05rem, 3vw, 1.7rem);
 		--nav-toggle-size: clamp(1.2rem, calc(var(--logo-size) * 1.5), 1.8rem);
-		--nav-item-size: clamp(1rem, calc(var(--logo-size) * 0.65), 1.5rem);
+		--nav-item-size: clamp(1rem, calc(var(--logo-size) * 0.7), 1.5rem);
 
 		@include section();
 
@@ -75,10 +75,6 @@
 	}
 
 	header.scrolled {
-		// --bg-color: var(--color-primary);
-		// --logo-color: var(--color-base-100);
-		// --nav-item-color: var(--color-base-100);
-
 		box-shadow: 0 0 48px rgba(#444, 0.3);
 		border-bottom: #e1e1e1 1px solid;
 	}
@@ -90,9 +86,9 @@
 	}
 
 	.logo > img {
-		width: calc(var(--logo-size) * 1.5);
+		width: calc(var(--logo-size) * 1.2);
 		margin-right: calc(var(--logo-size) * 0.5);
-		border-radius: 5px;
+		border-radius: 3px;
 	}
 
 	.logo > span {
@@ -101,6 +97,7 @@
 		font-weight: 800;
 		color: var(--logo-color);
 		font-size: var(--logo-size);
+		font-family: 'Zilla Slab';
 		white-space: nowrap;
 
 		padding: 0.66em 0;
@@ -189,6 +186,8 @@
 		font-weight: 700;
 		color: var(--nav-item-color);
 		font-size: var(--nav-item-size);
+		font-family: 'Zilla Slab';
+
 		white-space: nowrap;
 
 		padding: 0.25em 2em;
