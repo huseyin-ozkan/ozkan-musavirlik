@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.0](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v1.0.0...v1.1.0) (2023-12-17)
+
+
+### Features
+
+* **blog:** add section title, heading and shrink post sizes ([674523d](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/674523da9351579933b63f6e769e7280d25f428a))
+* **services:** change icons and design ([918b1ba](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/918b1ba75de572d6857359eff5f995d16766b9c7))
+* shrink footer size ([912aee6](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/912aee6efec75b4058a304b0469fbbb7c314f54b))
+
+
+### Bug Fixes
+
+* **services:** icon width ([9c39f51](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/9c39f51e62418ba5bf59ea593904589e7b669008))
+
 ## [1.0.0](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v0.1.10...v1.0.0) (2023-10-27)
 
 ## [0.1.10](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v0.1.9...v0.1.10) (2023-10-26)
