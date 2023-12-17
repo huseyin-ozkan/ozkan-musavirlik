@@ -16,7 +16,7 @@ const hero = defineType({
       name: 'subheading',
       title: 'Subheading',
       type: 'string',
-      validation: (Rule) => Rule.required().min(50).max(100),
+      validation: (Rule) => Rule.required().min(50).max(150),
     },
 
     {

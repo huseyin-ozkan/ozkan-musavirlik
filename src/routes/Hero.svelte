@@ -3,7 +3,13 @@
 </script>
 
 <section>
-	<h1>{content.heading}</h1>
+	<div class="content">
+		<h1>{content.heading}</h1>
+		<p>
+			{content.subheading}
+		</p>
+	</div>
+
 	<div class="image-container">
 		<img src="/assets/hero-image.jpg" alt="" />
 		<div class="image-cover" />
@@ -19,9 +25,9 @@
 
 	section {
 		--heading-color: #32426d;
-		--heading-size: clamp(2rem, 4vw, 4rem);
+		--heading-size: clamp(2rem, 3vw, 4rem);
 
-		--gap: var(--heading-size);
+		--gap: calc(var(--heading-size) * 2);
 
 		--image-cover-color: var(--color-base-100);
 
@@ -37,19 +43,25 @@
 		}
 	}
 
-	h1 {
+	.content {
 		margin: 1em 0;
+	}
 
+	.content > h1 {
 		font-family: Zilla Slab, Mulish, sans-serif;
-		font-weight: 500;
+		font-weight: 600;
 		line-height: 1;
 		font-size: var(--heading-size);
 		color: var(--heading-color);
 		text-align: left;
 
-		@include breakpoint() {
-			max-width: 50%;
-		}
+		margin-bottom: 0.35em;
+	}
+
+	.content > p {
+		@include paragraph-1();
+
+		max-width: 50em;
 	}
 
 	.image-container {
@@ -58,6 +70,10 @@
 		position: relative;
 		width: 100%;
 		height: 100%;
+
+		@include breakpoint() {
+			max-width: 50%;
+		}
 	}
 
 	.image-container img {
