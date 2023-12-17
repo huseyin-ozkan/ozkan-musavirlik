@@ -11,7 +11,6 @@
 	--color-neutral-pale: #636f98;
 	--color-neutral-vivid: #849ce8;
 
-	/* TODO new scrollbar styling */
 	/* scrollbar */
 	--color-scrollbar-track: var(--color-base-100);
 	--color-scrollbar-thumb: var(--color-neutral-pale);

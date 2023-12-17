@@ -62,6 +62,7 @@
 	</div>
 </section>
 
+<!-- TODO fix responsive post listing issue on middle size screen -->
 <style lang="scss">
 	@mixin breakpoint() {
 		@include md {
