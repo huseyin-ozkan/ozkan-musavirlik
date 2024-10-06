@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v1.2.0...v1.3.0) (2024-10-06)
+
+
+### Features
+
+* improve the post page layout ([677210a](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/677210a142ca6b89337551be9c92d12fe052a51f))
+
 ## [1.2.0](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v1.1.0...v1.2.0) (2023-12-17)
 
 
