@@ -21,9 +21,9 @@
 	<img src={poster} alt="Poster" />
 
 	<section class="post">
-		<h1>{title.toLocaleLowerCase('tr')}</h1>
-
 		<article class="post-details">
+			<h1>{title.toLocaleLowerCase('tr')}</h1>
+
 			<time datetime={dayjs(createdAt).format('D MMMM YYYY')}
 				>{dayjs(createdAt).format('D MMMM YYYY - dddd')}</time
 			>
@@ -39,8 +39,8 @@
 
 <style lang="scss">
 	.post-container {
-		--main-heading-font-size: clamp(1.5rem, 5vw, 3rem);
-		--post-max-width: 100em;
+		--main-heading-font-size: clamp(1.8rem, 5vw, 2.8rem);
+		--post-max-width: 75em;
 
 		display: flex;
 		flex-direction: column;
@@ -66,7 +66,7 @@
 
 		h1 {
 			font-size: var(--main-heading-font-size);
-			font-weight: 500;
+			font-weight: 700;
 			text-align: center;
 			text-transform: capitalize;
 			margin-bottom: 1em;
@@ -75,7 +75,14 @@
 		.post-details {
 			time {
 				color: var(--color-primary);
+				font-weight: 700;
+				font-size: 0.9em;
+				opacity: 0.5;
 			}
+
+			border-bottom: 1px solid #ddd;
+			padding-bottom: 1em;
+			margin-bottom: 1em;
 		}
 
 		.post-body {
