@@ -139,6 +139,7 @@
 			flex-direction: row;
 			flex-wrap: wrap;
 			justify-content: start;
+			align-items: start;
 		}
 	}
 
