@@ -1,4 +1,5 @@
 <script lang="ts">
+	import accountingCalculator from '$lib/assets/accounting-calculator.webp'
 	export let content: Content.About
 
 	// Mock data
@@ -32,7 +33,7 @@
 
 	<div class="image">
 		<div class="watermark" />
-		<img src="/assets/accounting-calculator.png" alt="" aria-hidden="true" />
+		<img src={accountingCalculator} alt="" aria-hidden="true" />
 	</div>
 </section>
 

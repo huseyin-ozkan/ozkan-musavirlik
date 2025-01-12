@@ -1,7 +1,7 @@
 <script lang="ts">
-	import accountingIcon from '$lib/assets/accounting-svgrepo-com 1.svelte'
-	import consultingIcon from '$lib/assets/men-and-women-to-consult-senior-svgrepo-com.svelte'
-	import realEstateIcon from '$lib/assets/villa.svelte'
+	import accountingIcon from '$lib/assets/icons/accountancy-icon.webp'
+	import consultingIcon from '$lib/assets/icons/consultancy-icon.webp'
+	import realEstateIcon from '$lib/assets/icons/real-estate-appraisal-icon.webp'
 
 	export let content: Content.Hero
 
@@ -15,17 +15,17 @@
 		{
 			title: 'Mali Müşavirlik',
 			description: content.services.accountancy,
-			icon: './assets/icons/accountancy-icon.png'
+			icon: accountingIcon
 		},
 		{
 			title: 'Gayrimenkul Değerleme',
 			description: content.services.realEstateAppraisal,
-			icon: './assets/icons/real-estate-appraisal-icon.png'
+			icon: realEstateIcon
 		},
 		{
 			title: 'Destek Danışmanlığı',
 			description: content.services.incentiveConsultancy,
-			icon: './assets/icons/consultancy-icon.png'
+			icon: consultingIcon
 		}
 	]
 </script>

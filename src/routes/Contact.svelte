@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte'
+	import officePhone from '$lib/assets/office-phone.webp'
 
 	export let branches: Content.Branch[]
 
@@ -71,7 +72,7 @@
 
 	<div class="image">
 		<div class="watermark" />
-		<img src="/assets/office-phone.png" alt="İletişim" />
+		<img src={officePhone} alt="İletişim" />
 	</div>
 </section>
 

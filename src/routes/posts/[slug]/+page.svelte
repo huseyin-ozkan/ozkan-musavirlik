@@ -1,6 +1,7 @@
 <script lang="ts">
 	import dayjs from 'dayjs'
 	import Markdown from '$lib/components/Markdown.svelte'
+	import booksAndNotebookImg from '$lib/assets/books-and-notebook.webp'
 
 	export let data: {
 		post: Post
@@ -9,7 +10,7 @@
 	const { title, body, mainImage, createdAt } = data.post
 
 	// use the main image if there is one, otherwise use the default
-	const poster = mainImage || `/assets/books-and-notebook.png`
+	const poster = mainImage || booksAndNotebookImg
 	console.log(body)
 </script>
 

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import heroImage from '$lib/assets/hero-image.webp'
+
 	export let content: Content.Hero
 </script>
 
@@ -11,7 +13,7 @@
 	</div>
 
 	<div class="image-container">
-		<img src="/assets/hero-image.jpg" alt="" />
+		<img src={heroImage} alt="Accountant writing on the paper with pen." />
 		<div class="image-cover" />
 	</div>
 </section>
