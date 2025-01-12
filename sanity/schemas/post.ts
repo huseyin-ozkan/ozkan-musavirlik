@@ -25,13 +25,13 @@ const post = defineType({
       title: 'Özet',
       name: 'summary',
       type: 'text',
-      validation: (Rule) => Rule.min(200).max(380),
+      validation: (Rule) => Rule.min(150).max(380),
     },
     {
       name: 'body',
       title: 'Yazı',
       type: 'markdown',
-      validation: (Rule) => Rule.required().min(100).max(20000),
+      validation: (Rule) => Rule.required().min(100).max(25000),
     },
     {
       name: 'mainImage',
