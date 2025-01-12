@@ -19,7 +19,12 @@
 		<span>Özkan Mali Müşavirlik</span></a
 	>
 
-	<button class="mobile-nav-toggle" on:click={toggleMobileNav} on:keyup={toggleMobileNav}>
+	<button
+		class="mobile-nav-toggle"
+		on:click={toggleMobileNav}
+		on:keyup={toggleMobileNav}
+		name="Navigasyon Menüsü"
+	>
 		<Icon icon="eva:menu-2-fill" />
 	</button>
 
