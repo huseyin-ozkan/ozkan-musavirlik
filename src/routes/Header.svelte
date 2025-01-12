@@ -24,6 +24,7 @@
 		on:click={toggleMobileNav}
 		on:keyup={toggleMobileNav}
 		name="Navigasyon Menüsü"
+		title="Navigasyon Menüsü"
 	>
 		<Icon icon="eva:menu-2-fill" />
 	</button>
