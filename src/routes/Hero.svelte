@@ -28,6 +28,7 @@
 	section {
 		--heading-color: #32426d;
 		--heading-size: clamp(2rem, 3vw, 4rem);
+		--subheading-size: clamp(1.1rem, 0.5vw, 2rem);
 
 		--gap: calc(var(--heading-size) * 2);
 
@@ -51,19 +52,20 @@
 
 	.content > h1 {
 		font-family: Zilla Slab, Mulish, sans-serif;
-		font-weight: 600;
-		line-height: 1;
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: 0.02ch;
 		font-size: var(--heading-size);
 		color: var(--heading-color);
 		text-align: left;
 
-		margin-bottom: 0.35em;
+		margin-bottom: 0.5em;
 	}
 
 	.content > p {
 		@include paragraph-1();
-
-		max-width: 50em;
+		font-size: var(--subheading-size);
+		max-width: 35em;
 	}
 
 	.image-container {
