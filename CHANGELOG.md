@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.3.0](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v1.2.0...v1.3.0) (2025-01-12)
+
+
+### Features
+
+* add meta desc ([e7da8c5](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/e7da8c56d8f4e2e36eab98e4873ce830266b0997))
+* better hero section text styling ([b0c3992](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/b0c3992e240e78573f5bd67456d3815db13333d9))
+* blog posts bigger bullets and autoplay ([83f1bc4](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/83f1bc4183d3a879698f0c34c98c7f166b9b84a9))
+* improve the post page layout ([677210a](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/677210a142ca6b89337551be9c92d12fe052a51f))
+* post page better text styling ([3d05abb](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/3d05abb543c54da47d2e8afaf4ec8b69fdc73047))
+* **sanity:** make post max length 25000 characters ([f99cfe5](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/f99cfe54454e5d6c86586dcc1bf26ec430d01250))
+
+
+### Bug Fixes
+
+* contact locations alignment issue ([d19bf01](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/d19bf01c3ba5eb030da6c0b51cf8c1b490931af2))
+
+
+### Performance Improvements
+
+* convert all images to webp ([3ca0399](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/3ca0399137a9b801db39af21710dc43a71fbcc2a))
+
 ## [1.2.0](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v1.1.0...v1.2.0) (2023-12-17)
 
 
