@@ -67,7 +67,7 @@
 		h1 {
 			font-size: var(--main-heading-font-size);
 			font-weight: 700;
-			text-align: center;
+			text-align: start;
 			text-transform: capitalize;
 			margin-bottom: 1em;
 		}
