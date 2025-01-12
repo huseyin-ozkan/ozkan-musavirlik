@@ -42,6 +42,8 @@
 			slidesPerView={1}
 			modules={[Pagination, Autoplay]}
 			pagination={{ clickable: true, type: 'bullets' }}
+			autoplay={{ delay: 3000, pauseOnMouseEnter: true }}
+			freeMode
 		>
 			{#each postPages as page}
 				<SwiperSlide>
@@ -71,7 +73,7 @@
 	}
 	section {
 		--section-bg: #fff;
-		--posts-bullet: #9db8ff;
+		--posts-bullet: #3866dc;
 
 		--section-pv: clamp(20px, 5vw, 100px);
 		--column-gap: 50px;
@@ -150,14 +152,16 @@
 		}
 
 		// Pagination bullets
-		:global(.swiper-posts-bullet) {
-			width: 1rem;
-			height: 1rem;
-			background-color: var(--posts-bullet);
-			opacity: 0.3;
+		:global(.swiper-pagination) {
+			--swiper-pagination-color: #3068f6;
+			--swiper-pagination-bullet-size: 1.1rem;
+			--swiper-pagination-top: 10rem;
+
+			--swiper-pagination-bullet-inactive-opacity: 0.2;
+			--swiper-pagination-bullet-opacity: 1;
+			--swiper-pagination-bullet-horizontal-gap: 0.2em;
 		}
-		:global(.swiper-posts-bullet-active) {
-			opacity: 1;
-		}
+		// :global(.swiper-pagination-bullet) {
+		// }
 	}
 </style>
