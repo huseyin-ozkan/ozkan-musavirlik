@@ -40,8 +40,8 @@
 
 <style lang="scss">
 	.post-container {
-		--main-heading-font-size: clamp(1.8rem, 5vw, 2.8rem);
-		--post-max-width: 75em;
+		--main-heading-font-size: clamp(1.8rem, 4vw, 2.5rem);
+		--post-max-width: 60rem;
 
 		display: flex;
 		flex-direction: column;
@@ -67,7 +67,7 @@
 
 		h1 {
 			font-size: var(--main-heading-font-size);
-			font-weight: 700;
+			font-weight: 800;
 			text-align: start;
 			text-transform: capitalize;
 			margin-bottom: 1em;
@@ -75,10 +75,9 @@
 
 		.post-details {
 			time {
-				color: var(--color-primary);
-				font-weight: 700;
-				font-size: 0.9em;
-				opacity: 0.5;
+				color: var(--color-neutral-pale);
+				font-weight: 400;
+				font-size: 1em;
 			}
 
 			border-bottom: 1px solid #ddd;
