@@ -41,7 +41,7 @@
 <style lang="scss">
 	.post-container {
 		--main-heading-font-size: clamp(1.8rem, 4vw, 2.5rem);
-		--post-max-width: 60rem;
+		--post-max-width: 70rem;
 
 		display: flex;
 		flex-direction: column;
