@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.4.0](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v1.3.0...v1.4.0) (2026-02-28)
+
+
+### Features
+
+* blog post page better text styling ([8fd403f](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/8fd403fb0552c3142f4cc0f7f0fab125d534f109))
+* increase blog post content width to 70em ([c94f036](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/c94f036f59e87e8b172f99212eadfa2bdb15b6b0))
+
+
+### Bug Fixes
+
+* contact numbers wrapping ([8cceec9](https://github.com/huseyin-ozkan/ozkan-musavirlik/commit/8cceec95d998cb0df5e0275fa5879f41b1fabf41))
+
 ## [1.3.0](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v1.2.0...v1.3.0) (2025-01-12)
 
 
