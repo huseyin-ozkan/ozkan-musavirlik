@@ -185,6 +185,10 @@
 		}
 	}
 
+	.phone a {
+		white-space: nowrap;
+	}
+
 	.image {
 		width: clamp(200px, 30vw, 400px);
 		align-self: end;
