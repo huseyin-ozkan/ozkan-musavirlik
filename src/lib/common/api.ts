@@ -28,7 +28,7 @@ export const posts = {
 					body: undefined,
 					// TODO remove markdown stuff and links when getting from body
 					summary: post?.summary ?? post.body.slice(0, 400)
-				} as unknown as PostPreview)
+				}) as unknown as PostPreview
 		)
 
 		return posts

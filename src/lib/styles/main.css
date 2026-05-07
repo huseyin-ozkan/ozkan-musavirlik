@@ -30,7 +30,10 @@
 	outline: none;
 
 	/* typography */
-	font-family: Mulish, Segoe UI, sans-serif;
+	font-family:
+		Mulish,
+		Segoe UI,
+		sans-serif;
 	color: var(--color-neutral);
 	font-size: 1rem;
 	font-style: normal;

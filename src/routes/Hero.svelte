@@ -51,7 +51,10 @@
 	}
 
 	.content > h1 {
-		font-family: Zilla Slab, Mulish, sans-serif;
+		font-family:
+			Zilla Slab,
+			Mulish,
+			sans-serif;
 		font-weight: 700;
 		line-height: 1.2;
 		letter-spacing: 0.02ch;
@@ -108,8 +111,8 @@
 		position: absolute;
 		inset: 0;
 
-		background: var(--gradient-radial), var(--gradient-left), var(--gradient-right),
-			var(--gradient-vertical);
+		background:
+			var(--gradient-radial), var(--gradient-left), var(--gradient-right), var(--gradient-vertical);
 
 		// @include breakpoint() {
 		// 	background: var(--gradient-radial), var(--gradient-left);

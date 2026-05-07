@@ -78,3 +78,5 @@ declare namespace Content {
 		email: string
 	}
 }
+
+declare module 'swiper'
