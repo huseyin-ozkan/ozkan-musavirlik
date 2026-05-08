@@ -8,12 +8,7 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		// Cloudflare adapter for Pages/Workers deployment.
-		adapter: adapter({
-			platformProxy: {
-				persist: false
-			}
-		})
+		adapter: adapter()
 	}
 }
 
