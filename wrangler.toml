@@ -1,4 +1,4 @@
-name = "regule-landing"
+name = 'ozkan-musavirlik'
 pages_build_output_dir = ".svelte-kit/cloudflare"
 compatibility_date = "2025-11-14"
 compatibility_flags = ["nodejs_compat"]
