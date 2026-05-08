@@ -7,7 +7,7 @@ on:
   push:
     branches: [master]
   pull_request:
-    branches: '*'
+    branches: "*"
 
 permissions:
   contents: write
@@ -20,27 +20,27 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'pnpm'
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: latest
 
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "pnpm"
+
       - name: 📥 Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: 📥 Install Sanity dependencies
-        run: cd sanity && pnpm install --frozen-lockfile
+      # - name: 📥 Install Sanity dependencies
+      #   run: cd sanity && npm ci
 
       - name: Pretty
         run: pnpm run format
@@ -83,16 +83,16 @@ jobs:
       # # a new release is created:
       # - name: Check out code
       #   if: ${{ steps.version.outputs.release_created }}
-      #   uses: actions/checkout@v3
+      #   uses: actions/checkout@v4
       #   with:
       #     # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
       #     fetch-depth: 0
 
-      # - name: Use Node.js 18
+      # - name: Use Node.js 22
       #   if: ${{ steps.version.outputs.release_created }}
-      #   uses: actions/setup-node@v3
+      #   uses: actions/setup-node@v4
       #   with:
-      #     node-version: 18
+      #     node-version: 22
       #     registry-url: 'https://registry.npmjs.org'
       #     cache: 'pnpm'
 
