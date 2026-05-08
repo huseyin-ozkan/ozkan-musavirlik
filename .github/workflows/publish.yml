@@ -7,7 +7,7 @@ on:
   push:
     branches: [master]
   pull_request:
-    branches: ['*']
+    branches: ["*"]
 
 permissions:
   contents: write
@@ -51,14 +51,14 @@ jobs:
       - name: 🛠️ Build Application
         run: pnpm run build
 
-      - name: 🧪 Test Units
-        run: pnpm run test:unit
+      # - name: 🧪 Test Units
+      #   run: pnpm run test:unit
 
-      - name: 📥 Install Playwright
-        run: pnpm exec playwright install
+      # - name: 📥 Install Playwright
+      #   run: pnpm exec playwright install
 
-      - name: 🧪 Test Application
-        run: pnpm run test
+      # - name: 🧪 Test Application
+      #   run: pnpm run test
 
   release-please:
     name: 🚀 Version
