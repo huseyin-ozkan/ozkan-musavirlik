@@ -1,4 +1,4 @@
-@import 'responsive';
+@use 'responsive' as *;
 
 $page-padding: clamp(10px, 5vw, 150px);
 $page-max-width: 1600px;

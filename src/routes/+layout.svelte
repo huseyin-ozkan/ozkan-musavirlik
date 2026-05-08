@@ -6,6 +6,7 @@
 	dayjs.locale('tr')
 
 	import '$lib/styles/main.css'
+	import '$lib/styles/app.scss'
 
 	// SECTIONS
 	import Header from './Header.svelte'

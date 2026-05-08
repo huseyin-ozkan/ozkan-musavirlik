@@ -1,5 +1,5 @@
-@import 'responsive';
-@import 'utils';
+@forward 'responsive';
+@forward 'utils';
 
 @mixin section-title {
 	margin-bottom: 10px;
