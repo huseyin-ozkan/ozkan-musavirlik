@@ -25,8 +25,8 @@
 
 <style lang="scss">
 	article {
-		--color-date: #6a93ff;
-		--color-p: #7988bb;
+		--color-date: var(--color-primary);
+		--color-p: var(--color-neutral-pale);
 
 		--h1-font-size: 1.15rem;
 		--date-font-size: 0.8rem;

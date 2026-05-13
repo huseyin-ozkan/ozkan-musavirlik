@@ -30,7 +30,7 @@
 	}
 
 	section {
-		--heading-color: #32426d;
+		--heading-color: var(--color-neutral);
 		--heading-size: clamp(2rem, 3vw, 4rem);
 		--subheading-size: clamp(1.1rem, 0.5vw, 2rem);
 
@@ -56,7 +56,7 @@
 
 	.content > h1 {
 		font-family:
-			Zilla Slab,
+			Crimson Pro,
 			Mulish,
 			sans-serif;
 		font-weight: 700;

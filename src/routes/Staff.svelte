@@ -1,11 +1,10 @@
 <script lang="ts">
 	interface Props {
-		staff: Content.Staff[]; // // mock
+		staff: Content.Staff[] // // mock
 	}
 
-	let { staff }: Props = $props();
+	let { staff }: Props = $props()
 
-	
 	// const staff: Staff[] = [
 	// 	{
 	// 		name: 'Hüseyin Özkan',
@@ -129,7 +128,7 @@
 
 	ul > li > figure > figcaption > .name {
 		font-size: var(--name-font-size);
-		font-family: 'Zilla Slab';
+		font-family: 'Crimson Pro';
 		font-weight: 600;
 		line-height: 116%;
 

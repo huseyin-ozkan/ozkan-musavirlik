@@ -84,7 +84,7 @@
 				font-size: 1em;
 			}
 
-			border-bottom: 1px solid #ddd;
+			border-bottom: 1px solid var(--color-base-400);
 			padding-bottom: 1em;
 			margin-bottom: 1em;
 		}

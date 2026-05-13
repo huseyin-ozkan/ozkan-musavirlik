@@ -1,12 +1,11 @@
 <script lang="ts">
 	import accountingCalculator from '$lib/assets/accounting-calculator.webp'
 	interface Props {
-		content: Content.About; // Mock data
+		content: Content.About // Mock data
 	}
 
-	let { content }: Props = $props();
+	let { content }: Props = $props()
 
-	
 	// const paragraph =
 	// 		'2012 yılından itibaren Yahyalı ve Kayseri’de Serbest Muhasebeci Mali Müşavirlik faaliyeti yürütmekteyiz. SPK lisanslı Gayrimenkul Değerleme Uzmanı olan Hüseyin Özkan tarafından talep üzerine özel veya kamu otoritelerine verilmek üzere Gayrimenkul Ekspertiz Raporlama faaliyetinde bulunmaktayız.'
 
@@ -121,7 +120,7 @@
 			h2 {
 				font-size: var(--title-font-size);
 				font-weight: 700;
-				font-family: 'Zilla Slab';
+				font-family: 'Crimson Pro';
 				margin-bottom: 0.8em;
 			}
 

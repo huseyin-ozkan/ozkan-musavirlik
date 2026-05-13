@@ -83,8 +83,8 @@
 	}
 
 	header.scrolled {
-		box-shadow: 0 0 48px rgba(#2b4499, 0.4);
-		border-bottom: #e1e1e1 1px solid;
+		box-shadow: 0 0 48px color-mix(in srgb, var(--color-primary) 40%, transparent);
+		border-bottom: 1px solid var(--color-base-400);
 	}
 
 	.logo {
@@ -105,7 +105,7 @@
 		font-weight: 800;
 		color: var(--logo-color);
 		font-size: var(--logo-size);
-		font-family: 'Zilla Slab';
+		font-family: 'Crimson Pro';
 		white-space: nowrap;
 
 		padding: 0.66em 0;
@@ -194,7 +194,7 @@
 		font-weight: 700;
 		color: var(--nav-item-color);
 		font-size: var(--nav-item-size);
-		font-family: 'Zilla Slab';
+		font-family: 'Crimson Pro';
 
 		white-space: nowrap;
 

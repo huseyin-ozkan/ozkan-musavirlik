@@ -81,7 +81,7 @@
 
 <style lang="scss">
 	#contact {
-		--color-section-bg: #fff;
+		--color-section-bg: var(--color-base-100);
 
 		--color-branch-bg: var(--color-base-100);
 		--color-icon: var(--color-neutral-vivid);
@@ -159,7 +159,7 @@
 	li > .name {
 		font-size: var(--name-font-size);
 		font-weight: 700;
-		font-family: 'Zilla Slab';
+		font-family: 'Crimson Pro';
 
 		width: 100%;
 		margin-bottom: 1.1em;

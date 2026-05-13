@@ -61,8 +61,8 @@
 		}
 	}
 	section {
-		--section-bg: #fff;
-		--posts-bullet: #3866dc;
+		--section-bg: var(--color-base-100);
+		--posts-bullet: var(--color-primary);
 
 		--section-pv: clamp(20px, 5vw, 100px);
 		--column-gap: 50px;

@@ -4,7 +4,7 @@
 
 a,
 a:visited {
-	color: #3498db;
+	color: var(--color-primary);
 	text-decoration: underline;
 	font-weight: 400;
 }
@@ -12,7 +12,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-	color: #2980b9;
+	color: var(--color-primary-darker);
 }
 
 p {
@@ -64,13 +64,13 @@ textarea {
 }
 
 blockquote {
-	border-left: 8px solid #fafafa;
+	border-left: 8px solid var(--color-base-200);
 	padding: 1rem;
 }
 
 pre,
 code {
-	background-color: #fafafa;
+	background-color: var(--color-base-200);
 	font-family: Menlo, Monaco, 'Courier New', monospace;
 }
 

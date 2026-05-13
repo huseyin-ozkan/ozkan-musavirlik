@@ -1,15 +1,35 @@
+/* Self-hosted variable WOFF2 (Turkish subset); see scripts/subset-turkish-vf-fonts.sh */
+@font-face {
+	font-family: 'Crimson Pro';
+	src: url('/fonts/crimson-pro-turkish.woff2') format('woff2');
+	font-weight: 200 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Readex Pro';
+	src: url('/fonts/readex-pro-turkish.woff2') format('woff2');
+	font-weight: 160 700;
+	font-style: normal;
+	font-display: swap;
+}
+
 :root {
-	/* Colors */
-	--color-primary: #2b4499;
-	--color-accent: #fcde8a;
+	/* Colors — aligned with Figma file VokTnVZeihNONAQhzMLvpS (Özkan Mali Müşavirlik) */
+	--color-primary: #0e57be;
+	--color-primary-darker: #1854a9;
+	--color-primary-lighter: #2469ca;
+	--color-accent: #f5d682;
 
-	--color-base-100: #fafdff;
-	--color-base-200: #dbe8f0;
-	--color-base-300: #bdd3e2;
+	--color-base-100: #ffffff;
+	--color-base-200: #fafafa;
+	--color-base-300: #f6f5f4;
+	--color-base-400: #efeeec;
 
-	--color-neutral: #1d2d64;
-	--color-neutral-pale: #636f98;
-	--color-neutral-vivid: #849ce8;
+	--color-neutral: #151e2a;
+	--color-neutral-pale: #334e72;
+	--color-neutral-vivid: #25518f;
 
 	/* scrollbar */
 	--color-scrollbar-track: var(--color-base-100);
@@ -31,8 +51,9 @@
 
 	/* typography */
 	font-family:
-		Mulish,
+		Readex Pro,
 		Segoe UI,
+		Helvetica,
 		sans-serif;
 	color: var(--color-neutral);
 	font-size: 1rem;

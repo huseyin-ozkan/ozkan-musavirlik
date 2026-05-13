@@ -100,7 +100,7 @@
 		color: var(--color-base-100);
 		font-size: var(--logo-font-size);
 		font-weight: 500;
-		font-family: 'Zilla Slab';
+		font-family: 'Crimson Pro';
 	}
 
 	// nav
@@ -127,7 +127,7 @@
 		font-weight: 600;
 		color: var(--color-neutral);
 		font-size: var(--nav-item-size);
-		font-family: 'Zilla Slab';
+		font-family: 'Crimson Pro';
 
 		padding: 0.25em 2em;
 
