@@ -1,8 +1,12 @@
 <script lang="ts">
 	import accountingCalculator from '$lib/assets/accounting-calculator.webp'
-	export let content: Content.About
+	interface Props {
+		content: Content.About; // Mock data
+	}
 
-	// Mock data
+	let { content }: Props = $props();
+
+	
 	// const paragraph =
 	// 		'2012 yılından itibaren Yahyalı ve Kayseri’de Serbest Muhasebeci Mali Müşavirlik faaliyeti yürütmekteyiz. SPK lisanslı Gayrimenkul Değerleme Uzmanı olan Hüseyin Özkan tarafından talep üzerine özel veya kamu otoritelerine verilmek üzere Gayrimenkul Ekspertiz Raporlama faaliyetinde bulunmaktayız.'
 
@@ -32,7 +36,7 @@
 	</section>
 
 	<div class="image">
-		<div class="watermark" />
+		<div class="watermark"></div>
 		<img src={accountingCalculator} alt="" aria-hidden="true" />
 	</div>
 </section>

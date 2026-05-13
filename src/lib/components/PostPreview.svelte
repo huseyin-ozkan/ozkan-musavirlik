@@ -1,7 +1,11 @@
 <script lang="ts">
 	import dayjs from 'dayjs'
 
-	export let post: Post
+	interface Props {
+		post: Post
+	}
+
+	let { post }: Props = $props()
 
 	// if there is no summary, get the body without html tags
 	const summary = post?.summary || post.body.replace(/<[^>]*>?/gm, '')

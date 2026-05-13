@@ -1,10 +1,12 @@
 <script lang="ts">
+	import { self } from 'svelte/legacy'
+
 	import Icon from '@iconify/svelte'
 	import { ROUTES, NAV_ROUTES } from '$lib/config/routes'
 
-	let mobileNavOpen = false
-	let scroll: number
-	$: scrolled = scroll > 50
+	let mobileNavOpen = $state(false)
+	let scroll: number = $state(0)
+	let scrolled = $derived(scroll > 50)
 
 	function toggleMobileNav() {
 		mobileNavOpen = !mobileNavOpen
@@ -21,8 +23,8 @@
 
 	<button
 		class="mobile-nav-toggle"
-		on:click={toggleMobileNav}
-		on:keyup={toggleMobileNav}
+		onclick={toggleMobileNav}
+		onkeyup={toggleMobileNav}
 		name="Navigasyon Menüsü"
 		title="Navigasyon Menüsü"
 	>
@@ -30,14 +32,14 @@
 	</button>
 
 	<nav
-		on:click|self={toggleMobileNav}
-		on:keyup|self={toggleMobileNav}
+		onclick={self(toggleMobileNav)}
+		onkeyup={self(toggleMobileNav)}
 		class:mobile-nav-open={mobileNavOpen}
 	>
 		<ul>
 			{#each NAV_ROUTES as route (route.path)}
 				<li>
-					<a href={route.path} title={route.title} on:click={toggleMobileNav}>
+					<a href={route.path} title={route.title} onclick={toggleMobileNav}>
 						{route.title}
 					</a>
 				</li>

@@ -6,13 +6,17 @@
 	import Contact from './Contact.svelte'
 	import Services from './Services.svelte'
 
-	export let data: {
+	interface Props {
+		data: {
 		posts: Post[]
 		hero: Content.Hero
 		about: Content.About
 		staff: Content.Staff[]
 		branches: Content.Branch[]
+	};
 	}
+
+	let { data }: Props = $props();
 </script>
 
 <Hero content={data.hero} />

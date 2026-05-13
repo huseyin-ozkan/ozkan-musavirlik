@@ -1,7 +1,11 @@
 <script lang="ts">
-	export let staff: Content.Staff[]
+	interface Props {
+		staff: Content.Staff[]; // // mock
+	}
 
-	// // mock
+	let { staff }: Props = $props();
+
+	
 	// const staff: Staff[] = [
 	// 	{
 	// 		name: 'Hüseyin Özkan',

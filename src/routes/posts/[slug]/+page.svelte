@@ -3,9 +3,13 @@
 	import Markdown from '$lib/components/Markdown.svelte'
 	import booksAndNotebookImg from '$lib/assets/books-and-notebook.webp'
 
-	export let data: {
-		post: Post
+	interface Props {
+		data: {
+			post: Post
+		}
 	}
+
+	let { data }: Props = $props()
 
 	const { title, body, mainImage, createdAt } = data.post
 

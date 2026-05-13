@@ -3,7 +3,11 @@
 	import consultingIcon from '$lib/assets/icons/consultancy-icon.webp'
 	import realEstateIcon from '$lib/assets/icons/real-estate-appraisal-icon.webp'
 
-	export let content: Content.Hero
+	interface Props {
+		content: Content.Hero;
+	}
+
+	let { content }: Props = $props();
 
 	type Service = {
 		title: string // min 10 max 25

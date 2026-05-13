@@ -2,9 +2,12 @@
 	import Icon from '@iconify/svelte'
 	import officePhone from '$lib/assets/office-phone.webp'
 
-	export let branches: Content.Branch[]
+	interface Props {
+		branches: Content.Branch[] // mock data
+	}
 
-	// mock data
+	let { branches }: Props = $props()
+
 	// const branches: Content.Branch[] = [
 	// 	{
 	// 		name: 'Kayseri',
@@ -71,7 +74,7 @@
 	</div>
 
 	<div class="image">
-		<div class="watermark" />
+		<div class="watermark"></div>
 		<img src={officePhone} alt="İletişim" />
 	</div>
 </section>

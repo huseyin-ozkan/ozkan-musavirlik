@@ -1,24 +1,24 @@
 <script lang="ts">
-	import 'swiper/css'
-	import 'swiper/css/autoplay'
-	import 'swiper/css/pagination'
-	import { Swiper, SwiperSlide } from 'swiper/svelte'
-	import { Pagination, Autoplay } from 'swiper'
-
 	import PostPreview from '$lib/components/PostPreview.svelte'
 
-	export let posts: Post[]
+	interface Props {
+		posts: Post[]
+	}
 
-	$: postPages = posts
-		.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
-		.reduce((prev, cur) => {
-			// paginate to 6 posts per page
-			if (prev.length === 0 || prev[prev.length - 1].length === 6) prev.push([])
+	let { posts }: Props = $props()
 
-			prev[prev.length - 1].push(cur)
+	let postPages = $derived(
+		posts
+			.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+			.reduce((prev, cur) => {
+				// paginate to 6 posts per page
+				if (prev.length === 0 || prev[prev.length - 1].length === 6) prev.push([])
 
-			return prev
-		}, [] as any[][])
+				prev[prev.length - 1].push(cur)
+
+				return prev
+			}, [] as any[][])
+	)
 </script>
 
 <section id="blog">
@@ -37,24 +37,13 @@
 	</div>
 
 	<div class="posts">
-		<Swiper
-			spaceBetween={10}
-			slidesPerView={1}
-			modules={[Pagination, Autoplay]}
-			pagination={{ clickable: true, type: 'bullets' }}
-			autoplay={{ delay: 3000, pauseOnMouseEnter: true }}
-			freeMode
-		>
-			{#each postPages as page}
-				<SwiperSlide>
-					<div class="page">
-						{#each page as post}
-							<PostPreview {post} />
-						{/each}
-					</div>
-				</SwiperSlide>
-			{/each}
-		</Swiper>
+		{#each postPages as page}
+			<div class="page">
+				{#each page as post}
+					<PostPreview {post} />
+				{/each}
+			</div>
+		{/each}
 	</div>
 
 	<div class="mobile-posts">
@@ -150,18 +139,5 @@
 			column-gap: var(--column-gap);
 			row-gap: var(--row-gap);
 		}
-
-		// Pagination bullets
-		:global(.swiper-pagination) {
-			--swiper-pagination-color: #3068f6;
-			--swiper-pagination-bullet-size: 1.1rem;
-			--swiper-pagination-top: 10rem;
-
-			--swiper-pagination-bullet-inactive-opacity: 0.2;
-			--swiper-pagination-bullet-opacity: 1;
-			--swiper-pagination-bullet-horizontal-gap: 0.2em;
-		}
-		// :global(.swiper-pagination-bullet) {
-		// }
 	}
 </style>
