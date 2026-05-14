@@ -1,44 +1,44 @@
 <script lang="ts">
-	import accountingIcon from '$lib/assets/icons/accountancy-icon.webp'
-	import consultingIcon from '$lib/assets/icons/consultancy-icon.webp'
-	import realEstateIcon from '$lib/assets/icons/real-estate-appraisal-icon.webp'
+	import accountingImg from '$lib/assets/services/accountancy.webp'
+	import consultingImg from '$lib/assets/services/consultancy.webp'
+	import realEstateImg from '$lib/assets/services/real-estate.webp'
 
 	interface Props {
-		content: Content.Hero;
+		content: Content.Hero
 	}
 
-	let { content }: Props = $props();
+	let { content }: Props = $props()
 
 	type Service = {
 		title: string // min 10 max 25
 		description: string
-		icon: string
+		image: string
 	}
 
-	const services: Service[] = [
+	const services: Service[] = $derived([
 		{
 			title: 'Mali Müşavirlik',
 			description: content.services.accountancy,
-			icon: accountingIcon
+			image: accountingImg
 		},
 		{
 			title: 'Gayrimenkul Değerleme',
 			description: content.services.realEstateAppraisal,
-			icon: realEstateIcon
+			image: realEstateImg
 		},
 		{
 			title: 'Destek Danışmanlığı',
 			description: content.services.incentiveConsultancy,
-			icon: consultingIcon
+			image: consultingImg
 		}
-	]
+	])
 </script>
 
 <section>
 	{#each services as service}
 		<figure class="service">
-			<div class="icon">
-				<img src={service.icon} alt={service.title} />
+			<div class="img-wrapper">
+				<img src={service.image} alt={service.title} />
 			</div>
 
 			<figcaption>
@@ -61,10 +61,10 @@
 
 		--title-font-size: clamp(1.1rem, 1.5vw, 1.6rem);
 		--desc-font-size: 0.85rem;
-		--desc-width: calc(var(--title-font-size) * 10);
 
 		--service-width: calc(var(--title-font-size) * 10);
-		--icon-width: clamp(50px, 5vw, 100px);
+		--img-width: clamp(80px, 8vw, 100px);
+		--img-aspect-ratio: 100/75;
 
 		--title-color: var(--color-neutral);
 		--description-color: var(--color-neutral-pale);
@@ -76,7 +76,7 @@
 		padding-bottom: $page-padding;
 
 		row-gap: 2rem;
-		column-gap: 7rem;
+		column-gap: 2rem;
 
 		@include breakpoint() {
 			flex-direction: row;
@@ -87,6 +87,7 @@
 	}
 
 	.service {
+		flex: 1;
 		display: flex;
 		align-items: center;
 		// border: crimson 1px dashed;
@@ -94,30 +95,50 @@
 		width: 100%;
 
 		@include breakpoint {
-			width: min-content;
+			max-width: 400px;
 		}
 		@include xl {
 			flex-grow: 1;
 		}
 	}
 
-	.icon {
+	.img-wrapper {
+		flex-shrink: 0;
+
 		position: relative;
-		width: var(--icon-width);
-		margin-right: calc(var(--icon-width) * 0.2);
+
+		margin-right: calc(var(--img-width) * 0.2);
+		aspect-ratio: var(--img-aspect-ratio);
+		width: var(--img-width);
+
+		img {
+			border-radius: var(--radius-card);
+		}
+
+		margin-left: calc(var(--img-width) * 0.25);
+
+		@include before() {
+			width: 115%;
+			height: 125%;
+			border-radius: 64px;
+			rotate: 10deg;
+			left: -25%;
+			top: -18%;
+
+			background: linear-gradient(109deg, var(--color-accent), transparent);
+		}
 	}
 
-	.service > figcaption > h1 {
-		font-size: var(--title-font-size);
-		font-weight: 800;
-		color: var(--title-color);
+	.service h1 {
+		@include mini-title();
+
 		white-space: nowrap;
-		width: min-content;
+		color: var(--title-color);
+		margin-bottom: 0.5em;
 	}
 
-	.service > figcaption > p {
-		font-size: var(--desc-font-size);
+	.service p {
+		@include subtitle();
 		color: var(--description-color);
-		width: var(--desc-width);
 	}
 </style>
