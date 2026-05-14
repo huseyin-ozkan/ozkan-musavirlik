@@ -159,7 +159,7 @@
 	li > .name {
 		font-size: var(--name-font-size);
 		font-weight: 700;
-		font-family: 'Crimson Pro';
+		font-family: var(--font-display);
 
 		width: 100%;
 		margin-bottom: 1.1em;

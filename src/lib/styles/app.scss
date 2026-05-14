@@ -4,22 +4,83 @@
 @mixin section-title {
 	margin-bottom: 10px;
 
-	font-family: Crimson Pro;
-	font-size: 2.5rem;
-	font-weight: 700;
+	font-family: var(--font-display);
+	font-size: clamp(1.75rem, 4vw, var(--type-section-title-size));
+	font-weight: var(--type-section-title-weight);
+	line-height: var(--type-section-title-line-height);
+	letter-spacing: var(--type-section-title-tracking);
+	color: var(--color-neutral);
+}
+
+@mixin part-title {
+	font-family: var(--font-display);
+	font-size: clamp(1.25rem, 3vw, var(--type-part-title-size));
+	font-weight: var(--type-part-title-weight);
+	line-height: var(--type-part-title-line-height);
+	letter-spacing: var(--type-part-title-tracking);
+	color: var(--color-neutral);
+}
+
+@mixin mini-title {
+	font-family: var(--font-sans);
+	font-size: var(--type-mini-title-size);
+	font-weight: var(--type-mini-title-weight);
+	line-height: var(--type-mini-title-line-height);
+	letter-spacing: var(--type-mini-title-tracking);
 	color: var(--color-neutral);
 }
 
 @mixin paragraph-1 {
-	font-size: 1rem;
-	font-weight: 600;
-	line-height: 115%;
+	font-family: var(--font-sans);
+	font-size: clamp(1rem, 2vw, var(--type-paragraph-1-size));
+	font-weight: var(--type-paragraph-1-weight);
+	line-height: var(--type-paragraph-1-line-height);
+	letter-spacing: var(--type-paragraph-1-tracking);
 	color: var(--color-neutral-pale);
 }
 
 @mixin paragraph-2 {
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 125%;
+	font-family: var(--font-sans);
+	font-size: var(--type-paragraph-2-size);
+	font-weight: var(--type-paragraph-2-weight);
+	line-height: var(--type-paragraph-2-line-height);
+	letter-spacing: var(--type-paragraph-2-tracking);
+	color: var(--color-neutral-pale);
+}
+
+@mixin subtitle {
+	font-family: var(--font-sans);
+	font-size: var(--type-subtitle-size);
+	font-weight: var(--type-subtitle-weight);
+	line-height: var(--type-subtitle-line-height);
+	letter-spacing: var(--type-subtitle-tracking);
+	color: var(--color-neutral-pale);
+}
+
+@mixin subtitle-2 {
+	font-family: var(--font-sans);
+	font-size: var(--type-subtitle-2-size);
+	font-weight: var(--type-subtitle-2-weight);
+	line-height: var(--type-subtitle-2-line-height);
+	letter-spacing: var(--type-subtitle-2-tracking);
+	color: var(--color-neutral-pale);
+}
+
+@mixin label {
+	font-family: var(--font-sans);
+	font-size: var(--type-label-size);
+	font-weight: var(--type-label-weight);
+	line-height: var(--type-label-line-height);
+	letter-spacing: var(--type-label-tracking);
+	color: var(--color-neutral);
+}
+
+@mixin label-2 {
+	font-family: var(--font-sans);
+	font-size: var(--type-label-2-size);
+	font-weight: var(--type-label-2-weight);
+	line-height: var(--type-label-2-line-height);
+	letter-spacing: var(--type-label-2-tracking);
+	text-decoration: underline;
 	color: var(--color-neutral-pale);
 }

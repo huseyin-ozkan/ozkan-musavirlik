@@ -105,7 +105,7 @@
 		font-weight: 800;
 		color: var(--logo-color);
 		font-size: var(--logo-size);
-		font-family: 'Crimson Pro';
+		font-family: var(--font-display);
 		white-space: nowrap;
 
 		padding: 0.66em 0;
@@ -194,7 +194,7 @@
 		font-weight: 700;
 		color: var(--nav-item-color);
 		font-size: var(--nav-item-size);
-		font-family: 'Crimson Pro';
+		font-family: var(--font-display);
 
 		white-space: nowrap;
 

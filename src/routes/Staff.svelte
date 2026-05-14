@@ -128,7 +128,7 @@
 
 	ul > li > figure > figcaption > .name {
 		font-size: var(--name-font-size);
-		font-family: 'Crimson Pro';
+		font-family: var(--font-display);
 		font-weight: 600;
 		line-height: 116%;
 

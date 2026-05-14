@@ -120,7 +120,7 @@
 			h2 {
 				font-size: var(--title-font-size);
 				font-weight: 700;
-				font-family: 'Crimson Pro';
+				font-family: var(--font-display);
 				margin-bottom: 0.8em;
 			}
 

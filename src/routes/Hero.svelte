@@ -55,13 +55,10 @@
 	}
 
 	.content > h1 {
-		font-family:
-			Crimson Pro,
-			Mulish,
-			sans-serif;
-		font-weight: 700;
-		line-height: 1.2;
-		letter-spacing: 0.02ch;
+		font-family: var(--font-display);
+		font-weight: var(--type-section-title-weight);
+		line-height: var(--type-section-title-line-height);
+		letter-spacing: var(--type-section-title-tracking);
 		font-size: var(--heading-size);
 		color: var(--heading-color);
 		text-align: left;

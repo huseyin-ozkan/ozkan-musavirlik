@@ -43,7 +43,7 @@
 		--notice-bg-color: var(--color-base-300);
 		--notice-text-color: var(--color-neutral-pale);
 
-		--notice-font-size: 12px;
+		--notice-font-size: 0.75rem;
 		--logo-font-size: 1rem;
 		--nav-item-size: 1rem;
 
@@ -100,7 +100,7 @@
 		color: var(--color-base-100);
 		font-size: var(--logo-font-size);
 		font-weight: 500;
-		font-family: 'Crimson Pro';
+		font-family: var(--font-display);
 	}
 
 	// nav
@@ -127,7 +127,7 @@
 		font-weight: 600;
 		color: var(--color-neutral);
 		font-size: var(--nav-item-size);
-		font-family: 'Crimson Pro';
+		font-family: var(--font-display);
 
 		padding: 0.25em 2em;
 

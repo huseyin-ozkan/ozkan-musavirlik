@@ -20,16 +20,79 @@
 	--color-primary: #0e57be;
 	--color-primary-darker: #1854a9;
 	--color-primary-lighter: #2469ca;
+	--color-primary-content: #ffffff;
 	--color-accent: #f5d682;
 
 	--color-base-100: #ffffff;
-	--color-base-200: #fafafa;
+	--color-base-200: #fafaf9;
 	--color-base-300: #f6f5f4;
 	--color-base-400: #efeeec;
 
 	--color-neutral: #151e2a;
 	--color-neutral-pale: #334e72;
 	--color-neutral-vivid: #25518f;
+
+	/* Font stacks (Figma: font-display, font-sans) */
+	--font-display: 'Crimson Pro', ui-serif, Georgia, serif;
+	--font-sans: 'Readex Pro', 'Segoe UI', Helvetica, sans-serif;
+
+	/* Radii (Figma: card-border-radius, btn-border-radius) */
+	--radius-card: 20px;
+	--radius-btn: 10px;
+
+	/* Elevation (Figma: btn-shadow-sm → #0E171326, offset 0 4, blur 8) */
+	--shadow-btn-sm: 0 4px 8px 0 rgb(14 23 19 / 0.149);
+
+	/*
+	 * Text styles from Figma; sizes in rem (1rem = 16px).
+	 * Letter-spacing: Figma % as CSS % (relative to computed font-size).
+	 */
+	--type-mini-title-size: 1.125rem;
+	--type-mini-title-weight: 700;
+	--type-mini-title-line-height: 1.3;
+	--type-mini-title-tracking: -1%;
+
+	--type-section-title-size: 4rem;
+	--type-section-title-weight: 600;
+	--type-section-title-line-height: 1;
+	--type-section-title-tracking: 0%;
+
+	--type-part-title-size: 2rem;
+	--type-part-title-weight: 600;
+	--type-part-title-line-height: 1;
+	--type-part-title-tracking: 0%;
+
+	--type-paragraph-1-size: 1.25rem;
+	--type-paragraph-1-weight: 400;
+	--type-paragraph-1-line-height: 1.5;
+	--type-paragraph-1-tracking: 0%;
+
+	--type-paragraph-2-size: 1rem;
+	--type-paragraph-2-weight: 400;
+	--type-paragraph-2-line-height: 1.5;
+	--type-paragraph-2-tracking: 0%;
+
+	--type-subtitle-size: 0.875rem;
+	--type-subtitle-weight: 400;
+	--type-subtitle-line-height: 1.16;
+	--type-subtitle-tracking: 0%;
+
+	--type-subtitle-2-size: 0.8125rem;
+	--type-subtitle-2-weight: 400;
+	--type-subtitle-2-line-height: 1.4;
+	--type-subtitle-2-tracking: 2%;
+
+	/* Label (Figma text style: Label) */
+	--type-label-size: 0.875rem;
+	--type-label-weight: 500;
+	--type-label-line-height: 1.16;
+	--type-label-tracking: 0%;
+
+	/* Label 2 (Figma local text style; pulled via Plugin API) */
+	--type-label-2-size: 0.75rem;
+	--type-label-2-weight: 500;
+	--type-label-2-line-height: 1.16;
+	--type-label-2-tracking: 0%;
 
 	/* scrollbar */
 	--color-scrollbar-track: var(--color-base-100);
@@ -50,11 +113,7 @@
 	outline: none;
 
 	/* typography */
-	font-family:
-		Readex Pro,
-		Segoe UI,
-		Helvetica,
-		sans-serif;
+	font-family: var(--font-sans);
 	color: var(--color-neutral);
 	font-size: 1rem;
 	font-style: normal;
