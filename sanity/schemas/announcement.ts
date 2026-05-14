@@ -1,4 +1,5 @@
 import {defineType} from 'sanity'
+import {categories} from '../categories'
 
 const announcement = defineType({
   name: 'announcement',
@@ -17,12 +18,15 @@ const announcement = defineType({
       type: 'text',
       validation: (Rule) => Rule.min(0).max(500),
     },
-    // {
-    //   name: 'categories',
-    //   title: 'Kategoriler',
-    //   type: 'array',
-    //   of: [{type: 'reference', to: {type: 'category'}}],
-    // },
+    {
+      title: 'Kategori',
+      name: 'category',
+      type: 'string',
+      options: {
+        list: categories,
+        layout: 'dropdown',
+      },
+    },
   ],
 })
 

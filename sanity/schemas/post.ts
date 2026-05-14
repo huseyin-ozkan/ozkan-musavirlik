@@ -1,4 +1,5 @@
 import {defineType} from 'sanity'
+import {categories} from '../categories'
 
 const post = defineType({
   name: 'post',
@@ -22,6 +23,15 @@ const post = defineType({
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Kategori',
+      name: 'category',
+      type: 'string',
+      options: {
+        list: categories,
+        layout: 'dropdown',
+      },
+    },
+    {
       title: 'Özet',
       name: 'summary',
       type: 'text',
@@ -41,12 +51,6 @@ const post = defineType({
         hotspot: true,
       },
     },
-    // {
-    //   name: 'categories',
-    //   title: 'Kategoriler',
-    //   type: 'array',
-    //   of: [{type: 'reference', to: {type: 'category'}}],
-    // },
   ],
 })
 
