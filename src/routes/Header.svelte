@@ -14,7 +14,7 @@
 <svelte:window bind:scrollY={scroll} />
 
 <header class:scrolled>
-	<a href={ROUTES.home.path} title={ROUTES.home.title} class="logo">
+	<a href={'/'} title="Ana Sayfa" class="logo">
 		<img src="/favicon.png" alt="" aria-hidden="true" />
 		<span>Özkan Mali Müşavirlik</span></a
 	>
@@ -33,7 +33,13 @@
 		<ul>
 			{#each NAV_ROUTES as route (route.path)}
 				<li>
-					<a href={route.path} title={route.title} onclick={toggleMobileNav}>
+					<a
+						href={route.path}
+						title={route.title}
+						onclick={toggleMobileNav}
+						class:btn-primary-sm={route.isPrimary}
+						class={route.isPrimary ? 'btn-primary-sm' : 'btn-shadow-sm'}
+					>
 						{route.title}
 					</a>
 				</li>
@@ -56,7 +62,7 @@
 
 		--logo-size: clamp(1.05rem, 3vw, 1.7rem);
 		--nav-toggle-size: clamp(1.2rem, calc(var(--logo-size) * 1.5), 1.8rem);
-		--nav-item-size: clamp(1rem, calc(var(--logo-size) * 0.7), 1.5rem);
+		--nav-item-size: 1rem;
 
 		@include section();
 
@@ -84,7 +90,9 @@
 			background-image: linear-gradient(
 				to bottom,
 				var(--bg-color),
-				color-mix(in srgb, var(--bg-color), transparent 30%) 70%,
+				color-mix(in srgb, var(--bg-color), transparent 0%) 70%,
+				color-mix(in srgb, var(--bg-color), transparent 20%) 90%,
+
 				transparent
 			);
 		}
@@ -109,7 +117,7 @@
 	.logo > span {
 		display: block;
 
-		font-weight: 800;
+		font-weight: 700;
 		color: var(--logo-color);
 		font-size: var(--logo-size);
 		font-family: var(--font-display);
@@ -170,49 +178,41 @@
 		justify-content: flex-start;
 
 		position: inherit;
-		right: -20%;
+		right: -25%;
 		top: 0;
 		bottom: 0;
+		width: 200px;
 
 		padding-top: 10vh;
+		padding-left: 20px;
+		padding-right: 20px;
 
 		background-color: var(--color-base-300);
+		gap: 0.5rem;
 
 		transition: inherit;
 
+		pointer-events: none;
+
 		@include breakpoint() {
+			pointer-events: auto;
 			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+
 			position: static;
 			right: unset;
 			top: auto;
 			bottom: auto;
+			width: auto;
+
 			padding-top: 0;
 			background-color: transparent;
 		}
 	}
+
 	nav.mobile-nav-open > ul {
+		pointer-events: auto;
 		right: 0;
-	}
-
-	nav > ul > li > a {
-		@include hover();
-		display: block;
-
-		font-weight: 700;
-		color: var(--nav-item-color);
-		font-size: var(--nav-item-size);
-		font-family: var(--font-display);
-
-		white-space: nowrap;
-
-		padding: 0.25em 2em;
-
-		text-align: end;
-
-		transition: inherit;
-
-		@include breakpoint() {
-			padding: 0.25em 0.75em;
-		}
 	}
 </style>

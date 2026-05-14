@@ -84,3 +84,42 @@
 	text-decoration: underline;
 	color: var(--color-neutral-pale);
 }
+
+@mixin btn-sm {
+	display: block;
+
+	font-size: 0.875rem;
+	line-height: 1;
+	padding: 0.85em 1.15em;
+	border-radius: var(--radius-btn);
+
+	transition: scale 200ms ease-in;
+
+	white-space: nowrap;
+
+	&:hover {
+		scale: 1.035;
+	}
+}
+
+.btn-primary-sm {
+	@include btn-sm();
+
+	background-color: var(--color-primary);
+	background-image: linear-gradient(
+		45deg,
+		var(--color-primary-darker),
+		var(--color-primary-lighter)
+	);
+	color: var(--color-primary-content);
+	font-family: var(--font-sans);
+
+	box-shadow: var(--shadow-btn-sm);
+}
+
+.btn-shadow-sm {
+	@include btn-sm();
+
+	background-color: transparent;
+	color: var(--color-neutral);
+}

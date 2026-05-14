@@ -1,16 +1,13 @@
 export interface Route {
 	path: string
 	title: string
+	isPrimary?: boolean
 }
 
 export const ROUTES: Record<string, Route> = {
-	home: {
-		path: '/',
-		title: 'Ana Sayfa'
-	},
 	blog: {
 		path: '/#blog',
-		title: 'Yazılar'
+		title: 'Blog'
 	},
 	about: {
 		path: '/#about',
@@ -18,7 +15,8 @@ export const ROUTES: Record<string, Route> = {
 	},
 	contact: {
 		path: '/#contact',
-		title: 'İletişim'
+		title: 'İletişim',
+		isPrimary: true
 	}
 }
 

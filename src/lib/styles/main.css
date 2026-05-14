@@ -28,7 +28,7 @@
 	--color-base-300: #f6f5f4;
 	--color-base-400: #efeeec;
 
-	--color-neutral: #151e2a;
+	--color-neutral: #242e3c;
 	--color-neutral-pale: #334e72;
 	--color-neutral-vivid: #25518f;
 
@@ -41,7 +41,7 @@
 	--radius-btn: 10px;
 
 	/* Elevation (Figma: btn-shadow-sm → #0E171326, offset 0 4, blur 8) */
-	--shadow-btn-sm: 0 4px 8px 0 rgb(14 23 19 / 0.149);
+	--shadow-btn-sm: 0 4px 8px 0 hsla(47, 24%, 7%, 0.15);
 
 	/*
 	 * Text styles from Figma; sizes in rem (1rem = 16px).
@@ -96,8 +96,8 @@
 
 	/* scrollbar */
 	--color-scrollbar-track: var(--color-base-100);
-	--color-scrollbar-thumb: var(--color-neutral-pale);
-	--color-scrollbar-thumb-hover: var(--color-neutral-vivid);
+	--color-scrollbar-thumb: color-mix(in srgb, var(--color-neutral-pale), var(--color-base-200) 50%);
+	--color-scrollbar-thumb-hover: var(--color-neutral-pale);
 }
 
 * {
@@ -150,7 +150,7 @@ html,
 body {
 	width: 100%;
 	min-height: 100%;
-	background-color: var(--color-base-100);
+	background-color: var(--color-base-200);
 	overflow-x: clip;
 }
 

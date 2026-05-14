@@ -13,9 +13,7 @@
 	{/if}
 
 	<div class="content">
-		<a href={ROUTES.home.path} title={ROUTES.home.title} class="logo">
-			© 2025 Özkan Mali Müşavirlik
-		</a>
+		<a href={'/'} title={'Ana Sayfa'} class="logo"> © 2025 Özkan Mali Müşavirlik </a>
 
 		<nav>
 			<ul>
