@@ -5,19 +5,12 @@
 		posts: Post[]
 	}
 
-	let { posts }: Props = $props()
+	let data: Props = $props()
 
-	let postPages = $derived(
-		posts
+	let posts = $derived(
+		data.posts
 			.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
-			.reduce((prev, cur) => {
-				// paginate to 6 posts per page
-				if (prev.length === 0 || prev[prev.length - 1].length === 6) prev.push([])
-
-				prev[prev.length - 1].push(cur)
-
-				return prev
-			}, [] as any[][])
+			.slice(0, 4)
 	)
 </script>
 
@@ -37,19 +30,13 @@
 	</div>
 
 	<div class="posts">
-		{#each postPages as page}
-			<div class="page">
-				{#each page as post}
-					<PostPreview {post} />
-				{/each}
-			</div>
-		{/each}
-	</div>
-
-	<div class="mobile-posts">
-		{#each postPages[0] as post}
+		{#each posts as post}
 			<PostPreview {post} />
 		{/each}
+
+		{#if data.posts.length > 4}
+			<a href="/blog" class="see-all-link" title="Blog yazılarının hepsine göz at">Hepsini gör</a>
+		{/if}
 	</div>
 </section>
 
@@ -71,7 +58,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: start;
-		justify-content: center;
+		justify-content: start;
 
 		gap: 3em;
 
@@ -102,42 +89,20 @@
 		}
 	}
 
-	// Mobile view
-	.mobile-posts {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: var(--row-gap);
-
-		@include breakpoint() {
-			display: none;
-		}
-	}
-
 	// Pagination on desktop
 	.posts {
-		display: none;
+		display: flex;
+		flex-direction: column;
+		gap: 2.5rem;
+		width: 100%;
+		max-width: 800px;
+	}
 
-		@include breakpoint() {
-			display: block;
-			width: 50vw;
-			flex-grow: 1;
-		}
-
-		// Swiper slide
-		:global(.swiper-slide) {
-			margin-bottom: calc(var(--section-pv) / 2 + 30px);
-			width: 100%;
-			height: 100%;
-		}
-
-		.page {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
-			column-gap: var(--column-gap);
-			row-gap: var(--row-gap);
+	.see-all-link {
+		@include subtitle-2();
+		color: var(--color-neutral-vivid);
+		&:hover {
+			text-decoration: underline;
 		}
 	}
 </style>

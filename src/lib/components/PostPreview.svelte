@@ -8,24 +8,43 @@
 	let { post }: Props = $props()
 
 	// if there is no summary, get the body without html tags
-	const summary = post?.summary || post.body.replace(/<[^>]*>?/gm, '')
+	const summary = $derived(post?.summary || post.body.replace(/<[^>]*>?/gm, ''))
 </script>
 
 <a href="/posts/{post.slug}" title="Devamını oku">
 	<article>
-		<span class="date">
-			{dayjs(post.createdAt).format('D MMMM YYYY')}
-		</span>
-		<h1 title={post.title}>{post.title}</h1>
-		<p>
-			{summary}
-		</p>
+		<div class="content">
+			<h1 title={post.title}>{post.title}</h1>
+
+			<p>
+				{summary}
+			</p>
+		</div>
+
+		<footer>
+			<span class="date">
+				{dayjs(post.createdAt).format('D MMMM YYYY')}
+			</span>
+		</footer>
 	</article>
 </a>
 
 <style lang="scss">
+	@mixin breakpoint() {
+		@include md {
+			@content;
+		}
+	}
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
 	article {
-		--color-date: var(--color-primary);
 		--color-p: var(--color-neutral-pale);
 
 		--h1-font-size: 1.15rem;
@@ -37,49 +56,61 @@
 		align-items: start;
 		justify-content: start;
 
+		gap: 1rem;
+
+		width: 100%;
+
+		@include breakpoint() {
+			flex-direction: row;
+		}
+	}
+
+	.content {
 		width: 100%;
 	}
 
-	a {
-		text-decoration: none;
-	}
-
-	// underline on hover
-	a:hover {
-		text-decoration: underline;
-	}
-
-	.date {
-		font-size: var(--date-font-size);
-		font-weight: 700;
-		color: var(--color-date);
-		margin-bottom: 0.5em;
-	}
-
 	h1 {
-		font-size: var(--h1-font-size);
-		font-weight: 800;
-		line-height: 130%;
-		margin-bottom: 0.2em;
+		@include mini-title();
+		margin-bottom: 0.65em;
 
 		// cut the text after 2 lines
 		text-overflow: ellipsis;
 		display: -webkit-box;
 		-webkit-line-clamp: 2;
+		line-clamp: 2;
 		-webkit-box-orient: vertical;
 		overflow: hidden;
 	}
 
 	p {
-		font-size: var(--p-font-size);
-		font-weight: 400;
+		@include subtitle();
 		color: var(--color-p);
 
 		// cut the text after 6 lines
 		text-overflow: ellipsis;
 		display: -webkit-box;
 		-webkit-line-clamp: 3;
+		line-clamp: 3;
 		-webkit-box-orient: vertical;
 		overflow: hidden;
+	}
+
+	footer {
+		width: 100%;
+		flex-shrink: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+
+		@include breakpoint {
+			width: 7rem;
+		}
+	}
+
+	footer .date {
+		@include subtitle-2();
+		color: var(--color-neutral-vivid);
+		opacity: 0.7;
+		margin-bottom: 0.5em;
 	}
 </style>
