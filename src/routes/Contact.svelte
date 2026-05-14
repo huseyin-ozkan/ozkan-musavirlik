@@ -55,13 +55,11 @@
 					<span class="phone">
 						<Icon icon="ic:baseline-local-phone" aria-hidden />
 
-						{#each branch.phones as phone, i (i)}
-							{#if i > 0}
-								<span aria-hidden>/</span>
-							{/if}
-
-							<a href="tel:{phone}" title="Ara">{phone}</a>
-						{/each}
+						<div class="numbers">
+							{#each branch.phones as phone, i (i)}
+								<a href="tel:{phone}" title="Ara">{phone}</a>
+							{/each}
+						</div>
 					</span>
 
 					<span class="email">
@@ -84,7 +82,7 @@
 		--color-section-bg: var(--color-base-100);
 
 		--color-branch-bg: var(--color-base-100);
-		--color-icon: var(--color-neutral-vivid);
+		--color-icon: var(--color-neutral);
 
 		--section-pv: clamp(75px, 7vw, 150px);
 		--heading-font-size: clamp(1.7rem, 5vw, 4rem);
@@ -107,9 +105,6 @@
 			align-items: center;
 			justify-content: space-between;
 		}
-	}
-
-	.content {
 	}
 
 	.content > h1 {
@@ -171,7 +166,7 @@
 		@include paragraph-2;
 
 		display: flex;
-		align-items: center;
+		align-items: start;
 		justify-content: center;
 		gap: 0.5em;
 
@@ -188,8 +183,15 @@
 		}
 	}
 
-	.phone a {
-		white-space: nowrap;
+	.phone .numbers {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+
+		a {
+			@include paragraph-2;
+			white-space: nowrap;
+		}
 	}
 
 	.image {
