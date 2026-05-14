@@ -206,7 +206,8 @@
 			bottom: auto;
 			width: auto;
 
-			padding-top: 0;
+			padding: 0;
+
 			background-color: transparent;
 		}
 	}
