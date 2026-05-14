@@ -1,16 +1,18 @@
 <script lang="ts">
 	import PostPreview from '$lib/components/PostPreview.svelte'
+	import Contact from '../Contact.svelte'
 
 	interface Props {
-		posts: Post[]
+		data: {
+			posts: Post[]
+			branches: Content.Branch[]
+		}
 	}
 
-	let data: Props = $props()
+	let { data }: Props = $props()
 
 	let posts = $derived(
-		data.posts
-			.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
-			.slice(0, 4)
+		data.posts.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
 	)
 </script>
 
@@ -33,12 +35,10 @@
 		{#each posts as post}
 			<PostPreview {post} />
 		{/each}
-
-		{#if data.posts.length > 4}
-			<a href="/blog" class="see-all-link" title="Blog yazılarının hepsine göz at">Hepsini gör</a>
-		{/if}
 	</div>
 </section>
+
+<Contact branches={data.branches} />
 
 <!-- TODO fix responsive post listing issue on middle size screen -->
 <style lang="scss">
@@ -50,17 +50,22 @@
 
 	section {
 		--section-bg: var(--color-base-100);
-		--section-pv: clamp(20px, 5vw, 100px);
+		--posts-bullet: var(--color-primary);
+
+		--section-pv: clamp(60px, 15vh, 200px);
+		--column-gap: 50px;
+		--row-gap: 40px;
 
 		display: flex;
 		flex-direction: column;
 		align-items: start;
 		justify-content: start;
+		min-height: 100svh;
 
 		gap: 3em;
 
 		padding-top: var(--section-pv);
-		padding-bottom: var(--section-pv); // other half is coming from posts gap
+		padding-bottom: var(--section-pv);
 
 		background-color: var(--section-bg);
 		border-top: var(--color-base-200) 1px solid;
@@ -93,13 +98,5 @@
 		gap: 2.5rem;
 		width: 100%;
 		max-width: 800px;
-	}
-
-	.see-all-link {
-		@include subtitle-2();
-		color: var(--color-neutral-vivid);
-		&:hover {
-			text-decoration: underline;
-		}
 	}
 </style>

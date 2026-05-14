@@ -6,7 +6,7 @@ export interface Route {
 
 export const ROUTES: Record<string, Route> = {
 	blog: {
-		path: '/#blog',
+		path: '/blog',
 		title: 'Blog'
 	},
 	about: {

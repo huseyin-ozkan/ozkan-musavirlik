@@ -12,10 +12,10 @@
 	import Header from './Header.svelte'
 	import Footer from './Footer.svelte'
 	interface Props {
-		children?: import('svelte').Snippet;
+		children?: import('svelte').Snippet
 	}
 
-	let { children }: Props = $props();
+	let { children }: Props = $props()
 </script>
 
 <Header />
@@ -27,5 +27,9 @@
 <style lang="scss" global>
 	main > :global(section) {
 		@include section;
+	}
+
+	main {
+		min-height: 100svh;
 	}
 </style>
