@@ -1,3 +1,5 @@
+declare type Category = 'accountancy' | 'real-estate' | 'entrepreneurs'
+
 declare type PostPreview = {
 	id: string
 	slug: string
@@ -14,6 +16,7 @@ declare type Post = {
 	createdAt: string
 	updatedAt: string
 
+	category?: Category
 	title: string
 	summary?: string
 	/** HTML */
@@ -28,6 +31,7 @@ declare type SanityPost = {
 	_createdAt: string
 	_updatedAt: string
 
+	category?: Category
 	title: string
 	slug: {
 		current: string
@@ -44,6 +48,16 @@ declare type SanityPost = {
 			_type: 'reference'
 		}
 	}
+}
+
+declare type Announcement = {
+	id: string
+	createdAt: string
+	updatedAt: string
+
+	category?: Category
+	title: string
+	body: string
 }
 
 declare namespace Content {

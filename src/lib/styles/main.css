@@ -88,21 +88,29 @@
 	--type-subtitle-2-line-height: 1.4;
 	--type-subtitle-2-tracking: 2%;
 
-	/* Label (Figma text style: Label) */
 	--type-label-size: 0.875rem;
 	--type-label-weight: 500;
 	--type-label-line-height: 1.16;
 	--type-label-tracking: 0%;
 
-	/* Label 2 (Figma local text style; pulled via Plugin API) */
 	--type-label-2-size: 0.75rem;
 	--type-label-2-weight: 500;
 	--type-label-2-line-height: 1.16;
 	--type-label-2-tracking: 0%;
 
+	--type-caption-1-size: 0.875rem;
+	--type-caption-1-weight: 700;
+	--type-caption-1-line-height: 1.16;
+	--type-caption-1-tracking: 0%;
+
+	--type-caption-2-size: 0.75rem;
+	--type-caption-2-weight: 700;
+	--type-caption-2-line-height: 1.16;
+	--type-caption-2-tracking: 0%;
+
 	/* scrollbar */
-	--color-scrollbar-track: var(--color-base-100);
-	--color-scrollbar-thumb: color-mix(in srgb, var(--color-neutral-pale), var(--color-base-200) 50%);
+	--color-scrollbar-track: transparent;
+	--color-scrollbar-thumb: #e0e1e6;
 	--color-scrollbar-thumb-hover: var(--color-neutral-pale);
 }
 
@@ -130,7 +138,7 @@
 
 	/* Scrollbar for Firefox */
 	scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-track);
-	scrollbar-width: auto;
+	scrollbar-width: thin;
 }
 
 /* Make the scrollbar style match the rest of the modal */
@@ -150,6 +158,9 @@
 *::-webkit-scrollbar-thumb:hover {
 	background: var(--color-scrollbar-thumb-hover);
 	cursor: pointer;
+}
+html {
+	scrollbar-width: auto;
 }
 
 html,

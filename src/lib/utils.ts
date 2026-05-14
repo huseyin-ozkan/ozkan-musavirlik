@@ -5,6 +5,7 @@ export const convertBackendPostToPost = (post: SanityPost): Post => ({
 	slug: post.slug.current,
 	createdAt: post._createdAt,
 	updatedAt: post._updatedAt,
+	category: post.category,
 	title: post.title,
 	summary: post.summary,
 	body: marked.parse(post.body), // convert markdown to html

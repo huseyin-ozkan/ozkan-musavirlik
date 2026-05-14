@@ -9,6 +9,7 @@
 	interface Props {
 		data: {
 			posts: Post[]
+			announcements: Announcement[]
 			hero: Content.Hero
 			about: Content.About
 			staff: Content.Staff[]
@@ -17,13 +18,15 @@
 	}
 
 	let { data }: Props = $props()
+
+	$inspect(data)
 </script>
 
 <Hero content={data.hero} />
 <Services content={data.hero} />
 
 {#if data.posts}
-	<Blog posts={data.posts} />
+	<Blog posts={data.posts} announcements={data.announcements} />
 {/if}
 <About content={data.about} />
 <!-- <Staff staff={data.staff} /> -->

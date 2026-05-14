@@ -89,7 +89,24 @@
 	font-weight: var(--type-label-2-weight);
 	line-height: var(--type-label-2-line-height);
 	letter-spacing: var(--type-label-2-tracking);
-	text-decoration: underline;
+	color: var(--color-neutral-pale);
+}
+
+@mixin caption-1 {
+	font-family: var(--font-sans);
+	font-size: var(--type-caption-1-size);
+	font-weight: var(--type-caption-1-weight);
+	line-height: var(--type-caption-1-line-height);
+	letter-spacing: var(--type-caption-1-tracking);
+	color: var(--color-neutral-pale);
+}
+
+@mixin caption-2 {
+	font-family: var(--font-sans);
+	font-size: var(--type-caption-2-size);
+	font-weight: var(--type-caption-2-weight);
+	line-height: var(--type-caption-2-line-height);
+	letter-spacing: var(--type-caption-2-tracking);
 	color: var(--color-neutral-pale);
 }
 

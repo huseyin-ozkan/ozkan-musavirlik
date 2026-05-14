@@ -17,6 +17,7 @@ export const posts = {
     "updatedAt": _updatedAt,
     title,
     summary,
+		category,
     body
   }`
 		)
@@ -43,11 +44,30 @@ export const posts = {
       "updatedAt": _updatedAt,
       title,
       summary,
+			category,
       body, // TODO format markdown to html
       "mainImage": mainImage.asset->url,
   }`)
 
 		return post
+	}
+}
+
+export const announcements = {
+	getAll: async () => {
+		const response = await client.fetch(
+			`// groq
+    *[_type == "announcement"]{
+    "id": _id,
+    "createdAt": _createdAt,
+    "updatedAt": _updatedAt,
+    title,
+		category,
+    body
+  }`
+		)
+
+		return response
 	}
 }
 

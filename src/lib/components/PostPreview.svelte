@@ -31,14 +31,15 @@
 
 <style lang="scss">
 	@mixin breakpoint() {
-		@include md {
+		@include lg {
 			@content;
 		}
 	}
 
 	a {
-		text-decoration: none;
+		max-width: 100%;
 
+		text-decoration: none;
 		&:hover {
 			text-decoration: underline;
 		}
@@ -52,21 +53,24 @@
 		--p-font-size: 0.9rem;
 
 		display: flex;
-		flex-direction: column;
+		flex-direction: column-reverse;
 		align-items: start;
 		justify-content: start;
 
-		gap: 1rem;
+		gap: 0.5rem;
 
-		width: 100%;
+		max-width: 100%;
 
 		@include breakpoint() {
 			flex-direction: row;
+			gap: 1rem;
 		}
 	}
 
 	.content {
+		flex: 1;
 		width: 100%;
+		min-width: 0;
 	}
 
 	h1 {
@@ -86,7 +90,7 @@
 		@include subtitle();
 		color: var(--color-p);
 
-		// cut the text after 6 lines
+		// cut the text after 3 lines
 		text-overflow: ellipsis;
 		display: -webkit-box;
 		-webkit-line-clamp: 3;
@@ -99,11 +103,11 @@
 		width: 100%;
 		flex-shrink: 0;
 		display: flex;
-		flex-direction: column;
-		align-items: end;
 
 		@include breakpoint {
 			width: 7rem;
+			flex-direction: column;
+			align-items: end;
 		}
 	}
 
@@ -111,6 +115,5 @@
 		@include subtitle-2();
 		color: var(--color-neutral-vivid);
 		opacity: 0.7;
-		margin-bottom: 0.5em;
 	}
 </style>
