@@ -13,9 +13,3 @@
 <div class="markdown">
 	{@html content}
 </div>
-
-<style lang="scss" global>
-	:global(.markdown) {
-		@import '../styles/markdown.scss';
-	}
-</style>
