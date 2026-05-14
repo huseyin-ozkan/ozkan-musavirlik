@@ -84,7 +84,7 @@
 		}
 
 		.title > h1 {
-			@include section-title;
+			@include title-1;
 		}
 		.title > p {
 			@include paragraph-1;

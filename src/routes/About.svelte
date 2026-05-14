@@ -83,7 +83,7 @@
 		grid-area: her;
 
 		.section-title {
-			@include section-title;
+			@include title-1;
 		}
 
 		.main-paragraph {

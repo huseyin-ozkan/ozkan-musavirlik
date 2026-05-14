@@ -70,7 +70,7 @@
 	}
 
 	h1 {
-		@include mini-title();
+		@include title-4();
 		margin-bottom: 0.65em;
 
 		// cut the text after 2 lines

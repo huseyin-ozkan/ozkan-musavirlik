@@ -108,7 +108,7 @@
 	}
 
 	.content > h1 {
-		@include section-title;
+		@include title-1;
 
 		margin-bottom: 0.3em;
 	}

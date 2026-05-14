@@ -1,32 +1,40 @@
 @forward 'responsive';
 @forward 'utils';
 
-@mixin section-title {
+@mixin title-1 {
 	margin-bottom: 10px;
 
 	font-family: var(--font-display);
-	font-size: clamp(1.75rem, 4vw, var(--type-section-title-size));
-	font-weight: var(--type-section-title-weight);
-	line-height: var(--type-section-title-line-height);
-	letter-spacing: var(--type-section-title-tracking);
+	font-size: clamp(1.75rem, 4vw, var(--type-title-1-size));
+	font-weight: var(--type-title-1-weight);
+	line-height: var(--type-title-1-line-height);
+	letter-spacing: var(--type-title-1-tracking);
 	color: var(--color-neutral);
 }
 
-@mixin part-title {
+@mixin title-2 {
 	font-family: var(--font-display);
-	font-size: clamp(1.25rem, 3vw, var(--type-part-title-size));
-	font-weight: var(--type-part-title-weight);
-	line-height: var(--type-part-title-line-height);
-	letter-spacing: var(--type-part-title-tracking);
+	font-size: clamp(1.25rem, 3vw, var(--type-title-2-size));
+	font-weight: var(--type-title-2-weight);
+	line-height: var(--type-title-2-line-height);
+	letter-spacing: var(--type-title-2-tracking);
+	color: var(--color-neutral);
+}
+@mixin title-3 {
+	font-family: var(--font-display);
+	font-size: clamp(1.25rem, 3vw, var(--type-title-3-size));
+	font-weight: var(--type-title-3-weight);
+	line-height: var(--type-title-3-line-height);
+	letter-spacing: var(--type-title-3-tracking);
 	color: var(--color-neutral);
 }
 
-@mixin mini-title {
+@mixin title-4 {
 	font-family: var(--font-sans);
-	font-size: var(--type-mini-title-size);
-	font-weight: var(--type-mini-title-weight);
-	line-height: var(--type-mini-title-line-height);
-	letter-spacing: var(--type-mini-title-tracking);
+	font-size: var(--type-title-4-size);
+	font-weight: var(--type-title-4-weight);
+	line-height: var(--type-title-4-line-height);
+	letter-spacing: var(--type-title-4-tracking);
 	color: var(--color-neutral);
 }
 
