@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { findCategoryTitle } from '$lib/common/categories'
+	import AnnouncementDetailsDialog from '$lib/components/AnnouncementDetailsDialog.svelte'
 	import dayjs from 'dayjs'
 
 	interface Props {
@@ -15,7 +16,7 @@
 	<ul>
 		{#each announcements as a}
 			<li>
-				<a href={`/#${a.id}`} title="Detayları gör">
+				<a href={`#${a.id}`} title="Detayları gör">
 					<span class="meta">
 						<span class="date">
 							{dayjs(a.createdAt).format('D MMMM YYYY')}
@@ -36,6 +37,8 @@
 		{/each}
 	</ul>
 </article>
+
+<AnnouncementDetailsDialog {announcements} />
 
 <style lang="scss">
 	article {

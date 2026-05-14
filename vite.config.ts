@@ -12,6 +12,8 @@ export default defineConfig({
 				api: 'modern-compiler',
 				additionalData: (source: string, filename: string) => {
 					if (filename.endsWith('/src/lib/styles/app.scss')) return source
+					/* Prose file only needs CSS vars from main.css — skip @use app to avoid circular deps / odd chunk order when this file is imported as its own entry. */
+					if (filename.endsWith('/src/lib/styles/markdown.scss')) return source
 					return `@use "${appScssPath}" as *;\n${source}`
 				}
 			}
