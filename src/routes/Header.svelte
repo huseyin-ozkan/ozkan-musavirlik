@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { self } from 'svelte/legacy'
-
 	import Icon from '@iconify/svelte'
 	import { ROUTES, NAV_ROUTES } from '$lib/config/routes'
 
@@ -17,7 +15,7 @@
 
 <header class:scrolled>
 	<a href={ROUTES.home.path} title={ROUTES.home.title} class="logo">
-		<img src="/favicon.png" alt="" aria-hidden />
+		<img src="/favicon.png" alt="" aria-hidden="true" />
 		<span>Özkan Mali Müşavirlik</span></a
 	>
 
@@ -31,11 +29,7 @@
 		<Icon icon="eva:menu-2-fill" />
 	</button>
 
-	<nav
-		onclick={self(toggleMobileNav)}
-		onkeyup={self(toggleMobileNav)}
-		class:mobile-nav-open={mobileNavOpen}
-	>
+	<nav onclick={toggleMobileNav} onkeyup={toggleMobileNav} class:mobile-nav-open={mobileNavOpen}>
 		<ul>
 			{#each NAV_ROUTES as route (route.path)}
 				<li>
@@ -56,7 +50,7 @@
 	}
 
 	header {
-		--bg-color: var(--color-base-100);
+		--bg-color: var(--color-base-200);
 		--logo-color: var(--color-neutral);
 		--nav-item-color: var(--color-neutral);
 
@@ -71,20 +65,33 @@
 		justify-content: space-between;
 		flex-wrap: nowrap;
 
-		position: sticky;
+		position: fixed;
 		inset: 0 0 auto 0;
 		z-index: 999;
 
-		background-color: var(--bg-color);
-
 		width: 100%;
 
-		transition: box-shadow 500ms;
+		&:before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+			pointer-events: none;
+
+			opacity: 0;
+			transition: all 500ms;
+
+			background-image: linear-gradient(
+				to bottom,
+				var(--bg-color),
+				color-mix(in srgb, var(--bg-color), transparent 30%) 70%,
+				transparent
+			);
+		}
 	}
 
-	header.scrolled {
-		box-shadow: 0 0 48px color-mix(in srgb, var(--color-primary) 40%, transparent);
-		border-bottom: 1px solid var(--color-base-400);
+	header.scrolled:before {
+		opacity: 1;
 	}
 
 	.logo {
