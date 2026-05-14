@@ -2,7 +2,7 @@ import {defineType} from 'sanity'
 
 const about = defineType({
   name: 'about',
-  title: 'About',
+  title: 'Hakkımızda',
   type: 'document',
   fields: [
     {

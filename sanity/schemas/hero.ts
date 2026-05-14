@@ -2,7 +2,7 @@ import {defineType} from 'sanity'
 
 const hero = defineType({
   name: 'hero',
-  title: 'Hero',
+  title: 'Ana Sayfa',
   type: 'document',
   fields: [
     {
