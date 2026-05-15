@@ -82,7 +82,6 @@
 		--color-section-bg: var(--color-base-100);
 
 		--color-branch-bg: var(--color-base-100);
-		--color-icon: var(--color-neutral);
 
 		--section-pv: clamp(75px, 7vw, 150px);
 		--heading-font-size: clamp(1.7rem, 5vw, 4rem);
@@ -174,8 +173,8 @@
 
 		// icon
 		:global(svg) {
-			// <!-- TODO fix icon color not working -->
-			color: var(--color-icon);
+			color: var(--color-neutral-pale);
+
 			// opacity: 0.5;
 			width: var(--icon-size);
 			height: var(--icon-size);
