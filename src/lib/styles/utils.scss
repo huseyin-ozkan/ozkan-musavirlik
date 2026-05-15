@@ -64,3 +64,31 @@ $page-max-width: 1600px;
 		padding-right: $padding;
 	}
 }
+
+$enter-duration: 700ms;
+$enter-stagger: 250ms;
+$enter-offset: 0.45em;
+$enter-easing: cubic-bezier(0.4, 0, 0.2, 1);
+
+// Hero sequence: heading → subheading → services (each service staggered)
+$enter-delay-subheading: 300ms;
+$enter-delay-services-start: $enter-delay-subheading + 350ms;
+
+@keyframes enter-in-keyframes {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@mixin enter-in($delay: 0ms) {
+	opacity: 0;
+	transform: translateY($enter-offset);
+	animation: enter-in-keyframes $enter-duration $enter-easing $delay forwards;
+
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+		opacity: 1;
+		transform: none;
+	}
+}

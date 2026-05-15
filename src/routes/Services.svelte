@@ -35,8 +35,8 @@
 </script>
 
 <section>
-	{#each services as service}
-		<figure class="service">
+	{#each services as service, index (index)}
+		<figure class="service" style:--enter-index={index}>
 			<div class="img-wrapper">
 				<img src={service.image} alt={service.title} />
 			</div>
@@ -63,7 +63,7 @@
 		--desc-font-size: 0.85rem;
 
 		--service-width: calc(var(--title-font-size) * 10);
-		--img-width: clamp(80px, 8vw, 100px);
+		--img-width: clamp(72px, 7vw, 100px);
 		--img-aspect-ratio: 100/75;
 
 		--title-color: var(--color-neutral);
@@ -72,8 +72,9 @@
 		display: flex;
 		flex-direction: column;
 
-		padding-top: $page-padding;
-		padding-bottom: $page-padding;
+		--padding-y: clamp(32px, min(15vh, 15vw), 120px);
+		padding-top: var(--padding-y);
+		padding-bottom: var(--padding-y);
 
 		row-gap: 2rem;
 		column-gap: 2rem;
@@ -93,6 +94,10 @@
 		// border: crimson 1px dashed;
 
 		width: 100%;
+
+		@include enter-in(
+			calc(#{$enter-delay-services-start} + #{$enter-stagger} * var(--enter-index))
+		);
 
 		@include breakpoint {
 			max-width: 400px;

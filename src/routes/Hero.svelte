@@ -73,6 +73,8 @@
 
 		padding-bottom: 0.1em;
 		margin-bottom: 0.5em;
+
+		@include enter-in(0ms);
 	}
 
 	.content > p {
@@ -80,6 +82,8 @@
 		font-size: var(--subheading-size);
 		line-height: 1.4;
 		max-width: 40em;
+
+		@include enter-in($enter-delay-subheading);
 	}
 
 	.image-container {
