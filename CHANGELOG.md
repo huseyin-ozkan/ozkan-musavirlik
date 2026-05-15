@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.5.0](https://github.com/huseyin-ozkan/ozkan-accountancy-website/compare/v1.4.0...v1.5.0) (2026-05-15)
+## [2.0.0](https://github.com/huseyin-ozkan/ozkan-accountancy-website/compare/v1.4.0...v1.5.0) (2026-05-15)
 
 
 ### Features
