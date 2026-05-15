@@ -109,28 +109,24 @@
 	.content > h1 {
 		@include title-1;
 
-		margin-bottom: 0.3em;
+		margin-bottom: 0.5em;
 	}
 
 	.content > p {
 		@include paragraph-1;
 
-		margin-bottom: 4em;
+		color: var(--color-neutral-pale);
+		margin-bottom: 70px;
 	}
 
 	// branch list
 	ul {
-		--name-font-size: clamp(1.25rem, 2.5vw, 1.8rem);
-		--icon-size: 28px;
-
-		--padding: calc(var(--name-font-size) * 1.2);
-		--gap: calc(var(--name-font-size) * 2);
+		--icon-size: 24px;
 
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 		justify-content: center;
-		gap: var(--gap);
+		gap: 64px;
 
 		@include md {
 			flex-direction: row;
@@ -146,36 +142,32 @@
 		flex-direction: column;
 		align-items: start;
 		justify-content: start;
+		gap: 24px;
 
 		max-width: 20rem;
 	}
 
 	li > .name {
-		font-size: var(--name-font-size);
-		font-weight: 700;
-		font-family: var(--font-display);
+		@include title-3;
 
 		width: 100%;
-		margin-bottom: 1.1em;
-		padding-bottom: 0.2em;
-		border-bottom: 1px solid var(--color-base-200);
+		padding-bottom: 0.6em;
+		border-bottom: 1.5px solid var(--color-base-400);
 	}
 
 	li > span {
 		@include paragraph-2;
+		color: var(--color-neutral-pale);
 
 		display: flex;
 		align-items: start;
 		justify-content: center;
-		gap: 0.5em;
-
-		margin-bottom: 1em;
+		gap: 1rem;
 
 		// icon
 		:global(svg) {
 			color: var(--color-neutral-pale);
 
-			// opacity: 0.5;
 			width: var(--icon-size);
 			height: var(--icon-size);
 			flex-shrink: 0;
@@ -185,12 +177,18 @@
 	.phone .numbers {
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		gap: 2px;
 
 		a {
 			@include paragraph-2;
 			white-space: nowrap;
+			color: var(--color-neutral-pale);
 		}
+	}
+
+	.email a {
+		text-decoration: underline;
+		color: var(--color-neutral-pale);
 	}
 
 	.image {
