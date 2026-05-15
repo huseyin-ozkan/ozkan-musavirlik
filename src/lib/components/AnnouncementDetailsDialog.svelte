@@ -1,0 +1,190 @@
+<script lang="ts">
+	import Icon from '@iconify/svelte'
+	import { browser } from '$app/environment'
+	import { goto } from '$app/navigation'
+	import { page } from '$app/state'
+	import { findCategoryTitle } from '$lib/common/categories'
+	import dayjs from 'dayjs'
+
+	interface Props {
+		announcements: Announcement[]
+	}
+
+	let { announcements }: Props = $props()
+
+	let dialogEl: HTMLDialogElement | undefined = $state()
+
+	const selected = $derived.by(() => {
+		const id = page.url.hash.slice(1)
+		if (!id) return null
+		return announcements.find((a) => a.id === id) ?? null
+	})
+
+	const handleDialogClose = () => {
+		goto(page.url.pathname, { noScroll: true })
+	}
+
+	/** Backdrop clicks target `<dialog>`; clicks on the panel target descendants. */
+	const handleDialogClick = (e: MouseEvent) => {
+		if (e.target === e.currentTarget) dialogEl?.close()
+	}
+
+	$effect(() => {
+		if (!browser || !dialogEl) return
+		if (selected) {
+			if (!dialogEl.open) dialogEl.showModal()
+		} else {
+			dialogEl.close()
+		}
+	})
+</script>
+
+<dialog
+	bind:this={dialogEl}
+	class="announcement-dialog"
+	aria-labelledby="announcement-dialog-title"
+	onclose={handleDialogClose}
+	onclick={handleDialogClick}
+>
+	{#if selected}
+		<div class="dialog-panel">
+			{#key selected.id}
+				<header class="dialog-head">
+					<p class="dialog-meta">
+						<span class="date">{dayjs(selected.createdAt).format('D MMMM YYYY')}</span>
+						{#if selected.category}
+							<span class="category">{findCategoryTitle(selected.category)?.title}</span>
+						{/if}
+					</p>
+
+					<h2 class="dialog-title" id="announcement-dialog-title">{selected.title}</h2>
+
+					<button
+						type="button"
+						class="dialog-close"
+						onclick={() => dialogEl?.close()}
+						aria-label="Kapat"
+					>
+						<Icon icon="material-symbols:close" width="1.5rem" height="1.5rem" aria-hidden />
+					</button>
+				</header>
+
+				<div class="dialog-body">
+					{selected.body}
+				</div>
+			{/key}
+		</div>
+	{/if}
+</dialog>
+
+<style lang="scss">
+	@mixin breakpoint() {
+		@include md {
+			@content;
+		}
+	}
+
+	.announcement-dialog {
+		--dialog-width: min(600px, calc(100vw - 2rem));
+		--dialog-max-height: min(85vh, 720px);
+		--dialog-padding: 1.75rem;
+		@include breakpoint() {
+			--dialog-padding: 2.5rem;
+		}
+
+		width: var(--dialog-width);
+		max-height: var(--dialog-max-height);
+		height: fit-content;
+
+		margin: auto;
+		padding: 0;
+
+		overflow: visible;
+
+		border-radius: var(--radius-card);
+		background: var(--color-base-300);
+		color: var(--color-neutral);
+		box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+		&::backdrop {
+			background: rgb(0 0 0 / 0.45);
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--color-neutral-vivid);
+			outline-offset: 2px;
+		}
+	}
+
+	.dialog-panel {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		min-height: 0;
+		max-height: var(--dialog-max-height);
+		padding: var(--dialog-padding);
+	}
+
+	.dialog-head {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.dialog-title {
+		@include title-4;
+		flex: 1;
+		min-width: 0;
+		margin: 0;
+	}
+
+	.dialog-close {
+		position: absolute;
+		top: calc(var(--dialog-padding) / 2);
+		right: calc(var(--dialog-padding) / 2);
+		z-index: 1;
+
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+		justify-content: center;
+
+		width: 2.25rem;
+		height: 2.25rem;
+		border: none;
+		border-radius: var(--radius-card);
+		background: var(--color-base-300);
+		color: var(--color-neutral);
+		cursor: pointer;
+
+		&:hover {
+			background: var(--color-base-200);
+		}
+	}
+
+	.dialog-meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 1rem;
+		margin: 0;
+
+		.date {
+			@include label;
+			color: var(--color-neutral-pale);
+			opacity: 0.85;
+		}
+
+		.category {
+			@include label;
+			color: var(--color-neutral-vivid);
+			opacity: 0.75;
+		}
+	}
+
+	.dialog-body {
+		@include paragraph-2;
+		overflow-y: auto;
+		min-height: 0;
+		margin-top: 1rem;
+	}
+</style>

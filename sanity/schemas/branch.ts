@@ -2,7 +2,7 @@ import {defineType} from 'sanity'
 
 const branch = defineType({
   name: 'branch',
-  title: 'Branch',
+  title: 'Adresler',
   type: 'document',
   fields: [
     {

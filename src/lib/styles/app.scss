@@ -1,25 +1,161 @@
 @forward 'responsive';
 @forward 'utils';
 
-@mixin section-title {
+@use 'markdown';
+
+@mixin title-1 {
 	margin-bottom: 10px;
 
-	font-family: Zilla Slab;
-	font-size: 2.5rem;
-	font-weight: 700;
+	font-family: var(--font-display);
+	font-size: var(--type-title-1-size);
+	font-weight: var(--type-title-1-weight);
+	line-height: var(--type-title-1-line-height);
+	letter-spacing: var(--type-title-1-tracking);
+	color: var(--color-neutral);
+}
+
+@mixin title-2 {
+	font-family: var(--font-display);
+	font-size: var(--type-title-2-size);
+	font-weight: var(--type-title-2-weight);
+	line-height: var(--type-title-2-line-height);
+	letter-spacing: var(--type-title-2-tracking);
+	color: var(--color-neutral);
+}
+@mixin title-3 {
+	font-family: var(--font-display);
+	font-size: var(--type-title-3-size);
+	font-weight: var(--type-title-3-weight);
+	line-height: var(--type-title-3-line-height);
+	letter-spacing: var(--type-title-3-tracking);
+	color: var(--color-neutral);
+}
+
+@mixin title-4 {
+	font-family: var(--font-sans);
+	font-size: var(--type-title-4-size);
+	font-weight: var(--type-title-4-weight);
+	line-height: var(--type-title-4-line-height);
+	letter-spacing: var(--type-title-4-tracking);
+	color: var(--color-neutral);
+}
+
+@mixin title-5 {
+	font-family: var(--font-sans);
+	font-size: var(--type-title-5-size);
+	font-weight: var(--type-title-5-weight);
+	line-height: var(--type-title-5-line-height);
+	letter-spacing: var(--type-title-5-tracking);
 	color: var(--color-neutral);
 }
 
 @mixin paragraph-1 {
-	font-size: 1rem;
-	font-weight: 600;
-	line-height: 115%;
+	font-family: var(--font-sans);
+	font-size: clamp(1rem, 2vw, var(--type-paragraph-1-size));
+	font-weight: var(--type-paragraph-1-weight);
+	line-height: var(--type-paragraph-1-line-height);
+	letter-spacing: var(--type-paragraph-1-tracking);
 	color: var(--color-neutral-pale);
 }
 
 @mixin paragraph-2 {
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 125%;
+	font-family: var(--font-sans);
+	font-size: var(--type-paragraph-2-size);
+	font-weight: var(--type-paragraph-2-weight);
+	line-height: var(--type-paragraph-2-line-height);
+	letter-spacing: var(--type-paragraph-2-tracking);
+	color: var(--color-neutral);
+}
+
+@mixin subtitle {
+	font-family: var(--font-sans);
+	font-size: var(--type-subtitle-size);
+	font-weight: var(--type-subtitle-weight);
+	line-height: var(--type-subtitle-line-height);
+	letter-spacing: var(--type-subtitle-tracking);
 	color: var(--color-neutral-pale);
+}
+
+@mixin subtitle-2 {
+	font-family: var(--font-sans);
+	font-size: var(--type-subtitle-2-size);
+	font-weight: var(--type-subtitle-2-weight);
+	line-height: var(--type-subtitle-2-line-height);
+	letter-spacing: var(--type-subtitle-2-tracking);
+	color: var(--color-neutral-pale);
+}
+
+@mixin label {
+	font-family: var(--font-sans);
+	font-size: var(--type-label-size);
+	font-weight: var(--type-label-weight);
+	line-height: var(--type-label-line-height);
+	letter-spacing: var(--type-label-tracking);
+	color: var(--color-neutral);
+}
+
+@mixin label-2 {
+	font-family: var(--font-sans);
+	font-size: var(--type-label-2-size);
+	font-weight: var(--type-label-2-weight);
+	line-height: var(--type-label-2-line-height);
+	letter-spacing: var(--type-label-2-tracking);
+	color: var(--color-neutral-pale);
+}
+
+@mixin caption-1 {
+	font-family: var(--font-sans);
+	font-size: var(--type-caption-1-size);
+	font-weight: var(--type-caption-1-weight);
+	line-height: var(--type-caption-1-line-height);
+	letter-spacing: var(--type-caption-1-tracking);
+	color: var(--color-neutral-pale);
+}
+
+@mixin caption-2 {
+	font-family: var(--font-sans);
+	font-size: var(--type-caption-2-size);
+	font-weight: var(--type-caption-2-weight);
+	line-height: var(--type-caption-2-line-height);
+	letter-spacing: var(--type-caption-2-tracking);
+	color: var(--color-neutral-pale);
+}
+
+@mixin btn-sm {
+	display: block;
+
+	font-size: 0.875rem;
+	line-height: 1;
+	padding: 0.85em 1.15em;
+	border-radius: var(--radius-btn);
+
+	transition: scale 200ms ease-in;
+
+	white-space: nowrap;
+
+	&:hover {
+		scale: 1.035;
+	}
+}
+
+.btn-primary-sm {
+	@include btn-sm();
+
+	background-color: var(--color-primary);
+	background-image: linear-gradient(
+		45deg,
+		var(--color-primary-darker),
+		var(--color-primary-lighter)
+	);
+	color: var(--color-primary-content);
+	font-family: var(--font-sans);
+
+	box-shadow: var(--shadow-btn-sm);
+}
+
+.btn-shadow-sm {
+	@include btn-sm();
+
+	background-color: transparent;
+	color: var(--color-neutral);
 }

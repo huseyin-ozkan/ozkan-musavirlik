@@ -2,9 +2,12 @@
 	import Icon from '@iconify/svelte'
 	import officePhone from '$lib/assets/office-phone.webp'
 
-	export let branches: Content.Branch[]
+	interface Props {
+		branches: Content.Branch[] // mock data
+	}
 
-	// mock data
+	let { branches }: Props = $props()
+
 	// const branches: Content.Branch[] = [
 	// 	{
 	// 		name: 'Kayseri',
@@ -52,13 +55,11 @@
 					<span class="phone">
 						<Icon icon="ic:baseline-local-phone" aria-hidden />
 
-						{#each branch.phones as phone, i (i)}
-							{#if i > 0}
-								<span aria-hidden>/</span>
-							{/if}
-
-							<a href="tel:{phone}" title="Ara">{phone}</a>
-						{/each}
+						<div class="numbers">
+							{#each branch.phones as phone, i (i)}
+								<a href="tel:{phone}" title="Ara">{phone}</a>
+							{/each}
+						</div>
 					</span>
 
 					<span class="email">
@@ -71,17 +72,16 @@
 	</div>
 
 	<div class="image">
-		<div class="watermark" />
-		<img src={officePhone} alt="İletişim" />
+		<div class="watermark"></div>
+		<img src={officePhone} alt="İletişim" loading="lazy" decoding="async" />
 	</div>
 </section>
 
 <style lang="scss">
 	#contact {
-		--color-section-bg: #fff;
+		--color-section-bg: var(--color-base-100);
 
 		--color-branch-bg: var(--color-base-100);
-		--color-icon: var(--color-neutral-vivid);
 
 		--section-pv: clamp(75px, 7vw, 150px);
 		--heading-font-size: clamp(1.7rem, 5vw, 4rem);
@@ -106,34 +106,27 @@
 		}
 	}
 
-	.content {
-	}
-
 	.content > h1 {
-		@include section-title;
+		@include title-1;
 
-		margin-bottom: 0.3em;
+		margin-bottom: 0.5em;
 	}
 
 	.content > p {
 		@include paragraph-1;
 
-		margin-bottom: 4em;
+		color: var(--color-neutral-pale);
+		margin-bottom: 70px;
 	}
 
 	// branch list
 	ul {
-		--name-font-size: clamp(1.25rem, 2.5vw, 1.8rem);
-		--icon-size: 28px;
-
-		--padding: calc(var(--name-font-size) * 1.2);
-		--gap: calc(var(--name-font-size) * 2);
+		--icon-size: 24px;
 
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 		justify-content: center;
-		gap: var(--gap);
+		gap: 64px;
 
 		@include md {
 			flex-direction: row;
@@ -149,48 +142,60 @@
 		flex-direction: column;
 		align-items: start;
 		justify-content: start;
+		gap: 24px;
 
 		max-width: 20rem;
 	}
 
 	li > .name {
-		font-size: var(--name-font-size);
-		font-weight: 700;
-		font-family: 'Zilla Slab';
+		@include title-3;
 
 		width: 100%;
-		margin-bottom: 1.1em;
-		padding-bottom: 0.2em;
-		border-bottom: 1px solid var(--color-base-200);
+		padding-bottom: 0.6em;
+		border-bottom: 1.5px solid var(--color-base-400);
 	}
 
 	li > span {
 		@include paragraph-2;
+		color: var(--color-neutral-pale);
 
 		display: flex;
-		align-items: center;
+		align-items: start;
 		justify-content: center;
-		gap: 0.5em;
-
-		margin-bottom: 1em;
+		gap: 1rem;
 
 		// icon
 		:global(svg) {
-			// <!-- TODO fix icon color not working -->
-			color: var(--color-icon);
-			// opacity: 0.5;
+			color: var(--color-neutral-pale);
+
 			width: var(--icon-size);
 			height: var(--icon-size);
 			flex-shrink: 0;
 		}
 	}
 
-	.phone a {
-		white-space: nowrap;
+	.phone .numbers {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+
+		a {
+			@include paragraph-2;
+			white-space: nowrap;
+			color: var(--color-neutral-pale);
+		}
+	}
+
+	.email a {
+		text-decoration: underline;
+		color: var(--color-neutral-pale);
 	}
 
 	.image {
-		width: clamp(200px, 30vw, 400px);
+		--image-size: clamp(220px, 30vw, 400px);
+		--watermark-radius: clamp(50px, calc(var(--image-size) * 0.25), 100px);
+
+		width: var(--image-size);
 		align-self: end;
 
 		right: 0;
@@ -200,12 +205,12 @@
 
 		.watermark {
 			position: absolute;
-			inset: 20% -10% -20% -20%;
+			inset: 20% -10% -10% -20%;
 
 			z-index: -1;
 
-			background: linear-gradient(to bottom, var(--color-accent), transparent);
-			border-radius: 100px;
+			background: linear-gradient(to bottom, var(--color-accent), transparent 85%);
+			border-radius: var(--watermark-radius);
 			rotate: 15deg;
 		}
 

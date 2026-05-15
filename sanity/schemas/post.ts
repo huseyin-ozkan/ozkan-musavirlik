@@ -1,8 +1,9 @@
 import {defineType} from 'sanity'
+import {categories} from '../categories'
 
 const post = defineType({
   name: 'post',
-  title: 'Post',
+  title: 'Yazılar',
   type: 'document',
   fields: [
     {
@@ -20,6 +21,15 @@ const post = defineType({
         maxLength: 90,
       },
       validation: (Rule) => Rule.required(),
+    },
+    {
+      title: 'Kategori',
+      name: 'category',
+      type: 'string',
+      options: {
+        list: categories,
+        layout: 'dropdown',
+      },
     },
     {
       title: 'Özet',
@@ -41,12 +51,6 @@ const post = defineType({
         hotspot: true,
       },
     },
-    // {
-    //   name: 'categories',
-    //   title: 'Kategoriler',
-    //   type: 'array',
-    //   of: [{type: 'reference', to: {type: 'category'}}],
-    // },
   ],
 })
 

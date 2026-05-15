@@ -6,16 +6,8 @@
 </script>
 
 <footer>
-	{#if notice}
-		<div class="notice">
-			<p>{notice}</p>
-		</div>
-	{/if}
-
 	<div class="content">
-		<a href={ROUTES.home.path} title={ROUTES.home.title} class="logo">
-			© 2025 Özkan Mali Müşavirlik
-		</a>
+		<a href={'/'} title={'Ana Sayfa'} class="logo"> © 2026 Özkan Mali Müşavirlik </a>
 
 		<nav>
 			<ul>
@@ -29,6 +21,12 @@
 			</ul>
 		</nav>
 	</div>
+
+	{#if notice}
+		<div class="notice">
+			<p>{notice}</p>
+		</div>
+	{/if}
 </footer>
 
 <style lang="scss">
@@ -39,39 +37,17 @@
 	}
 
 	footer {
-		--footer-bg-color: var(--color-neutral);
-		--notice-bg-color: var(--color-base-300);
-		--notice-text-color: var(--color-neutral-pale);
-
-		--notice-font-size: 12px;
-		--logo-font-size: 1rem;
+		--logo-font-size: 1.5rem;
 		--nav-item-size: 1rem;
 
 		--gap: 1.5rem;
 
-		background-color: var(--footer-bg-color);
-	}
-
-	footer > .notice {
-		@include section;
-
-		--pv: 10px;
+		background-color: var(--color-base-300);
 
 		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		background-color: var(--notice-bg-color);
-		padding-top: var(--pv);
-		padding-bottom: var(--pv);
-
-		p {
-			font-size: var(--notice-font-size);
-			text-align: center;
-			color: var(--notice-text-color);
-			font-weight: 500;
-			max-width: 1000px;
-		}
+		flex-direction: column;
+		padding: clamp(20px, 10vh, 48px) 0;
+		gap: 32px;
 	}
 
 	footer > .content {
@@ -89,7 +65,7 @@
 		padding-top: var(--pv);
 		padding-bottom: var(--pv);
 
-		color: var(--color-base-100);
+		color: var(--color-neutral);
 
 		@include breakpoint() {
 			flex-direction: row;
@@ -97,10 +73,9 @@
 	}
 
 	.logo {
-		color: var(--color-base-100);
 		font-size: var(--logo-font-size);
-		font-weight: 500;
-		font-family: 'Zilla Slab';
+		font-weight: 600;
+		font-family: var(--font-display);
 	}
 
 	// nav
@@ -122,18 +97,36 @@
 	}
 
 	nav > ul > li > a {
-		@include hover();
-
 		font-weight: 600;
-		color: var(--color-neutral);
+		color: var(--color-neutral-pale);
 		font-size: var(--nav-item-size);
-		font-family: 'Zilla Slab';
 
 		padding: 0.25em 2em;
 
-		color: var(--color-base-100);
 		white-space: nowrap;
 
 		padding: 0.25em 0.75em;
+	}
+
+	footer > .notice {
+		@include section;
+
+		--pv: 10px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		background-color: var(--notice-bg-color);
+		padding-top: var(--pv);
+		padding-bottom: var(--pv);
+
+		p {
+			@include subtitle-2;
+			text-align: center;
+			color: var(--notice-text-color);
+
+			max-width: 1000px;
+		}
 	}
 </style>

@@ -1,7 +1,10 @@
 <script lang="ts">
-	export let staff: Content.Staff[]
+	interface Props {
+		staff: Content.Staff[] // // mock
+	}
 
-	// // mock
+	let { staff }: Props = $props()
+
 	// const staff: Staff[] = [
 	// 	{
 	// 		name: 'Hüseyin Özkan',
@@ -26,7 +29,7 @@
 			<li>
 				<figure>
 					<div class="image">
-						<img src={image} alt={name} />
+						<img src={image} alt={name} loading="lazy" decoding="async" />
 					</div>
 
 					<figcaption>
@@ -125,7 +128,7 @@
 
 	ul > li > figure > figcaption > .name {
 		font-size: var(--name-font-size);
-		font-family: 'Zilla Slab';
+		font-family: var(--font-display);
 		font-weight: 600;
 		line-height: 116%;
 

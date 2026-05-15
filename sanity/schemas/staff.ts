@@ -2,7 +2,7 @@ import {defineType} from 'sanity'
 
 const staff = defineType({
   name: 'staff',
-  title: 'Staff',
+  title: 'Çalışanlar',
   type: 'document',
   fields: [
     {

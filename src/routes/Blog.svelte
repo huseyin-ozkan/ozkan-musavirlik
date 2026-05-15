@@ -1,167 +1,136 @@
 <script lang="ts">
-	import 'swiper/css'
-	import 'swiper/css/autoplay'
-	import 'swiper/css/pagination'
-	import { Swiper, SwiperSlide } from 'swiper/svelte'
-	import { Pagination, Autoplay } from 'swiper'
+	import { page } from '$app/state'
+	import { isCategory, type CategoryPostCount } from '$lib/common/categories'
+	import Announcements from '$lib/components/Announcements.svelte'
+	import PostCategoryFilter from '$lib/components/PostCategoryFilter.svelte'
+	import PostPreviewCard from '$lib/components/PostPreview.svelte'
 
-	import PostPreview from '$lib/components/PostPreview.svelte'
+	interface Props {
+		postPreviews: PostPreview[]
+		/** Total posts in CMS; used with limited `postPreviews` to show “see all”. */
+		postCount: number
+		categoryPostCounts: CategoryPostCount[]
+		announcements: Announcement[]
+	}
 
-	export let posts: Post[]
+	let data: Props = $props()
 
-	$: postPages = posts
-		.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
-		.reduce((prev, cur) => {
-			// paginate to 6 posts per page
-			if (prev.length === 0 || prev[prev.length - 1].length === 6) prev.push([])
+	let displayPostPreviews = $derived(
+		[...data.postPreviews].sort(
+			(a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+		)
+	)
 
-			prev[prev.length - 1].push(cur)
+	let showSeeAllBlog = $derived(data.postCount > 4)
 
-			return prev
-		}, [] as any[][])
+	const seeAllBlogHref = $derived.by(() => {
+		const category = page.url.searchParams.get('category')
+		return category && isCategory(category) ? `/blog?category=${category}` : '/blog'
+	})
 </script>
 
 <section id="blog">
 	<div class="blog-header">
-		<div class="title">
-			<h1>Blog</h1>
-			<p>
-				Yönetmelik değişiklikleri, yeni yasalar gibi konularla alaklı yazılarımızı
-				inceleyebilirsiniz
-			</p>
-		</div>
+		<h1>Blog</h1>
+		<p>
+			Yönetmelik değişiklikleri, yeni yasalar gibi konularla alaklı yazılarımızı inceleyebilirsiniz
+		</p>
 
-		<div class="categories">
-			<!-- TODO -->
-		</div>
+		<PostCategoryFilter categoryPostCounts={data.categoryPostCounts} />
 	</div>
 
-	<div class="posts">
-		<Swiper
-			spaceBetween={10}
-			slidesPerView={1}
-			modules={[Pagination, Autoplay]}
-			pagination={{ clickable: true, type: 'bullets' }}
-			autoplay={{ delay: 3000, pauseOnMouseEnter: true }}
-			freeMode
-		>
-			{#each postPages as page}
-				<SwiperSlide>
-					<div class="page">
-						{#each page as post}
-							<PostPreview {post} />
-						{/each}
-					</div>
-				</SwiperSlide>
+	<div class="content">
+		<div class="posts">
+			{#each displayPostPreviews as post}
+				<PostPreviewCard {post} />
 			{/each}
-		</Swiper>
-	</div>
 
-	<div class="mobile-posts">
-		{#each postPages[0] as post}
-			<PostPreview {post} />
-		{/each}
+			{#if showSeeAllBlog}
+				<a href={seeAllBlogHref} class="see-all-link" title="Blog yazılarının hepsine göz at">
+					Hepsini gör ({data.postCount})
+				</a>
+			{/if}
+		</div>
+
+		<Announcements announcements={data.announcements} />
 	</div>
 </section>
 
 <!-- TODO fix responsive post listing issue on middle size screen -->
 <style lang="scss">
-	@mixin breakpoint() {
-		@include md {
-			@content;
-		}
-	}
 	section {
-		--section-bg: #fff;
-		--posts-bullet: #3866dc;
-
-		--section-pv: clamp(20px, 5vw, 100px);
-		--column-gap: 50px;
-		--row-gap: 40px;
+		--section-bg: var(--color-base-100);
+		--section-pv: clamp(20px, 5vh, 100px);
 
 		display: flex;
 		flex-direction: column;
 		align-items: start;
-		justify-content: center;
+		justify-content: start;
 
 		gap: 3em;
 
 		padding-top: var(--section-pv);
-		padding-bottom: calc(var(--section-pv) / 2); // other half is coming from posts gap
+		padding-bottom: var(--section-pv);
 
 		background-color: var(--section-bg);
 		border-top: var(--color-base-200) 1px solid;
 		border-bottom: var(--color-base-200) 1px solid;
 
-		@include lg {
+		@include xl {
 			flex-direction: row;
 			gap: 5vw;
 		}
 	}
 
 	.blog-header {
-		@include lg {
+		display: flex;
+		flex-direction: column;
+
+		@include xl {
 			width: 20vw;
 			max-width: 300px;
 		}
 
-		.title > h1 {
-			@include section-title;
+		h1 {
+			@include title-1;
+			margin-bottom: 0.35em;
 		}
-		.title > p {
-			@include paragraph-1;
+		p {
+			@include paragraph-2;
+			color: var(--color-neutral-pale);
+			margin-bottom: 3em;
 		}
 	}
 
-	// Mobile view
-	.mobile-posts {
+	.content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
-		gap: var(--row-gap);
+		gap: 48px;
+		width: 100%;
+		// background-color: red;
 
-		@include breakpoint() {
-			display: none;
+		@include md {
+			flex-direction: row;
+			align-items: start;
 		}
 	}
 
-	// Pagination on desktop
 	.posts {
-		display: none;
+		flex: 1 1 300px;
+		min-width: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 2.5rem;
+		width: 100%;
+		max-width: 800px;
+	}
 
-		@include breakpoint() {
-			display: block;
-			width: 50vw;
-			flex-grow: 1;
+	.see-all-link {
+		@include subtitle-2();
+		color: var(--color-neutral-vivid);
+		&:hover {
+			text-decoration: underline;
 		}
-
-		// Swiper slide
-		:global(.swiper-slide) {
-			margin-bottom: calc(var(--section-pv) / 2 + 30px);
-			width: 100%;
-			height: 100%;
-		}
-
-		.page {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
-			column-gap: var(--column-gap);
-			row-gap: var(--row-gap);
-		}
-
-		// Pagination bullets
-		:global(.swiper-pagination) {
-			--swiper-pagination-color: #3068f6;
-			--swiper-pagination-bullet-size: 1.1rem;
-			--swiper-pagination-top: 10rem;
-
-			--swiper-pagination-bullet-inactive-opacity: 0.2;
-			--swiper-pagination-bullet-opacity: 1;
-			--swiper-pagination-bullet-horizontal-gap: 0.2em;
-		}
-		// :global(.swiper-pagination-bullet) {
-		// }
 	}
 </style>
