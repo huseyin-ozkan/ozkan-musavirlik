@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { CategoryPostCount } from '$lib/common/categories'
 	import Hero from './Hero.svelte'
 	import Blog from './Blog.svelte'
 	import About from './About.svelte'
@@ -10,6 +11,7 @@
 		data: {
 			postPreviews: PostPreview[]
 			postCount: number
+			categoryPostCounts: CategoryPostCount[]
 			announcements: Announcement[]
 			hero: Content.Hero
 			about: Content.About
@@ -30,6 +32,7 @@
 	<Blog
 		postPreviews={data.postPreviews}
 		postCount={data.postCount}
+		categoryPostCounts={data.categoryPostCounts}
 		announcements={data.announcements}
 	/>
 {/if}

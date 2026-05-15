@@ -1,17 +1,22 @@
 import { listAnnouncements } from '$lib/server/content/announcements'
-import { listPostPreviews } from '$lib/server/content/posts'
+import { getPostsCountsByCategory, listPostPreviews } from '$lib/server/content/posts'
 import { getBranches } from '$lib/server/content/site'
+import { resolveCategoryParam } from '$lib/server/category-query'
 
-export async function load() {
+export async function load({ url }) {
 	try {
-		const [branches, postPreviews, announcements] = await Promise.all([
+		const category = resolveCategoryParam(url)
+
+		const [branches, postPreviews, categoryPostCounts, announcements] = await Promise.all([
 			getBranches(),
-			listPostPreviews(),
+			listPostPreviews({ category }),
+			getPostsCountsByCategory(),
 			listAnnouncements()
 		])
 
 		return {
 			postPreviews,
+			categoryPostCounts,
 			branches,
 			announcements
 		}

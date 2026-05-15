@@ -1,11 +1,14 @@
 <script lang="ts">
+	import type { CategoryPostCount } from '$lib/common/categories'
 	import Announcements from '$lib/components/Announcements.svelte'
+	import PostCategoryFilter from '$lib/components/PostCategoryFilter.svelte'
 	import PostPreviewCard from '$lib/components/PostPreview.svelte'
 	import Contact from '../Contact.svelte'
 
 	interface Props {
 		data: {
 			postPreviews: PostPreview[]
+			categoryPostCounts: CategoryPostCount[]
 			branches: Content.Branch[]
 			announcements: Announcement[]
 		}
@@ -30,9 +33,7 @@
 			</p>
 		</div>
 
-		<div class="categories">
-			<!-- TODO -->
-		</div>
+		<PostCategoryFilter categoryPostCounts={data.categoryPostCounts} />
 	</div>
 
 	<div class="content">
@@ -76,6 +77,10 @@
 	}
 
 	.blog-header {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+
 		@include xl {
 			width: 20vw;
 			max-width: 300px;

@@ -1,11 +1,15 @@
 <script lang="ts">
+	import { page } from '$app/state'
+	import { isCategory, type CategoryPostCount } from '$lib/common/categories'
 	import Announcements from '$lib/components/Announcements.svelte'
+	import PostCategoryFilter from '$lib/components/PostCategoryFilter.svelte'
 	import PostPreviewCard from '$lib/components/PostPreview.svelte'
 
 	interface Props {
 		postPreviews: PostPreview[]
 		/** Total posts in CMS; used with limited `postPreviews` to show “see all”. */
 		postCount: number
+		categoryPostCounts: CategoryPostCount[]
 		announcements: Announcement[]
 	}
 
@@ -18,6 +22,11 @@
 	)
 
 	let showSeeAllBlog = $derived(data.postCount > 4)
+
+	const seeAllBlogHref = $derived.by(() => {
+		const category = page.url.searchParams.get('category')
+		return category && isCategory(category) ? `/blog?category=${category}` : '/blog'
+	})
 </script>
 
 <section id="blog">
@@ -26,6 +35,8 @@
 		<p>
 			Yönetmelik değişiklikleri, yeni yasalar gibi konularla alaklı yazılarımızı inceleyebilirsiniz
 		</p>
+
+		<PostCategoryFilter categoryPostCounts={data.categoryPostCounts} />
 	</div>
 
 	<div class="content">
@@ -35,7 +46,7 @@
 			{/each}
 
 			{#if showSeeAllBlog}
-				<a href="/blog" class="see-all-link" title="Blog yazılarının hepsine göz at">
+				<a href={seeAllBlogHref} class="see-all-link" title="Blog yazılarının hepsine göz at">
 					Hepsini gör ({data.postCount})
 				</a>
 			{/if}
@@ -72,6 +83,10 @@
 	}
 
 	.blog-header {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+
 		@include xl {
 			width: 20vw;
 			max-width: 300px;
