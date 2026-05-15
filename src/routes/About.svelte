@@ -36,7 +36,7 @@
 
 	<div class="image">
 		<div class="watermark"></div>
-		<img src={accountingCalculator} alt="" aria-hidden="true" />
+		<img src={accountingCalculator} alt="" aria-hidden="true" loading="lazy" decoding="async" />
 	</div>
 </section>
 

@@ -29,7 +29,7 @@
 			<li>
 				<figure>
 					<div class="image">
-						<img src={image} alt={name} />
+						<img src={image} alt={name} loading="lazy" decoding="async" />
 					</div>
 
 					<figcaption>

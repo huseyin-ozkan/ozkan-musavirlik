@@ -73,7 +73,7 @@
 
 	<div class="image">
 		<div class="watermark"></div>
-		<img src={officePhone} alt="İletişim" />
+		<img src={officePhone} alt="İletişim" loading="lazy" decoding="async" />
 	</div>
 </section>
 
