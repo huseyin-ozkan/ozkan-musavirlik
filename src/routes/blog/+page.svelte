@@ -79,18 +79,20 @@
 	.blog-header {
 		display: flex;
 		flex-direction: column;
-		gap: 1.5rem;
 
 		@include xl {
 			width: 20vw;
 			max-width: 300px;
 		}
 
-		.title > h1 {
+		h1 {
 			@include title-1;
+			margin-bottom: 0.35em;
 		}
-		.title > p {
-			@include paragraph-1;
+		p {
+			@include paragraph-2;
+			color: var(--color-neutral-pale);
+			margin-bottom: 3em;
 		}
 	}
 
