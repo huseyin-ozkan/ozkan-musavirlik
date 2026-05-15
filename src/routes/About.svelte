@@ -106,7 +106,7 @@
 		flex-grow: 1;
 		flex-shrink: 0;
 		align-self: end;
-		margin-left: 15vw;
+		margin-left: calc(var(--image-size) * 0.5);
 
 		.watermark {
 			position: absolute;
