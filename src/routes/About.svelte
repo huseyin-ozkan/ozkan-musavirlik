@@ -96,9 +96,12 @@
 	}
 
 	.image {
+		--image-size: clamp(200px, max(25vh, 20vw), 350px);
+		--watermark-radius: clamp(70px, calc(var(--image-size) * 0.37), 150px);
+
 		position: relative;
 		z-index: 1;
-		width: clamp(200px, max(25vh, 20vw), 350px);
+		width: var(--image-size);
 		max-width: 350px;
 		flex-grow: 1;
 		flex-shrink: 0;
@@ -112,7 +115,7 @@
 			z-index: -1;
 
 			background: linear-gradient(to bottom, var(--color-accent), transparent 90%);
-			border-radius: 128px;
+			border-radius: var(--watermark-radius);
 			rotate: 15deg;
 		}
 
@@ -142,7 +145,7 @@
 			min-width: 0;
 
 			@include md {
-				max-width: 543px;
+				max-width: 540px;
 			}
 
 			h2 {

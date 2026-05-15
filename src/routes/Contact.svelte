@@ -195,7 +195,10 @@
 	}
 
 	.image {
-		width: clamp(200px, 30vw, 400px);
+		--image-size: clamp(220px, 30vw, 400px);
+		--watermark-radius: clamp(50px, calc(var(--image-size) * 0.25), 100px);
+
+		width: var(--image-size);
 		align-self: end;
 
 		right: 0;
@@ -205,12 +208,12 @@
 
 		.watermark {
 			position: absolute;
-			inset: 20% -10% -20% -20%;
+			inset: 20% -10% -10% -20%;
 
 			z-index: -1;
 
-			background: linear-gradient(to bottom, var(--color-accent), transparent);
-			border-radius: 100px;
+			background: linear-gradient(to bottom, var(--color-accent), transparent 85%);
+			border-radius: var(--watermark-radius);
 			rotate: 15deg;
 		}
 
