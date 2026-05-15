@@ -1,5 +1,49 @@
 # Changelog
 
+## [1.5.0](https://github.com/huseyin-ozkan/ozkan-accountancy-website/compare/v1.4.0...v1.5.0) (2026-05-15)
+
+
+### Features
+
+* about section new styling and update colors & typography ([8aed5da](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/8aed5daa039bb54b2862eaed11cbf4b67f96cb0e))
+* announcement details dialog ([88954fd](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/88954fd95b2955e991f2ccbefe339816ad29d77b))
+* announcement details dialog better mobile styling ([4c1ec29](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/4c1ec2920a7c5a0287e8c1c6c06a7d0c39e8295a))
+* announcement details dialog better styling and new title ([d22410b](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/d22410b34286e406d8cd8ea2998cd4300a431b00))
+* announcements empty list state ([0e4bb3c](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/0e4bb3c8c32e2995eb9d955153ef054c17532d57))
+* announcements with categories ([e63300c](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/e63300c3b0fc6844fe7bdd4c46f2ee47509b50c4))
+* better responsive about and contact images ([de5f891](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/de5f8913d906f743c7109d3c80465062dd892244))
+* blog header stying improvements ([9220ffd](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/9220ffd0ad37c785e7b1301c32e38b81698224f8))
+* blog post page new design and fix text styling ([2b07ab3](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/2b07ab3c2568f69c21cc99f4fed38f2e5891f688))
+* blog section new design ([68fcdd3](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/68fcdd3db3b13a002dc4c627fedf7cdc65a21acb))
+* category filter system for blog posts ([c0604cf](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/c0604cf22c0f69c93d562db555405522b5bd4d01))
+* contact missing parts of new design ([07b4484](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/07b448462846317fdcc47ae7f2c3c5a9ff352dcd))
+* contact section and footer new design ([1e31b05](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/1e31b05cad3145a52bc216041fc7788190f32708))
+* dedicated blog page for all posts ([d272639](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/d2726395a4e36106834fb6cc1fc55bceaef6f58f))
+* font size tweaks for titles and hero subheading ([222b0cb](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/222b0cb6f7fcf91fffb36f33e96f209bd8726d7f))
+* hero and services fade in animation and services better dimensions ([15e0a29](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/15e0a294e1327cfaa7567a19860befbebb3422d5))
+* new color palette and fonts ([2733728](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/2733728f753f2fc4d002d7ec72aeb33f3a9136b3))
+* new header design ([5bc3c5e](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/5bc3c5e979f760bcef6bd16bcefa746a327a566f))
+* new hero section design ([897dc51](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/897dc5140cabbb650b3a203380ef5c223e0c773c))
+* new services section design ([f8e3fb5](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/f8e3fb5aa70e7849ecd6d9f00bf43c00038255bf))
+* **sanity:** add announcements type ([0b3496f](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/0b3496f4b0503d7d0a709b17550e0d6e1ff01d8c))
+* **sanity:** rename types in turkish ([f760b59](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/f760b590617a917b452b201292dad1e8e4e7a47f))
+* **sanity:** simple fixed categories system for posts and announcements ([9717972](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/97179720320785e00a0cc403444c6e8d70b1ccba))
+* scrollbar more visible color ([0b4d969](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/0b4d96965b07fbb4f2e444f0bc33a7b44e7e11e8))
+* tokens and text styles from new design ([0d2df1d](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/0d2df1d9dc3258817d340b359f4db89a284e262c))
+* update color palette ([8dc7aee](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/8dc7aeecb296c5bef994a28a64e325415c1307b2))
+
+
+### Bug Fixes
+
+* about image too much margin on extreme width screens ([10ab1fb](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/10ab1fb7599bbca343b7f71a961f2a011cd0e272))
+* false x padding on header nav on desktop ([7a438c6](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/7a438c6e445be4bc4e80ca9cb46d717aa307d877))
+* icons color not working ([e345b0d](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/e345b0db1995834f8ce68eef598c9545ad85c265))
+
+
+### Performance Improvements
+
+* lazy load images ([fa1f474](https://github.com/huseyin-ozkan/ozkan-accountancy-website/commit/fa1f474e6059e5a2f90ba9881863e1f886abac9b))
+
 ## [1.4.0](https://github.com/huseyin-ozkan/ozkan-musavirlik/compare/v1.3.0...v1.4.0) (2026-02-28)
 
 ### Features
