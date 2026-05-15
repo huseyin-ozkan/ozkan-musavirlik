@@ -40,6 +40,15 @@
 	color: var(--color-neutral);
 }
 
+@mixin title-5 {
+	font-family: var(--font-sans);
+	font-size: var(--type-title-5-size);
+	font-weight: var(--type-title-5-weight);
+	line-height: var(--type-title-5-line-height);
+	letter-spacing: var(--type-title-5-tracking);
+	color: var(--color-neutral);
+}
+
 @mixin paragraph-1 {
 	font-family: var(--font-sans);
 	font-size: clamp(1rem, 2vw, var(--type-paragraph-1-size));

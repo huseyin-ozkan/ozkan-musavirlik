@@ -130,7 +130,7 @@
 	}
 
 	.service h1 {
-		@include title-4();
+		@include title-5();
 
 		white-space: nowrap;
 		color: var(--title-color);

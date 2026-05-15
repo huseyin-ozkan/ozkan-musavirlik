@@ -56,7 +56,7 @@
 	}
 
 	article h1 {
-		@include title-4;
+		@include title-5;
 		margin-bottom: 24px;
 	}
 

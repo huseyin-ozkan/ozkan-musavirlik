@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Icon from '@iconify/svelte'
 	import { browser } from '$app/environment'
 	import { goto } from '$app/navigation'
 	import { page } from '$app/state'
@@ -49,23 +50,24 @@
 		<div class="dialog-panel">
 			{#key selected.id}
 				<header class="dialog-head">
+					<p class="dialog-meta">
+						<span class="date">{dayjs(selected.createdAt).format('D MMMM YYYY')}</span>
+						{#if selected.category}
+							<span class="category">{findCategoryTitle(selected.category)?.title}</span>
+						{/if}
+					</p>
+
 					<h2 class="dialog-title" id="announcement-dialog-title">{selected.title}</h2>
+
 					<button
 						type="button"
 						class="dialog-close"
 						onclick={() => dialogEl?.close()}
 						aria-label="Kapat"
 					>
-						×
+						<Icon icon="material-symbols:close" width="1.5rem" height="1.5rem" aria-hidden />
 					</button>
 				</header>
-
-				<p class="dialog-meta">
-					<span class="date">{dayjs(selected.createdAt).format('D MMMM YYYY')}</span>
-					{#if selected.category}
-						<span class="category">{findCategoryTitle(selected.category)?.title}</span>
-					{/if}
-				</p>
 
 				<div class="dialog-body">
 					{selected.body}
@@ -93,7 +95,7 @@
 		overflow: visible;
 
 		border-radius: var(--radius-card);
-		background: var(--color-base-100);
+		background: var(--color-base-300);
 		color: var(--color-neutral);
 		box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 
@@ -112,14 +114,20 @@
 			gap: 0.75rem;
 			min-height: 0;
 			max-height: var(--dialog-max-height);
-			padding: 2rem;
+			padding: 2.5rem;
 		}
 
 		.dialog-head {
 			display: flex;
-			align-items: flex-start;
-			justify-content: space-between;
-			gap: 1rem;
+			flex-direction: column;
+			gap: 0.75rem;
+		}
+
+		.dialog-close {
+			position: absolute;
+			top: 24px;
+			right: 24px;
+			z-index: 1;
 		}
 
 		.dialog-title {
@@ -130,15 +138,16 @@
 		}
 
 		.dialog-close {
+			display: flex;
 			flex-shrink: 0;
+			align-items: center;
+			justify-content: center;
 			width: 2.25rem;
 			height: 2.25rem;
 			border: none;
 			border-radius: var(--radius-card);
 			background: var(--color-base-300);
 			color: var(--color-neutral);
-			font-size: 1.5rem;
-			line-height: 1;
 			cursor: pointer;
 
 			&:hover {
@@ -153,22 +162,23 @@
 			margin: 0;
 
 			.date {
-				@include label-2;
+				@include label;
 				color: var(--color-neutral-pale);
 				opacity: 0.85;
 			}
 
 			.category {
-				@include label-2;
+				@include label;
 				color: var(--color-neutral-vivid);
 				opacity: 0.75;
 			}
 		}
 
 		.dialog-body {
+			@include paragraph-2;
 			overflow-y: auto;
 			min-height: 0;
-			margin-top: 0.25rem;
+			margin-top: 1rem;
 		}
 	}
 </style>
