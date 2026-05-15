@@ -115,7 +115,7 @@
 
 	/* scrollbar */
 	--color-scrollbar-track: transparent;
-	--color-scrollbar-thumb: #e0e1e6;
+	--color-scrollbar-thumb: #9ca7b9;
 	--color-scrollbar-thumb-hover: var(--color-neutral-pale);
 }
 
