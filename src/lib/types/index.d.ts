@@ -1,11 +1,13 @@
 declare type Category = 'accountancy' | 'real-estate' | 'entrepreneurs'
 
+/** Card / list row: plain teaser only (no HTML body). */
 declare type PostPreview = {
 	id: string
 	slug: string
 	createdAt: string
 	updatedAt: string
 	title: string
+	category?: Category
 	summary: string
 }
 
@@ -22,32 +24,6 @@ declare type Post = {
 	/** HTML */
 	body: string
 	mainImage?: string
-}
-
-declare type SanityPost = {
-	_id: string
-	_rev: string
-	_type: 'post'
-	_createdAt: string
-	_updatedAt: string
-
-	category?: Category
-	title: string
-	slug: {
-		current: string
-		_type: 'slug'
-	}
-	summary?: string
-	/** Markdown */
-	body: string
-
-	mainImage?: {
-		_type: 'image'
-		asset: {
-			_ref: string
-			_type: 'reference'
-		}
-	}
 }
 
 declare type Announcement = {

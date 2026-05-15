@@ -1,11 +1,11 @@
 <script lang="ts">
 	import Announcements from '$lib/components/Announcements.svelte'
-	import PostPreview from '$lib/components/PostPreview.svelte'
+	import PostPreviewCard from '$lib/components/PostPreview.svelte'
 	import Contact from '../Contact.svelte'
 
 	interface Props {
 		data: {
-			posts: Post[]
+			postPreviews: PostPreview[]
 			branches: Content.Branch[]
 			announcements: Announcement[]
 		}
@@ -13,8 +13,10 @@
 
 	let { data }: Props = $props()
 
-	let posts = $derived(
-		data.posts.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+	let sortedPostPreviews = $derived(
+		[...data.postPreviews].sort(
+			(a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+		)
 	)
 </script>
 
@@ -35,8 +37,8 @@
 
 	<div class="content">
 		<div class="posts">
-			{#each posts as post}
-				<PostPreview {post} />
+			{#each sortedPostPreviews as post}
+				<PostPreviewCard {post} />
 			{/each}
 		</div>
 

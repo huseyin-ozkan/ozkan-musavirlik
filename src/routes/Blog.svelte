@@ -1,19 +1,23 @@
 <script lang="ts">
 	import Announcements from '$lib/components/Announcements.svelte'
-	import PostPreview from '$lib/components/PostPreview.svelte'
+	import PostPreviewCard from '$lib/components/PostPreview.svelte'
 
 	interface Props {
-		posts: Post[]
+		postPreviews: PostPreview[]
+		/** Total posts in CMS; used with limited `postPreviews` to show “see all”. */
+		postCount: number
 		announcements: Announcement[]
 	}
 
 	let data: Props = $props()
 
-	let posts = $derived(
-		[...data.posts]
-			.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
-			.slice(0, 4)
+	let displayPostPreviews = $derived(
+		[...data.postPreviews].sort(
+			(a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+		)
 	)
+
+	let showSeeAllBlog = $derived(data.postCount > 4)
 </script>
 
 <section id="blog">
@@ -26,12 +30,14 @@
 
 	<div class="content">
 		<div class="posts">
-			{#each posts as post}
-				<PostPreview {post} />
+			{#each displayPostPreviews as post}
+				<PostPreviewCard {post} />
 			{/each}
 
-			{#if data.posts.length > 4}
-				<a href="/blog" class="see-all-link" title="Blog yazılarının hepsine göz at">Hepsini gör</a>
+			{#if showSeeAllBlog}
+				<a href="/blog" class="see-all-link" title="Blog yazılarının hepsine göz at">
+					Hepsini gör ({data.postCount})
+				</a>
 			{/if}
 		</div>
 

@@ -2,13 +2,10 @@
 	import dayjs from 'dayjs'
 
 	interface Props {
-		post: Post
+		post: PostPreview
 	}
 
 	let { post }: Props = $props()
-
-	// if there is no summary, get the body without html tags
-	const summary = $derived(post?.summary || post.body.replace(/<[^>]*>?/gm, ''))
 </script>
 
 <a href="/posts/{post.slug}" title="Devamını oku">
@@ -17,7 +14,7 @@
 			<h1 title={post.title}>{post.title}</h1>
 
 			<p>
-				{summary}
+				{post.summary}
 			</p>
 		</div>
 

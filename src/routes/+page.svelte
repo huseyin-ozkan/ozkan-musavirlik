@@ -8,7 +8,8 @@
 
 	interface Props {
 		data: {
-			posts: Post[]
+			postPreviews: PostPreview[]
+			postCount: number
 			announcements: Announcement[]
 			hero: Content.Hero
 			about: Content.About
@@ -25,8 +26,12 @@
 <Hero content={data.hero} />
 <Services content={data.hero} />
 
-{#if data.posts}
-	<Blog posts={data.posts} announcements={data.announcements} />
+{#if data.postPreviews}
+	<Blog
+		postPreviews={data.postPreviews}
+		postCount={data.postCount}
+		announcements={data.announcements}
+	/>
 {/if}
 <About content={data.about} />
 <!-- <Staff staff={data.staff} /> -->
