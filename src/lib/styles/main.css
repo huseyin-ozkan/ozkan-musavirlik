@@ -17,9 +17,9 @@
 
 :root {
 	/* Colors — aligned with Figma file VokTnVZeihNONAQhzMLvpS (Özkan Mali Müşavirlik) */
-	--color-primary: #0e57be;
-	--color-primary-darker: #1854a9;
-	--color-primary-lighter: #2469ca;
+	--color-primary: #1b5eab;
+	--color-primary-darker: #135cb0;
+	--color-primary-lighter: #1b70d3;
 	--color-primary-content: #ffffff;
 	--color-accent: #edc755;
 
@@ -29,8 +29,8 @@
 	--color-base-400: #f2f1ed;
 
 	--color-neutral: #242f3c;
-	--color-neutral-pale: #334e72;
-	--color-neutral-vivid: #25518f;
+	--color-neutral-pale: #374f69;
+	--color-neutral-vivid: #25568f;
 
 	/* Font stacks (Figma: font-display, font-sans) */
 	--font-display: 'Crimson Pro', ui-serif, Georgia, serif;
