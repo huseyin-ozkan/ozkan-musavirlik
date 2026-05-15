@@ -17,12 +17,19 @@
 </script>
 
 <section id="about">
-	<section class="section-hero">
-		<h1 class="section-title">Hakkımızda</h1>
-		<p class="main-paragraph">{content.paragraph}</p>
-	</section>
+	<div class="about-top">
+		<article class="section-hero">
+			<h1 class="section-title">Hakkımızda</h1>
+			<p class="main-paragraph">{content.paragraph}</p>
+		</article>
 
-	<section class="mission-vision">
+		<div class="image">
+			<div class="watermark" aria-hidden="true"></div>
+			<img src={accountingCalculator} alt="" aria-hidden="true" loading="lazy" decoding="async" />
+		</div>
+	</div>
+
+	<div class="mission-vision">
 		<article class="mission">
 			<h2>Misyonumuz</h2>
 			<p>{content.mission}</p>
@@ -32,127 +39,121 @@
 			<h2>Vizyonumuz</h2>
 			<p>{content.vision}</p>
 		</article>
-	</section>
-
-	<div class="image">
-		<div class="watermark"></div>
-		<img src={accountingCalculator} alt="" aria-hidden="true" loading="lazy" decoding="async" />
 	</div>
 </section>
 
 <style lang="scss">
 	#about {
-		--section-pt: clamp(75px, 10vw, 250px);
-		--section-pb: clamp(75px, 7vw, 150px);
+		--section-py: clamp(75px, 10vw, 100px);
+		--block-gap: clamp(48px, 10vh, 200px);
+		--hero-content-gap: clamp(24px, 4vw, 40px);
+		--card-gap: clamp(20px, 3vw, 32px);
+		--mission-vision-gap: clamp(32px, min(10vw, 15vh), 200px);
 
-		--heading-font-size: clamp(1.7rem, 5vw, 4rem);
-		--paragraph-font-size: clamp(1rem, 2vw, 1.3rem);
+		@include section;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: var(--block-gap);
+		padding-top: var(--section-py);
+		padding-bottom: var(--section-py);
+		background-color: var(--color-base-200);
+	}
 
-		padding-top: var(--section-pt);
-		padding-bottom: var(--section-pb);
-
-		display: grid;
-		align-items: start;
-
-		grid-template-areas:
-			'her her'
-			'... img'
-			'mvs mvs';
-		grid-template-columns: repeat(2, auto);
-		grid-template-rows: repeat(3, auto);
+	.about-top {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: clamp(48px, 8vw, 80px);
+		width: 100%;
 
 		@include md {
-			grid-template-areas:
-				'her img'
-				'mvs mvs';
-			grid-template-columns: auto 15vw;
-			grid-template-rows: repeat(2, auto);
-			column-gap: 15vw;
-		}
-
-		@include xl {
-			grid-template-areas:
-				'her img'
-				'mvs img';
-			grid-template-columns: auto 15vw;
-			grid-template-rows: repeat(2, auto);
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			gap: clamp(32px, 5vw, 64px);
 		}
 	}
 
 	.section-hero {
-		grid-area: her;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: var(--hero-content-gap);
+		width: 100%;
+		max-width: 702px;
 
 		.section-title {
 			@include title-1;
+			margin-bottom: 0;
 		}
 
 		.main-paragraph {
 			@include paragraph-1;
-			margin-bottom: 4em;
+			color: var(--color-neutral);
+			margin-bottom: 0;
+		}
+	}
+
+	.image {
+		position: relative;
+		z-index: 1;
+		width: clamp(200px, max(25vh, 20vw), 350px);
+		max-width: 350px;
+		flex-grow: 1;
+		flex-shrink: 0;
+		align-self: end;
+		margin-left: 15vw;
+
+		.watermark {
+			position: absolute;
+			inset: 20% -30% 0% -35%;
+
+			z-index: -1;
+
+			background: linear-gradient(to bottom, var(--color-accent), transparent 90%);
+			border-radius: 128px;
+			rotate: 15deg;
+		}
+
+		img {
+			width: 100%;
 		}
 	}
 
 	.mission-vision {
-		grid-area: mvs;
-		--title-font-size: clamp(1.3rem, 1.5vw, 1.5rem);
-		--text-size: clamp(0.95rem, calc(var(--title-font-size) * 0.6), 1.1rem);
-		--gap: calc(var(--title-font-size) * 3);
-
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
-		justify-content: center;
-		gap: var(--gap);
-
-		margin-bottom: 2em;
+		gap: var(--mission-vision-gap);
+		width: 100%;
 
 		@include md {
 			flex-direction: row;
+			align-items: flex-start;
 		}
 
 		article {
 			display: flex;
 			flex: 1;
 			flex-direction: column;
-			align-items: start;
-			justify-content: start;
+			align-items: flex-start;
+			gap: var(--card-gap);
+			min-width: 0;
+
+			@include md {
+				max-width: 543px;
+			}
 
 			h2 {
-				font-size: var(--title-font-size);
-				font-weight: 700;
-				font-family: var(--font-display);
-				margin-bottom: 0.8em;
+				@include title-2;
+				margin-bottom: 0;
 			}
 
 			p {
 				@include paragraph-2;
+				margin-bottom: 0;
 			}
-		}
-	}
-
-	.image {
-		grid-area: img;
-		justify-self: end;
-		position: relative;
-		z-index: 1;
-		// width: 45%;
-		max-width: 300px;
-		flex-grow: 1;
-		flex-shrink: 0;
-
-		.watermark {
-			position: absolute;
-			inset: 20% -70% -10% -60%;
-
-			z-index: -1;
-
-			background: linear-gradient(to bottom, var(--color-accent), transparent);
-			border-radius: 150px;
-			rotate: 15deg;
-		}
-
-		img {
-			width: 100%;
 		}
 	}
 </style>
