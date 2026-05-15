@@ -48,17 +48,17 @@
 	 * Letter-spacing: Figma % as CSS % (relative to computed font-size).
 	 */
 
-	--type-title-1-size: 4rem;
+	--type-title-1-size: clamp(2rem, 10vw, 4rem);
 	--type-title-1-weight: 600;
 	--type-title-1-line-height: 1;
 	--type-title-1-tracking: 0%;
 
-	--type-title-2-size: 2.5rem;
+	--type-title-2-size: clamp(1.75rem, 6.5vw, 2.5rem);
 	--type-title-2-weight: 600;
 	--type-title-2-line-height: 1;
 	--type-title-2-tracking: 0%;
 
-	--type-title-3-size: 2rem;
+	--type-title-3-size: clamp(1.5rem, 5vw, 2rem);
 	--type-title-3-weight: 600;
 	--type-title-3-line-height: 1;
 	--type-title-3-tracking: 0%;

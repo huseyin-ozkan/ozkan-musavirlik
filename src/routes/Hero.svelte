@@ -28,7 +28,7 @@
 	section {
 		--heading-color: var(--color-neutral);
 		--heading-size: clamp(56px, 7vw, 120px);
-		--subheading-size: 20px;
+		--subheading-size: clamp(16px, 2vw, 20px);
 
 		--gap: calc(var(--heading-size) * 2);
 		--padding-t: clamp(80px, 10vw, 250px);
