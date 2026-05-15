@@ -14,6 +14,10 @@
 	<h1>Duyurular</h1>
 
 	<ul>
+		{#if announcements.length === 0}
+			<li>Duyurularımız burada yayınlanacaktır.</li>
+		{/if}
+
 		{#each announcements as a}
 			<li>
 				<a href={`#${a.id}`} title="Detayları gör">
