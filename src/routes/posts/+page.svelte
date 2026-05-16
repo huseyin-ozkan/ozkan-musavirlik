@@ -1,5 +1,8 @@
 <script lang="ts">
-	import type { CategoryPostCount } from '$lib/common/categories'
+	import { page } from '$app/state'
+	import { isCategory, type CategoryPostCount } from '$lib/common/categories'
+	import { BASE_URL, DEFAULT_OG_IMAGE, SITE_NAME } from '$lib/constants'
+	import { getAbsoluteUrl } from '$lib/utils'
 	import Announcements from '$lib/components/Announcements.svelte'
 	import PostCategoryFilter from '$lib/components/PostCategoryFilter.svelte'
 	import PostPreviewCard from '$lib/components/PostPreview.svelte'
@@ -16,12 +19,42 @@
 
 	let { data }: Props = $props()
 
+	const blogDescription =
+		'Yönetmelik değişiklikleri, yeni yasalar gibi konularla alaklı yazılarımızı inceleyebilirsiniz.'
+	const pageTitle = `Blog | ${SITE_NAME}`
+	const ogImage = getAbsoluteUrl(DEFAULT_OG_IMAGE)
+
+	const canonicalUrl = $derived.by(() => {
+		const url = new URL(`${BASE_URL}/posts`)
+		const category = page.url.searchParams.get('category')
+		if (category && isCategory(category)) {
+			url.searchParams.set('category', category)
+		}
+		return url.toString()
+	})
+
 	let sortedPostPreviews = $derived(
 		[...data.postPreviews].sort(
 			(a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
 		)
 	)
 </script>
+
+<svelte:head>
+	<title>{pageTitle}</title>
+	<meta name="description" content={blogDescription} />
+	<meta name="robots" content="max-image-preview:large" />
+	<link rel="canonical" href={canonicalUrl} />
+
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={canonicalUrl} />
+	<meta property="og:title" content={pageTitle} />
+	<meta property="og:description" content={blogDescription} />
+	<meta property="og:site_name" content={SITE_NAME} />
+	<meta property="og:image" content={ogImage} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+</svelte:head>
 
 <section id="blog">
 	<div class="blog-header">
@@ -37,11 +70,13 @@
 	</div>
 
 	<div class="content">
-		<div class="posts">
-			{#each sortedPostPreviews as post}
-				<PostPreviewCard {post} />
+		<ul class="posts">
+			{#each sortedPostPreviews as post (post.id)}
+				<li>
+					<PostPreviewCard {post} />
+				</li>
 			{/each}
-		</div>
+		</ul>
 
 		<Announcements announcements={data.announcements} />
 	</div>
@@ -117,5 +152,12 @@
 		gap: 2.5rem;
 		width: 100%;
 		max-width: 800px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			min-width: 0;
+		}
 	}
 </style>

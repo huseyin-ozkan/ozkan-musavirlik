@@ -41,9 +41,13 @@
 
 	<div class="content">
 		<div class="posts">
-			{#each displayPostPreviews as post}
-				<PostPreviewCard {post} />
-			{/each}
+			<ul class="post-list">
+				{#each displayPostPreviews as post (post.id)}
+					<li>
+						<PostPreviewCard {post} />
+					</li>
+				{/each}
+			</ul>
 
 			{#if showSeeAllBlog}
 				<a href={seeAllBlogHref} class="see-all-link" title="Blog yazılarının hepsine göz at">
@@ -124,6 +128,19 @@
 		gap: 2.5rem;
 		width: 100%;
 		max-width: 800px;
+	}
+
+	.post-list {
+		display: flex;
+		flex-direction: column;
+		gap: 2.5rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			min-width: 0;
+		}
 	}
 
 	.see-all-link {
