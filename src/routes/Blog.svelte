@@ -25,7 +25,7 @@
 
 	const seeAllBlogHref = $derived.by(() => {
 		const category = page.url.searchParams.get('category')
-		return category && isCategory(category) ? `/blog?category=${category}` : '/blog'
+		return category && isCategory(category) ? `/posts?category=${category}` : '/posts'
 	})
 </script>
 
