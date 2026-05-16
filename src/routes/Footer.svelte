@@ -7,7 +7,9 @@
 
 <footer>
 	<div class="content">
-		<a href={'/'} title={'Ana Sayfa'} class="logo"> © 2026 Özkan Mali Müşavirlik </a>
+		<a href={'/'} title={'Ana Sayfa'} class="logo">
+			<img src="/logo.svg" alt="Özkan Mali Müşavirlik" />
+		</a>
 
 		<nav>
 			<ul>
@@ -37,7 +39,7 @@
 	}
 
 	footer {
-		--logo-font-size: 1.5rem;
+		--logo-size: 80px;
 		--nav-item-size: 1rem;
 
 		--gap: 1.5rem;
@@ -72,10 +74,9 @@
 		}
 	}
 
-	.logo {
-		font-size: var(--logo-font-size);
-		font-weight: 600;
-		font-family: var(--font-display);
+	.logo > img {
+		height: var(--logo-size);
+		width: auto;
 	}
 
 	// nav

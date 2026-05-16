@@ -15,9 +15,8 @@
 
 <header class:scrolled>
 	<a href={'/'} title="Ana Sayfa" class="logo">
-		<img src="/favicon.png" alt="" aria-hidden="true" />
-		<span>Özkan Mali Müşavirlik</span></a
-	>
+		<img src="/logo-with-icon.svg" alt="Özkan Mali Müşavirlik" />
+	</a>
 
 	<button
 		class="mobile-nav-toggle"
@@ -57,10 +56,9 @@
 
 	header {
 		--bg-color: var(--color-base-200);
-		--logo-color: var(--color-neutral);
 		--nav-item-color: var(--color-neutral);
 
-		--logo-size: clamp(1.05rem, 3vw, 1.7rem);
+		--logo-size: clamp(48px, 5vw, 72px);
 		--nav-toggle-size: clamp(1.2rem, calc(var(--logo-size) * 1.5), 1.8rem);
 		--nav-item-size: 1rem;
 
@@ -109,20 +107,8 @@
 	}
 
 	.logo > img {
-		width: calc(var(--logo-size) * 1.2);
-		margin-right: calc(var(--logo-size) * 0.5);
-		border-radius: 3px;
-	}
-
-	.logo > span {
-		display: block;
-
-		font-weight: 700;
-		color: var(--logo-color);
-		font-size: var(--logo-size);
-		font-family: var(--font-display);
-		white-space: nowrap;
-
+		height: var(--logo-size);
+		width: auto;
 		padding: 0.66em 0;
 	}
 
